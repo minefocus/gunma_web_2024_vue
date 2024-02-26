@@ -1,0 +1,98 @@
+@import './element-ui.scss';
+@import './vue_max768.scss';
+@import './vue_min768.scss';
+body {
+    height: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    //font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    font-family: "-apple-system", BlinkMacSystemFont, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "メイリオ", "Hiragino Kaku Gothic ProN", "MS PGothic", Osaka, "sans-serif";
+}
+
+label {
+    font-weight: 700;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+div:focus {
+    outline: none;
+}
+
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+// main-container global css
+.app-container {
+    padding: 1px 20px 20px 20px;
+}
+
+body {
+    font-size: 16px;
+}
+
+.weight {
+    font-weight: bold;
+}
+.rending_img{
+    image-rendering:-moz-crisp-edges;
+	image-rendering:-o-crisp-edges;
+	image-rendering:-webkit-optimize-contrast;
+	image-rendering: auto;
+	-ms-interpolation-mode:nearest-neighbor;
+}
+
+// #id_work_name::-webkit-input-placeholder { /* WebKit browsers */
+//     font-size:11px;
+//     }
+    
+//     #id_work_name:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//     font-size:11px;
+//     }
+    
+//     #id_work_name::-moz-placeholder { /* Mozilla Firefox 19+ */
+//     font-size:11px;
+//     }
+    
+//     #id_work_name:-ms-input-placeholder { /* Internet Explorer 10+ */
+//     font-size:13px;
+//     }
+.body_ {
+    overflow-y: auto;
+    
+}

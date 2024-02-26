@@ -1,0 +1,318 @@
+// cover some element-ui styles
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+    font-weight: 400 !important;
+}
+
+.el-upload {
+    input[type="file"] {
+        display: none !important;
+    }
+}
+
+.el-upload__input {
+    display: none;
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+    transform: none;
+    left: 0;
+    position: relative;
+    margin: 0 auto;
+}
+
+// refine element ui upload
+.upload-container {
+    .el-upload {
+        width: 100%;
+        .el-upload-dragger {
+            width: 100%;
+            height: 200px;
+        }
+    }
+}
+
+// dropdown
+.el-dropdown-menu {
+    a {
+        display: block
+    }
+}
+
+// button
+//  element scss variables //
+$labelFontSize: 14px; // checkbox , radio ,<p>
+//$lableColor:rgb(18, 200, 18); // checkbox , radio ,<p>
+$lableColor: #303133; // checkbox , radio ,<p>
+$tableThBgColor: #223762; // table header's background color
+$tableThColor: #fff; // table header's text color
+$hrColor: #C0C0C0; // hr line color rgb(0,0,0)
+$datailCountFontSize: 15px;
+$datailCountColor: rgb(151, 223, 18);
+$buttonBgColor: #223762;
+$buttonBdColor: #2F5597;
+$focusColor: #2F5597;
+$buttonFontColor: #fff;
+$buttonHoverBgColor: #E6E6FA;
+$buttonHoverBdColor: #1E90FF;
+$buttonHoverFontColor: #000;
+#id {
+    display: flex;
+    justify-content: center;
+}
+
+.inner_border {
+   
+    height: 100%;
+    /* background-color: aquamarine; */
+
+}
+
+.tittle {
+    width: 100%;
+    height: 60px;
+    // border: 1px solid black;
+}
+
+.flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex_start_f {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.button_ {
+    height: 35px !important;
+    border: 1.5px solid #bdbcbc;
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+.button_All{
+    height: 35px !important;
+    border: 1.5px solid #fffefe00 !important;
+    border-radius: 5px !important;
+    background-image: linear-gradient(#01216B, #01216B);
+    overflow: hidden;
+    color: white;
+     background-color: rgba(7, 193, 97, 0) !important;
+     width: 200px;
+}
+.button_All_{
+    height: 35px !important;
+    border: 1px solid #01216B !important;
+    border-radius: 5px !important;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    overflow: hidden;
+    color: #01216B !important;
+     background-color: rgba(7, 193, 97, 0) !important;
+     width: 200px; 
+}
+.confirm_waring{
+    display: flex;
+      align-items: center;
+      background-color: rgb(247, 247, 247);
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 14px;
+    line-height: 30px;
+  }
+.result_ {
+    width: 95%;
+    height: 100px;
+}
+
+button {
+    border-radius: 7px;
+}
+
+.button_02 {
+    border: 0px;
+}
+
+// /deep/.el-input__inner {
+//   height: 300px !important;
+// }
+.flex_title {
+    width: 100%;
+    font-weight: bold;
+}
+.flex_title_2{
+    width: 100%;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.el-col {
+    height: 100%;
+}
+
+.el-date-editor {
+    width: 100% !important;
+}
+
+.tittle_out {
+    height: 100%;
+}
+
+.content_ {
+    height: 100%;
+}
+
+.border_red_around {
+    width: 50px;
+    border: rgb(255, 0, 0) solid 1px;
+    color: rgb(255, 0, 0);
+    // background-color: white;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    // padding-top: 3px;
+}
+.border_red_around_w{
+    width: 50px;
+    border: rgb(255, 0, 0) solid 1px;
+    color: rgb(255, 0, 0);
+    // background-color: white;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+    padding-top: 3px;
+}
+.tips_top {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.flex_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.waring_01 {
+    font-size: 14px;
+  }
+.row_height_100 {
+    height: 100%;
+}
+
+._err {
+    color: red;
+    font-size: 12px;
+}
+
+._waring {
+    min-height: 15px;
+    color: rgb(68, 139, 202);
+    font-size: 14px;
+}
+
+._normal {
+    min-height: 15px;
+    color: rgb(42, 42, 42);
+    font-size: 12px;
+}
+
+.margin_1 {
+    margin-top: -1px !important;
+    // margin-bottom: 25px;
+}
+
+.tips_top_row {
+    margin-bottom: 5px;
+}
+
+.border_ {
+    border: 1px solid #e6e6e6;
+}
+
+.border_r {
+    // border-right: 1px solid #e6e6e6;
+    // background-color: rgba(116, 179, 249, 0.43);
+}
+.back_all{
+    // background-color: rgba(116, 179, 249, 0.43);
+}
+.back_img_{
+ background-color: #F5F6F7 !important;
+  }
+.back_wight{
+    background-color: rgb(255, 255, 255);
+}
+.tittle_out {
+    padding: 0 10px;
+}
+
+.input_inner_300px {
+    width: 100%;
+}
+
+.van-button--primary {
+    border: 0px;
+}
+
+.font_weight_bold {
+    font-weight: bolder;
+}
+
+.flex_between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.font_color_b {
+    color: #01216B !important;
+}
+
+.tittle_02 {
+    min-height: 25px;
+    font-weight: bold;
+}
+.font_w{
+    // color: white
+    color: #000;
+}
+
+
+.tittle_all{
+    padding: 10px 0 10px 0;
+    font-size: 16px;
+    color: #272727;
+    font-weight: bolder;
+}
+.btn_1_1{
+    position:absolute;
+ 
+}
+.btn_1_postion{
+    position: relative;
+}
+.position_R{
+    position: relative !important;
+}
+.position_L{
+    position: absolute !important;
+    top:26%;
+    right: 10px;
+}
+.position_R_{
+    position: absolute !important;
+    top:26%;
+    left: 10px;
+}
+.position_B_R{
+        position: relative;
+}
+.position_B{
+    position: absolute;
+    bottom: 40px;
+}
+.btn_w_ {
+    width: 200px;
+  }
+
