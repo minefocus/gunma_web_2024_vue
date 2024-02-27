@@ -1483,5 +1483,4 @@ export default {
   }
 }
 
-
 </style>

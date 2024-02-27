@@ -979,12 +979,12 @@
     padding: 5px 0;
   }
   .check01 {
-    border: 5px solid rgb(0 121 255);
+    border: 5px solid #03A369;
     border-radius: 10px;
   }
 
   .check02 {
-    border: 5px solid rgb(0 121 255);
+    border: 5px solid #03A369;
     border-radius: 10px;
   }
 

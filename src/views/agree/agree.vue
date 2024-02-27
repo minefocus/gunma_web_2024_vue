@@ -461,7 +461,7 @@
       },
       toPage() {
         this.$router.push({
-          name: "advance",
+          name: "explanation",
           params: {},
         });
       },
@@ -470,11 +470,11 @@
 </script>
 
 <style scoped>
-  /deep/.el-checkbox__input.is-checked .el-checkbox__inner,
+  /* /deep/.el-checkbox__input.is-checked .el-checkbox__inner,
 .el-checkbox__input.is-indeterminate .el-checkbox__inner {
   border-color: #409EFF !important;
   background-color: #409EFF !important;
-}
+} */
 /deep/.el-checkbox__inner:hover {
   border-color: #01216b !important;
 }

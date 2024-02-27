@@ -172,15 +172,15 @@
     <div class="btom_div position_B_R">
       <el-row style="height: 90px">
         <el-col :xs="24" :sm="24" class="flex_center">
-          <div class="flex_between btnw">
-            <van-button
+          <div class="flex_center btnw">
+            <!-- <van-button
               class="flex_center button_All_ position_R application_w"
               type="primary"
               @click="goBack()"
             >
               <span class="position_R_">〈</span>
               <span>戻る</span>
-            </van-button>
+            </van-button> -->
             <van-button
               class="flex_center button_All position_R application_w"
               type="primary"
@@ -264,7 +264,7 @@ export default {
     },
     goBack() {
         this.$router.push({
-          name: "advance",
+          name: "explanation",
           params: {},
         });
       },

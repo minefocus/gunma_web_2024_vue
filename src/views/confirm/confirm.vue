@@ -46,7 +46,7 @@
                     <div class="flex_center">
                       <span class="font_weight_bold">お名前（漢字）</span>
                     </div>
-                    <van-button round plain style="height:25px;border: 1px solid rgb(1 33 107);background-color:rgb(1 33 107);color: rgb(255 255 255);" type="info"
+                    <van-button round plain style="height:25px;border: 1px solid #03A369;background-color:#03A369;color: rgb(255 255 255) !important;" type="info"
                       @click="toPage('inputCustomer')">修正</van-button>
                   </el-col>
                 </el-row>
@@ -378,7 +378,7 @@
                     <div class="">
                       <span class="font_weight_bold">お取引の目的</span>
                     </div>
-                    <van-button round plain style="height:25px;border: 1px solid rgb(1 33 107);background-color:rgb(1 33 107);color: rgb(255 255 255);" type="info"
+                    <van-button round plain style="height:25px;border: 1px solid #03A369;background-color:#03A369;color: rgb(255 255 255) !important;" type="info"
                       @click="toPage('inputApplication')">修正</van-button>
                   </el-col>
                 </el-row>
