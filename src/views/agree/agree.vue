@@ -292,10 +292,7 @@
               </el-col>
               
             </el-row>
-              <el-row class="margin_top_down" style="font-size: 14px;
-    margin-bottom: 16px;
-    color: #01216b !important;
-    font-weight: bolder;text-indent: 15px;">
+              <el-row class="margin_top_down" style="font-size: 14px;margin-bottom: 16px;font-weight: bolder;text-indent: 15px;">
               <el-col>
                 各サービスの詳細は以下を参照
               </el-col>
@@ -475,12 +472,12 @@
   border-color: #409EFF !important;
   background-color: #409EFF !important;
 } */
-/deep/.el-checkbox__inner:hover {
+/* /deep/.el-checkbox__inner:hover {
   border-color: #01216b !important;
 }
 /deep/.el-checkbox__inner {
   border-color: #01216b !important;
-}
+} */
 .top_waring {
   color: rgb(0, 0, 0);
   display: flex;
@@ -617,7 +614,7 @@
     background-color: #FAFAFA;
     border-radius: 5px;
   }
-  .el-checkbox{
+  /* .el-checkbox{
     color: #01216b !important;
-  }
+  } */
 </style>
