@@ -35,116 +35,29 @@
     </el-row>
 
     <div style="width: 100%; margin-top: 10px" class="back_img_">
-      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+     
+      <!-- -------------- -->
+     
+    <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
-            <span class="flex_title font_w">お取引の目的
+            <span class="flex_title font_w">決済口座情報
               <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
             </span>
           </div>
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
-          <div class="content_ input_01 flex_c_c check_no_center">
-            <el-row>
-              <el-col :span="24" class="waring_01" style="color: red; line-height: 20px">
-                <span>該当する項目をすべてチェックしてください。<br />※事業費決済は受付できません</span>
-              </el-col>
-            </el-row>
-            <el-row ref="checklist" id="checklist">
-              <el-col :xs="24" :sm="24">
-                <div>
-                  <el-checkbox-group v-model="checklist">
-                    <el-row>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="01">生計費決済</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="02">事業費決済</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="03">給与受取</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="04">年金受取</el-checkbox>
-                      </el-col>
-                    </el-row>
-                    <el-row>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="05">仕送り</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="06">貯蓄</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="07">資産運用</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="08">融資返済用口座</el-checkbox>
-                      </el-col>
-                    </el-row>
-
-                    <el-row>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="09">外国為替取引</el-checkbox>
-                      </el-col>
-                      <el-col :xs="24" :sm="6" class="padding_checkbox">
-                        <el-checkbox label="99" @change="showInput1()">その他</el-checkbox>
-                      </el-col>
-                    </el-row>
-                  </el-checkbox-group>
-
-                  <el-row>
-                    <el-col :xs="24" :sm="24" class="padding_checkbox">
-                    </el-col>
-                  </el-row>
-
-                  <el-row v-if="checklist.includes('99')">
-                    <el-col :xs="24" :sm="16">
-                      <el-row>
-                        <el-col :span="24" class="waring_01" style="color: red"><span>その他をご選択の場合はご入力ください。</span>
-                        </el-col>
-                      </el-row>
-                      <el-row class="flex_center_start" style="margin: 5px 0 0 0">
-                        <el-col :xs="24" :sm="24" class="">
-                          <el-input ref="id_account_purpose_other" id="id_account_purpose_other"
-                            class="input_inner_100 position_ab" v-model="form.account_purpose_other"
-                            @blur="halfToFull('account_purpose_other')" maxlength="20" placeholder="20文字まで" @input="
-                            deleteAllBackgroundColor([
-                            'id_account_purpose_other',
-                            ])
-                            ">
-                          </el-input>
-                        </el-col>
-                      </el-row>
-                    </el-col>
-                  </el-row>
-                </div>
-              </el-col>
-            </el-row>
-          </div>
-        </el-col>
-      </el-row>
-      <!-- -------------- -->
-      <el-row  class="border_ margin_1 mobile_margin back_all flex_center_web">
-        <el-col :xs="24" :sm="6" class="border_r">
-          <div class="flex_center tittle_out">
-            <span class="flex_title font_w">口座開設する店舗
-              <span   class="flex_center border_red_around" style="font-weight: normal">必須</span>
-            </span>
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="18" class="back_wight border_l">
-          <div class="content_ input_01 flex_c_c" style="justify-content: flex-start;">
-            <el-row >
-              <el-col :span="24">{{form.introduce_nm}}</el-col>
-            </el-row>
-            <el-row v-if="flg" class="flex_bet" >
-              <el-col :xs="24" :sm="24">
-                <el-row>
-                  <el-col :xs="24" :sm="16">
-                    <el-row class="flex_center_start">
-                      <el-col :xs="24" :sm="24" class="">
-                        <el-select ref="account_store_number" id="account_store_number"
+          <div class="content_ input_01 flex_c_c">
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="11">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="4">
+                    <div class="tittle_out_in">
+                      <span class="flex_title">店舗</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="20" class="">
+                                           <el-select ref="account_store_number" id="account_store_number"
                           v-model="form.account_store_number" placeholder="選択してください" style="width: 100%" @change="
                             deleteAllBackgroundColor([
                             'account_store_number',
@@ -157,57 +70,28 @@
                           <el-option v-for="item in store_list" :key="item.store_number"
                             :label="item.store_nm" :value="item.store_number" />
                         </el-select>
-                      </el-col>
-                    </el-row>
                   </el-col>
                 </el-row>
               </el-col>
-            </el-row>
-            <el-row class="" style="margin: 10px 0;padding-top:5px">
-              <el-col :span="24">
-                <div class="weight">当行で口座開設する理由をお選びください。</div>
-              </el-col>
-            </el-row>
-             <el-row  ref="account_reason" id="account_reason" style="margin-top: 10px;">
-              <el-col :xs="24" :sm="24">
-                <div>
-
-                  <el-radio-group v-model="account_reason" @change="clean()">
-                    <el-radio :label="'01'">徳島県内の大学等に入学予定</el-radio>
-                    <el-radio :label="'02'">徳島県内の大学等に在学中（本人確認書類の住所が徳島県外）</el-radio>
-                    <el-radio :label="'03'">徳島県内の会社に就職予定</el-radio>
-                    <el-radio :label="'04'">徳島県内の会社で就業中（本人確認書類の住所が徳島県外）</el-radio>
-                    <el-radio :label="'05'">徳島県内の会社・個人との口座振替引落し口座</el-radio>
-                    <el-radio :label="'99'">その他</el-radio>
-                  </el-radio-group>
-
-                  <el-row style="padding:10px 0" v-if="account_reason === '99'">
-                    <el-col :xs="24" :sm="16">
-                      <el-row>
-                        <el-col :span="24" class="waring_01" style="color: red"><span>その他をご選択の場合はご入力ください。</span>
-                        </el-col>
-                      </el-row>
-                      <el-row class="flex_center_start" style="margin: 5px 0 0 0">
-                        <el-col :xs="24" :sm="24" class="">
-                          <el-input ref="account_reason_other" id="account_reason_other"
-                            class="input_inner_100 position_ab" v-model="form.account_reason_other"
-                            @blur="halfToFull('account_reason_other')" maxlength="50" placeholder="50文字まで" @input="
-                            deleteAllBackgroundColor([
-                            'account_reason_other',
-                            ])
-                            ">
-                          </el-input>
-                        </el-col>
-                      </el-row>
-                    </el-col>
-                  </el-row>
-                </div>
+              <el-col :xs="24" :sm="11" class="padidng_left">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="4">
+                    <div class="tittle_out_in">
+                      <span class="flex_title">口座番号
+                  </span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="20" class="">
+                    <el-input ref="name_first" id="name_first" class="input_inner_100" v-model.trim="form.name_first"
+                      :maxlength="15" @blur="halfToFull('name_first')" placeholder=""
+                      @input="deleteAllBackgroundColor(['name_first']),noPlace('name_first')"></el-input>
+                  </el-col>
+                </el-row>
               </el-col>
             </el-row>
           </div>
         </el-col>
       </el-row>
-
       <el-row class="border_ margin_1 mobile_margin back_all
             flex_center_web">
         <el-col :xs="24" :sm="6" class="border_r">
@@ -221,36 +105,18 @@
           <div class="content_ input_01 flex_c_c">
             <el-row class="">
               <el-col :span="24">
-                <div class="weight">カードデザイン</div>
+                <div class="weight">デビットカ一ド</div>
               </el-col>
             </el-row>
-            <el-row>
-              <el-col :span="24" class="waring_01" style="color: red; margin-bottom: 20px">
-                <span>どちらかのカードデザインをお選びください。</span>
-              </el-col>
-            </el-row>
+
             <el-row class="" ref="cord_type" id="cord_type">
               <el-row class="" ref="cord_type" id="cord_type">
                 <el-col :xs="24" :sm="12" class="flex_center" style="height: 180px">
-                  <div class="flex_center" style="height: 180px; width: 290px; overflow: hidden" :class="{
-                        check01: cord_type == '0',
-                        nocheck: cord_type != '0',
-                        err:
-                        (cord_type != '0' || cord_type != '1') && cord_type_err,
-                        }">
+    
                     <img style="height: 170px; width: 280px" :src="url01" @click="cord_typeBtn('0')" />
-                  </div>
+                
                 </el-col>
-                <el-col :xs="24" :sm="12" class="flex_center" style="height: 180px">
-                  <div class="flex_center" style="height: 180px; width: 290px; overflow: hidden" :class="{
-                        check02: cord_type == '1',
-                        nocheck: cord_type != '1',
-                        err:
-                        (cord_type != '0' || cord_type != '1') && cord_type_err,
-                        }">
-                    <img style="height: 170px; width: 280px" :src="url02" @click="cord_typeBtn('1')" />
-                  </div>
-                </el-col>
+
               </el-row>
             </el-row>
 
@@ -261,20 +127,7 @@
                     <div class="tittle_out_in">
                       <div class="weight">キャッシュカード暗証番号</div>
                     </div>
-                    <div class="tittle_out_in">
-                      <div class="p4_err">
-                        以下の番号は、暗証番号としてご登録いただけませんのでご注意ください。
-                      </div>
-                      <div class="p4_err">
-                        ・自宅電話番号、携帯電話番号の連続する４桁
-                      </div>
-                      <div class="p4_err">
-                        ・同一数字の連続番号（1111など）
-                      </div>
-                      <div class="p4_err">
-                        ・西暦、和暦で表示した生年月日の組合せ（昭和55年8月4日の場合、5584、0804、5508など）
-                      </div>
-                    </div>
+
                   </el-col>
                 </el-row>
                 <el-row class="flex_bet">
@@ -328,115 +181,24 @@
                 flex_center_web">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
-            <span class="flex_title font_w">インターネットバンキング
+            <span class="flex_title font_w">デビットカード暗証番号
               <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
             </span>
           </div>
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
-            <el-row class="flex_bet">
-              <el-col :xs="24" :sm="24">
-                <el-row>
-                  <el-col :span="24">
-                    <div class="tittle_out_in">
-                      <div class="weight">ご契約済みですか？</div>
-                    </div>
-                  </el-col>
-                  <el-col :xs="24" :sm="16" style="margin-top: 15px" id="contractor_flg_id">
-                    <el-row class="flex_center_start">
-                      <el-col :xs="24" :sm="6">
-                        <el-radio v-model="contractor_flg" label="0" @change="showInputF()">はい</el-radio>
-                      </el-col>
-                      <el-col :xs="24" :sm="6">
-                        <el-radio v-model="contractor_flg" label="1" @change="showInputF()">いいえ</el-radio>
-                      </el-col>
-                    </el-row>
-                    <el-row>
-                      <el-col :span="12"> </el-col>
-                    </el-row>
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row>
+     
 
-            <el-row v-show="contractor_flg == '1'">
+            <el-row >
               <el-col :span="24">
-                <el-row class="flex_bet">
+                <el-row class="flex_bet" >
                   <el-col :xs="24" :sm="24">
                     <el-row>
                       <el-col :span="24">
                         <div class="tittle_out_in padding_t_32">
-                          <div class="weight">1日あたりの振込限度額</div>
-                        </div>
-                      </el-col>
-                      <el-col :span="24">
-                        <div class="tips_top waring_font">
-                          振込・払込限度額を0円から100万円の範囲内で設定してください。
-                        </div>
-                      </el-col>
-                      <el-col :xs="24" :sm="16">
-                        <el-row class="flex_center_start">
-                          <el-col :xs="20" :sm="20" class="">
-                            <el-input ref="id_creditlimit" id="id_creditlimit" v-model="form.creditlimit"
-                              class="input_inner_100" maxlength="7" placeholder="半角数字（0～1000000）" type="tel"
-                              @focus="clear('creditlimit')"
-                              @blur="toSBCNum('creditlimit'),money('creditlimit')" @input="
-                                      deleteAllBackgroundColor(['id_creditlimit']),
-                                      replaceNum('creditlimit')
-                                      " />
-                          </el-col>
-                          <el-col :xs="4" :sm="4" class="">
-                            &nbsp;&nbsp;円
-                          </el-col>
-                        </el-row>
-                      </el-col>
-                    </el-row>
-                  </el-col>
-                </el-row>
-
-                <el-row class="flex_bet" style="margin-top: 20px
-                            !important">
-                  <el-col :xs="24" :sm="24">
-                    <el-row>
-                      <el-col :span="24">
-                        <div class="">
-                          <div class="p4_err waring_font">
-                            ※パスワード盗用による不正防止のため、適切な金額を設定してください。
-                          </div>
-                          <div class="p4_err waring_font">
-                            ※ご利用口座間の「お振替え」は含みません。
-                          </div>
-                          <!-- <div class="p4_err waring_font">
-                            パスワードには電話番号や生年月日など他人にわかり
-                          </div> -->
-                          <div class="p4_err waring_font">
-                            ※サービス利用開始後、振込・払込限度額の変更が可能です。引上げについては、ワンタイムパスワードのご利用が必要となります。
-                          </div>
-                        </div>
-                      </el-col>
-               
-                      <el-col :span="24">
-                        <div class="tittle_out_in padding_t_32">
-                          <div style="padding-bottom: 10px" class="weight">
-                            インターネットバンキング暗証番号
-                          </div>
-                        </div>
-                      </el-col>
-                      <el-col :span="24">
-                        <div class="">
-                          <div class="p4_err waring_font">
-                            インターネットバンキング用のパスワードをご登録ください。
-                          </div>
-                          <div class="p4_err waring_font">
-                            インターネットバンキングをご利用の際に必要となりますので、お忘れにならないようご注意ください。
-                          </div>
-                          <div class="p4_err waring_font">
-                            パスワードには電話番号や生年月日など他人にわかりやすい番号はお避けください。
-                          </div>
-
-                          <div class="p4_err waring_font">
-                            また「000000」「999999」以外の数字をご記入ください。
+                          <div >
+                           デビットカード利用時に使用する暗証番号を数字４桁で入力してください。規則的な数字や生年月日等は使用できません。
                           </div>
                         </div>
                       </el-col>
@@ -459,14 +221,10 @@
                     <el-row>
                       <el-col :span="24">
                         <div class="tittle_out_in padding_t_32">
-                          <div style="padding-bottom: 10px" class="weight">
-                            インターネットバンキング暗証番号（確認）
+                          <div>
+                           確認のため、再度入力してください
                           </div>
-                          <div class="">
-                            <div class="p4_err waring_font">
-                              確認のため、再度ご入力ください。
-                            </div>
-                          </div>
+      
                         </div>
                       </el-col>
 
@@ -512,7 +270,7 @@
   </div>
 </template>
 <script>
-  import urlImage01 from "../../assets/img/picture01.png";
+  import urlImage01 from "../../assets/img/card_visa@3x.png";
   import urlImage02 from "../../assets/img/picture02.png";
   import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,similarBirthday,isSimilarToPhoneNumber,repeatNum,PATTERFULL} from "@/utils/validate.js";
   import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
