@@ -125,17 +125,17 @@
         </el-col>
       </el-row>
       <!-- -------------- -->
-      <el-row v-if="flg || flg_2 || flg_3" class="border_ margin_1 mobile_margin back_all flex_center_web">
+      <el-row  class="border_ margin_1 mobile_margin back_all flex_center_web">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">口座開設する店舗
-              <span v-if="flg || flg_2 " class="flex_center border_red_around" style="font-weight: normal">必須</span>
+              <span   class="flex_center border_red_around" style="font-weight: normal">必須</span>
             </span>
           </div>
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start;">
-            <el-row v-if="flg_3">
+            <el-row >
               <el-col :span="24">{{form.introduce_nm}}</el-col>
             </el-row>
             <el-row v-if="flg" class="flex_bet" >
@@ -163,12 +163,12 @@
                 </el-row>
               </el-col>
             </el-row>
-            <el-row v-if="flg_2" class="" style="margin: 10px 0;padding-top:5px">
+            <el-row class="" style="margin: 10px 0;padding-top:5px">
               <el-col :span="24">
                 <div class="weight">当行で口座開設する理由をお選びください。</div>
               </el-col>
             </el-row>
-             <el-row v-if="flg_2" ref="account_reason" id="account_reason" style="margin-top: 10px;">
+             <el-row  ref="account_reason" id="account_reason" style="margin-top: 10px;">
               <el-col :xs="24" :sm="24">
                 <div>
 

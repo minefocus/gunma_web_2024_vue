@@ -65,7 +65,7 @@
             class=" "
             style="
               display: flex;
-              align-items: flex-start;
+              align-items: center;
               justify-content: center;
               flex-direction: column;
               margin: 10px 0;
@@ -73,17 +73,17 @@
               width: 100%;
             "
           >
-            <div style="font-size: 17px;font-weight: bold;color: green;">以下の本人確認書類のいずれかをご用意ください。</div>
-            <div style="margin:15px 0;padding:0 20px; width: 100%;border: 2px solid #00a56f;" class="flex_s_c">
-              <div class="flex_center" style="width: 100%; padding: 10px 0">
-                  運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証
+            <div style="font-size: 17px;font-weight: bold;color: #03A369;">続いて、在留カードを撮影します。</div>
+            <div style="margin:15px 0;padding:0 10px; width: 100%;border: 2px solid #00a56f;" class="flex_s_c">
+              <div class="flex_center" style="width: 100%; padding: 10px 0;color:red">
+                  在留資格が「永住者」以外の方はお申込みできません。群馬銀行本支店で受付をいたします
                 </div>
               <div class="mar_l_r flex_c_c" style="width: 200px">
                 <img class="rending_img width_img" :src="url01" />
               </div>
             </div>
-            <div>
-              本人確認書類を撮影する際は、記載事項がはっきり読み取れるように撮影してください。不鮮明な場合はお手続きができず、再度お申込みをお願いすることがあります。
+            <div style="padding: 0 10px;">
+              本人確認は株式会社Liquidの「本人認証サ一ビス」にて行います。これより、株式会社Liquidのペ一ジへ遷移します。
             </div>
           </div>
         </el-col>

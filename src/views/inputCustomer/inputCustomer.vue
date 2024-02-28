@@ -80,7 +80,44 @@
         </el-col>
       </el-row>
       <!--------------------------------------------------------------------------->
+ <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">お名前（英文表記）
+              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="18" class="back_wight border_l">
+          <div class="content_ input_01 flex_c_c">
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="11">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="4">
+   
+                  </el-col>
+                  <el-col :xs="24" :sm="20" class="">
+                    <el-input ref="name_last" id="name_last" class="input_inner_100" v-model.trim="form.name_last"
+                      placeholder="半角18文字まで（例）a wa" :maxlength="16" @blur="halfToFull('name_last')"
+                      @input="deleteAllBackgroundColor(['name_last']),noPlace('name_last')">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              <el-row class="flex_bet padding_row">
+              <el-col :xs="24" :sm="24" style="flex-direction: column">
+                <span class="_waring" style="color: red">姓名合わせて16文字以内で入力ください。<br>
+                文字数が足りない場合は、名をイニシャルにしてください。<br>
+                例）TAROU　GUNMAMAEBASHI<br>
+                　　→　T　GUNMAMAEBASHI
+                </span>
+                </el-col>
+            </el-row>
+              </el-col>
 
+            </el-row>
+          </div>
+        </el-col>
+      </el-row>
       <!--------------------------------------------------------------------------->
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
@@ -321,11 +358,6 @@
             </el-row>
           </div>
         </el-col>
-
-
-
-
-
       </el-row>
       <!---------------------->
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="tele_flg_checkbox" id="tele_flg_checkbox">
@@ -338,7 +370,7 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c">
-            <el-row class="flex_bet padding_row">
+            <!-- <el-row class="flex_bet padding_row">
               <el-col :xs="24" :sm="24" style="flex-direction: column">
                 <span class="_waring" style="color: red">お持ちの電話をお選びください</span>
               </el-col>
@@ -371,9 +403,9 @@
               <el-col :xs="24" :sm="24" style="flex-direction: column">
                 <span class="_waring" style="color: red">お申込み内容の確認のためお電話をさせていただく場合がありますのでご了承ください。</span>
               </el-col>
-            </el-row>
+            </el-row> -->
 
-            <el-row class="flex_bet padding_row" v-if="tele_flg == '0' || tele_flg == '1'">
+            <el-row class="flex_bet padding_row" >
               <el-col :xs="24" :sm="24">
                 <el-row class="row_height_100 p3_padding_15">
                   <el-col :xs="24" :sm="7">
@@ -435,7 +467,7 @@
                 </el-row>
               </el-col>
             </el-row>
-            <el-row class="flex_bet padding_row" v-if="tele_flg == '0' || tele_flg == '2'">
+            <el-row class="flex_bet padding_row">
               <el-col :xs="24" :sm="24">
                 <el-row class="row_height_100 p3_padding_15">
                   <el-col :xs="24" :sm="7" class="p_l_10">
@@ -512,69 +544,26 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l" id="checkList">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
-            <el-checkbox-group v-model="checkList" >
-              <el-row class="padding_checkbox" >
-
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="1">会社役員・団体役員</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="2">会社員・団体職員</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="4" class="font_p_1">
-                  <el-checkbox label="3">公務員</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="8">
-                  <el-checkbox label="4">個人事業主・自営業</el-checkbox>
-                </el-col>
-              </el-row>
-              <el-row>
-                <el-col :xs="24" :sm="24" style="font-size:14px;color:red;" class="font_p">
-                    <span  class="padding_m_pc" >※事業用の口座は受付できません</span> &nbsp;
-                </el-col>
-              </el-row>
-              <el-row class="padding_checkbox">
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="5">パート・アルバイト</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="6">派遣・嘱託・契約社員</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="4" class="font_p_1">
-                  <el-checkbox label="7">主婦・主夫</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="8">
-                  <el-checkbox label="8">年金受給者</el-checkbox>
-                </el-col>
-              </el-row>
-                <el-row >
-                <el-col :xs="24" :sm="24" style="font-size:14px;color:red;" class="font_p">
-                    &nbsp;
-                </el-col>
-              </el-row>
-              <el-row class="padding_checkbox">
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="9" >学生</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="10">無職</el-checkbox>
-                </el-col>
-                <el-col :xs="24" :sm="6" class="font_p_1">
-                  <el-checkbox label="11" @change="showInput()">その他</el-checkbox>
-                </el-col>
-              </el-row>
-            </el-checkbox-group>
-
-
-            <el-row v-if="checkList.includes('11')" class="mar_top_15" style="color:red">
+            <el-radio-group v-model="account_reason">
+                    <el-radio :label="'01'">会社員・会社役員</el-radio>
+                    <el-radio :label="'02'">自営業・自由業</el-radio>
+                    <el-radio :label="'03'">年金受給</el-radio>
+                    <el-radio :label="'04'">アルバイト・パート・派遣・契約社員</el-radio>
+                    <el-radio :label="'05'">無職</el-radio>
+                    <el-radio :label="'06'">学生</el-radio>
+                    <el-radio :label="'07'">公務員</el-radio>
+                    <el-radio :label="'08'">医師・弁護士・公認会計士・司法書士・税理士・一級建築士・大学教授</el-radio>
+                  </el-radio-group>
+              <el-row class="mar_top_15" style="color:red;margin-top: 10px;">
               <el-col :xs="24" :sm="16">
-                <el-row class="flex_center_start" style="height: 65px;">
+                <el-row class="flex_center_start" >
                   <el-col :xs="24" :sm="24" class="">
-                    <div class="waring_01">その他をご選択の場合はご入力ください</div>
-                    <el-input ref="p3_i4" id="p3_i4" class="input_inner_100 position_ab" style="margin: 5px 0 0 0"
-                      v-model="form.other_item" @blur="halfToFull('other_item')" maxlength="20" placeholder="20文字まで"
-                      @input="deleteAllBackgroundColor(['p3_i4'])">
-                    </el-input>
+                    <div class="waring_01"></div>
+                           <el-select ref="account_store_number" id="account_store_number"
+                          v-model="form.account_store_number" placeholder="選択してください" style="width: 100%" >
+                          <el-option v-for="item in store_list" :key="item.store_number"
+                            :label="item.store_nm" :value="item.store_number" />
+                        </el-select>
 
                   </el-col>
                 </el-row>
@@ -696,68 +685,135 @@
       </el-row>
 
       <!-- -------------- -->
-      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先（学校）住所
-              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+              <!-- <span class="flex_center border_red_around" style="font-weight: normal">必須</span> -->
             </span>
           </div>
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c">
-
-
-             <!-- <el-row class="flex_bet" style="margin: 10px 0px">
+            <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row class="row_height_100">
-                  <el-col :xs="24" :sm="4">
+                  <el-col :xs="24" :sm="9">
                     <div class="tittle_out_in flex_between p_l_10">
                       <span class="flex_title_2 ">郵便番号</span>
+                      <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
                     </div>
                   </el-col>
-                  <el-col :xs="24" :sm="20">
+                  <el-col :xs="24" :sm="15">
                     <el-row class="flex_center" style="justify-content: flex-start;">
-                      <el-col :xs="24" :sm="16" class="">
-                        <el-input ref="work_zip_code" id="work_zip_code" class="input_inner_100" v-model="form.work_zip_code" @blur="toSBCNum('work_zip_code')"
-                          placeholder="半角数字７文字（ハイフンなし）" :maxlength="7" @input="deleteAllBackgroundColor(['work_zip_code'])">
+                      <el-col :xs="16" :sm="16" class="">
+                        <el-input ref="zip_code" id="zip_code" class="input_inner_100" v-model="form.zip_code" type='tel'
+                          placeholder="半角数字７文字（ハイフンなし）" :maxlength="7" @input="deleteAllBackgroundColor(['zip_code']),replaceNum('zip_code')" @blur="toSBCNum('zip_code')">
                         </el-input>
                       </el-col>
-                    </el-row>
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row> -->
-
-
-       <el-row class="flex_bet" style="margin: 10px 0px">
-              <el-col :xs="24" :sm="24">
-                <el-row class="row_height_100">
-                   <el-col :span="24" class="waring_01" style="color:red;margin-bottom: 5px;">
-                    <span>学生の方は、学校の住所をご入力ください。</span>
-                  </el-col>
-                  <el-col :span="24" class="waring_01" style="color:red;margin-bottom: 5px;">
-                    <span>無職の方は「自宅」とご入力ください。</span>
-                  </el-col>
-                  <!-- <el-col :span="24" class="waring_01" style="color:red;margin-bottom: 5px;">
-                    <span>都道府県からご入力ください。</span>
-                  </el-col> -->
-                  
-                  <el-col :xs="24" :sm="24">
-                    <el-row class="flex_center" style="justify-content: flex-start;">
-                      <el-col :xs="24" :sm="16" class="">
-                        <el-input ref="id_work_address" id="id_work_address" @blur="halfToFull('work_address')" class=""
-                          maxlength="60" v-model="form.work_address" placeholder="例：60文字まで（例）阿波市○○町１－２"
-                          @input="deleteAllBackgroundColor(['id_work_address'])">
-                        </el-input>
+                      <el-col :xs="8" :sm="5" class="flex_center">
+                        <van-button plain style="height:35px;border-radius: 5px;margin-left: 10px;" type="info" @click="getAddress()">住所検索
+                        </van-button>
                       </el-col>
                     </el-row>
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
+            <el-row class="flex_bet" style="margin:10px 0">
+              <el-col :xs="24" :sm="24">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="9">
+                    <div class="tittle_out_in flex_between p_l_10">
+                      <span class="flex_title_2 ">都道府県</span>
+                      <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="10" class="">
 
-
+                    <el-select ref="address_pref" id="address_pref" v-model="form.address_pref" placeholder="選択してください"
+                      style="width: 100%" @change="deleteAllBackgroundColor(['address_pref'])">
+                      <el-option-group v-for="group in address_pref_list" :key="group.label" :label="group.label">
+                        <el-option v-for="item in group.options" :key="item.label" :label="item.label"
+                          :value="item.label">
+                        </el-option>
+                      </el-option-group>
+                    </el-select>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+            <el-row class="flex_bet" style="margin:10px 0">
+              <el-col :xs="24" :sm="24">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="9">
+                    <div class="tittle_out_in flex_between p_l_10">
+                      <span class="flex_title_2 ">市区町村</span>
+                      <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="10" class="">
+                    <el-input ref="address_city" id="address_city" class="input_inner_100" v-model="form.address_city"
+                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('address_city')"
+                      @input="deleteAllBackgroundColor(['address_city'])">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+            <el-row class="flex_bet" style="margin:10px 0">
+              <el-col :xs="24" :sm="24">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="9">
+                    <div class="tittle_out_in flex_between p_l_10">
+                      <span class="flex_title_2 ">丁目・地番</span>
+                      <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="10" class="">
+                    <el-input ref="address_number" id="address_number" class="input_inner_100" v-model="form.address_number"
+                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('address_number')"
+                      @input="deleteAllBackgroundColor(['address_number'])">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+            <el-row class="flex_bet" style="margin:10px 0">
+              <el-col :xs="24" :sm="24">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="9">
+                    <div class="tittle_out_in">
+                      <span class="flex_title_2 ">マンション・部屋番号</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="10" class="">
+                    <el-input ref="address_other" id="address_other" class="input_inner_100"
+                      v-model="form.address_other" placeholder="20文字まで" :maxlength="20"
+                      @blur="halfToFull('address_other')" @input="kanaOnInput01('address_other','address_other')">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+            <el-row class="flex_bet" style="margin:10px 0">
+              <el-col :xs="24" :sm="24">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="9">
+                    <div class="tittle_out_in">
+                      <span class="flex_title_2">マンション・部屋番号（フリガナ）</span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="10" class="">
+                    <el-input ref="kana_address_other" id="kana_address_other" class="input_inner_100"
+                      v-model="form.kana_address_other" placeholder="20文字まで" :maxlength="20"
+                      @blur="changeLastKanaName('kana_address_other')"
+                      @input="kanaOnInput02('kana_address_other','kana_address_other')">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
           </div>
         </el-col>
       </el-row>
@@ -815,8 +871,21 @@ export default {
       checked09: "",
       checked10: "",
       checked11: "",
+      account_reason:'',
       checkList: [],
+      store_list:[
+        {store_number:"011",store_nm:"株式会社○○○○"},
+        {store_number:"012",store_nm:"○○○○株式会社"},
+        {store_number:"021",store_nm:"有限会社○○○○"},
+        {store_number:"022",store_nm:"○○○○有限会社"},
+        {store_number:"361",store_nm:"合同会社○○○○"},
+        {store_number:"362",store_nm:"○○○○合同会社"},
+        {store_number:"061",store_nm:"医療法人○○○○"},
+        {store_number:"101",store_nm:"学校法人○○○○"},
+        {store_number:"000",store_nm:"その他（勤務先名と併せて入力してください）"},
+      ],
       form: {
+        account_store_number:'',
         name_first: '',
         name_last: '',
         kana_last_name: "",
@@ -1481,6 +1550,10 @@ export default {
   .border_r_01 {
     border-right: 1px solid #e6e6e6;
   }
+}
+.el-radio-group{
+  display: flex;
+  flex-direction: column;
 }
 
 </style>

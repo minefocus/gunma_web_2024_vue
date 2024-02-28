@@ -312,6 +312,13 @@ button {
     top:26%;
     left: 10px;
 }
+.el-radio__label{
+    display: inline-grid;
+    white-space: pre-line;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-height: 20px;
+  }
 .position_B_R{
         position: relative;
 }
