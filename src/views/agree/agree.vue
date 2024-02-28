@@ -686,7 +686,7 @@
           type="primary"
           @click="nextPage()"
         >
-          <span>同意して始める</span>
+          <span>同意して申し込む</span>
           <span class="position_L">〉</span>
         </van-button>
       </el-col>
