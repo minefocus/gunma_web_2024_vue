@@ -79,6 +79,27 @@
 
 
             <el-divider></el-divider>
+             <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class="flex_center">
+                      <span class="font_weight_bold">お名前（英文表記）</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="second_title">
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.name_last | NOVALUE}}
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+
+
+            <el-divider></el-divider>
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
@@ -258,26 +279,26 @@
                   </el-col>
                 </el-row>
            
-                <el-row class="second_title" v-if="pageF.tele_flg == '0' || pageF.tele_flg == '1'">
+                <el-row class="second_title">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class=" ">
                       <span class="" style="">自宅（固定電話）</span>
                     </div>
                   </el-col>
                 </el-row>
-                <el-row class="third_text" v-if="pageF.tele_flg == '0' || pageF.tele_flg == '1'">
+                <el-row class="third_text" >
                   <el-col :xs="24" :sm="24" class="">
                     {{pageF.tele_number_content | NOVALUE}}
                   </el-col>
                 </el-row>
-                <el-row class="second_title" v-if="pageF.tele_flg == '0' || pageF.tele_flg == '2'">
+                <el-row class="second_title" >
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class=" ">
                       <span class="" style="">携帯</span>
                     </div>
                   </el-col>
                 </el-row>
-                <el-row class="third_text" v-if="pageF.tele_flg == '0' || pageF.tele_flg == '2'">
+                <el-row class="third_text" >
                   <el-col :xs="24" :sm="24" class="">
                     {{pageF.phone_number_content|NOVALUE}}
                   </el-col>
@@ -343,16 +364,84 @@
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
-                  <el-col :xs="24" :sm="24">
-                    <div class=" ">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class="">
                       <span class="font_weight_bold">お勤め先（学校）住所</span>
                     </div>
                   </el-col>
                 </el-row>
-      
+                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" >郵便番号</span>
+
+                    </div>
+                  </el-col>
+                </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{pageF.work_address| NOVALUE}}
+                    {{pageF.zip_code|NOVALUE}}
+                  </el-col>
+                </el-row>
+                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="margin-right:20px">都道府県</span>
+    
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.address_pref | NOVALUE}}
+                  </el-col>
+                </el-row>
+                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="">市区町村</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.address_city | NOVALUE}}
+                  </el-col>
+                </el-row>
+                                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="">丁目・地番</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.address_number | NOVALUE}}
+                  </el-col>
+                </el-row>
+                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="">マンション・部屋番号</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.address_other| NOVALUE}}
+                  </el-col>
+                </el-row>
+                <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="">マンション・部屋番号（フリガナ）</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageF.kana_address_other | NOVALUE}}
                   </el-col>
                 </el-row>
               </el-col>
@@ -366,6 +455,7 @@
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お申込み情報
+            
             </span>
           </div>
         </el-col>
@@ -373,58 +463,43 @@
           <div class="content_ input_01 flex_c_c">
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
+               
                 <el-row class="first_title">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
-                    <div class="">
-                      <span class="font_weight_bold">お取引の目的</span>
+                    <div class=" ">
+                      <span class="font_weight_bold">決済口座情報</span>
                     </div>
                     <van-button round plain style="height:25px;border: 1px solid #03A369;background-color:#03A369;color: rgb(255 255 255) !important;" type="info"
                       @click="toPage('inputApplication')">修正</van-button>
                   </el-col>
                 </el-row>
-
-                <el-row class="third_text">
-                  <el-col :xs="24" :sm="24" class="">
-                    <div v-for="item in pageS.checklist" :key="item" style="margin-bottom: 10px">{{item|Purpose}} <span
-                        v-if="item=='99'">&nbsp;&nbsp;({{pageS.account_purpose_other|NOVALUE }})</span></div>
-                  </el-col>
-                </el-row>
-
-                <el-divider></el-divider>
-                <el-row class="first_title">
-                  <el-col :xs="24" :sm="24">
-                    <div class=" ">
-                      <span class="font_weight_bold">口座開設する店舗</span>
-                    </div>
-                  </el-col>
-                </el-row>
-
-                <el-row v-if="flg" class="third_text" >
-                  <el-col :xs="24" :sm="24" class="">
-                    {{pageS.account_store_nm }}
-                  </el-col>
-                </el-row>
-
-                  <el-row v-if="flg_2" class="second_title">
+                <el-row class="second_title">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class=" ">
-                      <span class="" style="">当行で口座開設する理由</span>
+                      <span class="" style="">店舗</span>
                     </div>
                   </el-col>
                 </el-row>
-                <el-row v-if="flg_2" class="third_text" >
+                <el-row class="third_text" >
                   <el-col :xs="24" :sm="24" class="">
-                    {{pageS.account_reason | STORENAME}}
-                    <span
-                        v-if="pageS.account_reason == '99'">&nbsp;&nbsp;({{pageS.account_reason_other|NOVALUE }})</span>
+                    {{pageS.account_store_nm | NOVALUE}}
                   </el-col>
                 </el-row>
 
-                <el-row v-if="flg_3" class="third_text" >
-                  <el-col :xs="24" :sm="24" class="">
-                    {{pageS.introduce_nm}}
+                  <el-row class="second_title">
+                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
+                    <div class=" ">
+                      <span class="" style="">口座番号</span>
+                    </div>
                   </el-col>
                 </el-row>
+                <el-row  class="third_text" >
+                  <el-col :xs="24" :sm="24" class="">
+                    {{pageS.account_reason | NOVALUE}}
+          
+                  </el-col>
+                </el-row>
+
 
                 <el-divider></el-divider>
                 <el-row class="first_title" >
@@ -444,16 +519,12 @@
                   </el-col>
                 </el-row>
 
-                <el-row class="third_text" v-if="pageS.cord_type!='' && pageS.cord_type =='0'">
-                  <el-col :xs="24" :sm="24" class="">
+                <el-row class="third_text" >
+                  <el-col :xs="24" :sm="24" class="" style="margin: 10px;">
                     <img style="height: 160px" :src="url01" />
                   </el-col>
                 </el-row>
-                <el-row class="third_text" v-if="pageS.cord_type!='' && pageS.cord_type =='1'">
-                  <el-col :xs="24" :sm="24" class="">
-                    <img style="height: 160px" :src="url02" />
-                  </el-col>
-                </el-row>
+       
 
 
 
@@ -476,30 +547,18 @@
                 <el-row class="first_title"  v-if="pageS.contractor_flg !='0'">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class="m_15px">
-                      <span class="font_weight_bold">インターネットバンキング</span>
+                      <span class="font_weight_bold">デビットカード暗証番号</span>
                     </div>
                   </el-col>
                 </el-row>
                
-                <el-row class="second_title" v-if="pageS.contractor_flg !='0'">
-                  <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
-                    <div class=" ">
-                      <span class="" style="">1日あたりの振込限度額</span>
-                    </div>
-                  </el-col>
-                </el-row>
-                <el-row class="third_text" v-if="pageS.contractor_flg !='0'">
-                  <el-col :xs="24" :sm="24" class="">
-                    {{pageS.creditlimit| NOVALUE }}<span v-if="pageS.creditlimit!=''">&nbsp;&nbsp;円</span>
-                  </el-col>
-                </el-row>
-                <el-row class="second_title" v-if="pageS.contractor_flg !='0'">
+                <!-- <el-row class="second_title" v-if="pageS.contractor_flg !='0'">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class=" ">
                       <span class="" style="">インターネットバンキング暗証番号</span>
                     </div>
                   </el-col>
-                </el-row>
+                </el-row> -->
                 <el-row class="third_text" v-if="pageS.contractor_flg !='0'">
                   <el-col :xs="24" :sm="24" class="">
                     ******
@@ -540,7 +599,7 @@ import { mapMutations, mapGetters } from 'vuex';
 import { MESSAGE, popMessageFromApi,ErrMessage } from "@/utils/message.js";
 import { ACCOUNT_APPLICATION_POST } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
-import urlImage01 from "../../assets/img/picture01.png";
+import urlImage01 from "../../assets/img/card_visa@3x.png";
 import urlImage02 from "../../assets/img/picture02.png";
 import { isEmpty} from "@/utils/validate.js";
 import myMixin from '../mixin.js';
