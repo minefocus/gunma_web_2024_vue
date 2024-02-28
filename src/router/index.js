@@ -53,6 +53,10 @@ export const constantRoutes = [
                 name: 'explanation',
                 component: ()=>import ('@/views/explanation/explanation.vue') 
             },  {
+                path: 'explanation2',
+                name: 'explanation2',
+                component: ()=>import ('@/views/explanation2/explanation2.vue') 
+            }, {
                 path: 'finish',
                 name: 'finish',
                 component: ()=>import ('@/views/finish/finish.vue') 

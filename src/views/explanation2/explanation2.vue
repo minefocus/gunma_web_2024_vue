@@ -60,10 +60,10 @@
           class="flex_center"
           style="font-size: 14px; width: 100%"
         >
+        
           <div
             class=" "
             style="
-              background-color: #f7f7f7;
               display: flex;
               align-items: flex-start;
               justify-content: center;
@@ -73,25 +73,13 @@
               width: 100%;
             "
           >
-            <div>以下の本人確認書類のいずれかをご用意ください。</div>
-            <div style="padding: 20px; width: 100%" class="flex_s_c">
+            <div style="font-size: 17px;font-weight: bold;color: green;">以下の本人確認書類のいずれかをご用意ください。</div>
+            <div style="margin:15px 0;padding:0 20px; width: 100%;border: 2px solid #00a56f;" class="flex_s_c">
+              <div class="flex_center" style="width: 100%; padding: 10px 0">
+                  運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証運転1免許証
+                </div>
               <div class="mar_l_r flex_c_c" style="width: 200px">
                 <img class="rending_img width_img" :src="url01" />
-                <div class="flex_center" style="width: 100%; padding: 10px 0">
-                  運転免許証
-                </div>
-              </div>
-              <div class="mar_l_r flex_c_c" style="width: 200px">
-                <img class="rending_img width_img" :src="url03" />
-                <div class="flex_center" style="width: 100%; padding: 10px 0">
-                  マイナンバーカード
-                </div>
-              </div>
-              <div class="mar_l_r flex_c_c" style="width: 200px">
-                <img class="rending_img width_img" :src="url02" />
-                <div class="flex_center" style="width: 100%; padding: 10px 0">
-                  運転経歴証明書
-                </div>
               </div>
             </div>
             <div>
@@ -126,24 +114,15 @@ import { mapGetters } from "vuex";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import { TAKE_PHOTO_POST } from "@/api/account/api.js";
-import urlImage01 from "@/assets/img/img_driver.png";
-import urlImage02 from "@/assets/img/img_driver_exper.png";
-import urlImage03 from "@/assets/img/img_number.png";
-import urlImage01_2 from "@/assets/img/img_student.png";
-import urlImage02_2 from "@/assets/img/img_receipt.png";
-import urlImage03_2 from "@/assets/img/img_work.png";
+import urlImage01 from "@/assets/img/img_residence@3x.png";
+
 import myMixin from "../mixin.js";
 import { decrypt } from "../../utils/jse";
 export default {
   data() {
     return {
       url01: urlImage01,
-      url02: urlImage02,
-      url03: urlImage03,
-      url01_2: urlImage01_2,
-      url02_2: urlImage02_2,
-      url03_2: urlImage03_2,
-      toUrl: "",
+      
       form:{
         tokushima_flg:'',
         introduce_flg:'',
