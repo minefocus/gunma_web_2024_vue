@@ -12,7 +12,7 @@
               class="rending_img"
               src="../../assets/img/icon.png"
               alt=""
-            />&nbsp;&nbsp;口座開設申込
+            />&nbsp;&nbsp;Visaデビット申込
           </div>
         </el-col>
       </el-row>
@@ -101,7 +101,7 @@
         </el-col>
       </el-row>
 
-      <el-row v-if="form.tokushima_flg =='1' && form.introduce_cd ==''">
+      <el-row>
         <el-col
           :span="24"
           class="flex_center"

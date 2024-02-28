@@ -9,7 +9,7 @@
               class="rending_img"
               src="../../assets/img/icon.png"
               alt=""
-            />&nbsp;&nbsp;口座開設申込
+            />&nbsp;&nbsp;Visaデビット申込
           </div>
         </el-col>
       </el-row>
@@ -19,7 +19,10 @@
             class="msgCenter"
             style="width: 100% !important; padding: 10px; font-size: 14px"
           >
-            口座開設のお申込みページをメールでご案内しますので、メールアドレスをご入力ください。<br>ご契約のプロバイダやメールソフトの設定などにより、受信できない場合があります。<br>迷惑メール設定（ドメイン指定）をされている場合は、「@awabank.co.jp」からのメールが受信できるように、あらかじめ設定の変更をお願いします。
+            メールにてお申込みページのURLをご案内いたします。
+            <br>以下の入力フォームにメールアドレスをご入力いただき、「送信する」をタップしてください。<br>
+            迷惑メール対策を実施している場合は、「@gunmabank.co.jp」からのメールを受信できるように設定変更をお願いします。
+
           </div>
         </el-col>
          <el-col :span="24" class="flex_center"  v-if="$store.state.page.isPc">

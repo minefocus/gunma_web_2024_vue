@@ -45,7 +45,7 @@ router.afterEach((to,from) => {
         }else if(to.path=='/notice'){
             document.title = '郵送されるキャッシュカード等のお受取りに関するご注意事項'
         } else{
-            document.title = '口座開設申込'
+            document.title = 'Visaデビット申込'
         }
     },10)
    

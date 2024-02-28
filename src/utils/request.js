@@ -79,7 +79,7 @@ service.interceptors.response.use(
                 if(store.state.page.pageNum){
                     router.push('/error_page')
                 }else{
-                    router.push('/account_error_page')
+                    // router.push('/account_error_page')
                 }
                 
             } else {
@@ -147,10 +147,10 @@ service.interceptors.response.use(
                     // 口座
                     if(code === 'SE00003'){
                         store.dispatch('page/errorMessage', MESSAGE.timeOut)
-                        router.push('/account_error_page')
+                        // router.push('/account_error_page')
                     }else{
                         store.dispatch('page/errorMessage', MESSAGE.errorMsg)
-                        router.push('/account_error_page')
+                        // router.push('/account_error_page')
                     }
 
                 }

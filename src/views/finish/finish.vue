@@ -3,7 +3,7 @@
     <el-row>
       <el-col :xs="24" :sm="24">
         <div class="tittle_all flex_start_f">
-        <img style="width:40px" class="rending_img " src="../../assets/img/icon.png" alt="">&nbsp;&nbsp;口座開設申込
+        <img style="width:40px" class="rending_img " src="../../assets/img/icon.png" alt="">&nbsp;&nbsp;Visaデビット申込
         </div>
       </el-col>
     </el-row>

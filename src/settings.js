@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '口座開設申込',
+  title: 'Visaデビット申込',
 
   /**
    * @type {boolean} true | false
