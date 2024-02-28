@@ -559,96 +559,127 @@
           </div>
         </div>
       </el-col>
-        <el-col :span="24" class="padding_l_20">
-          <div class="Outer_frame">
-        <p style="margin-left: 0px; font-size: 1em; margin-top: 20px;font-weight:bold;line-height: 30px; color: #02a369;">反社会的勢力ではないことの表明・確約に関する同意</p>
+      <el-col :span="24" class="padding_l_20">
+        <div class="Outer_frame">
+          <p
+            style="
+              margin-left: 0px;
+              font-size: 1em;
+              margin-top: 20px;
+              font-weight: bold;
+              line-height: 30px;
+              color: #02a369;
+            "
+          >
+            反社会的勢力ではないことの表明・確約に関する同意
+          </p>
+
+          <div class="tab_block">
+            <div class="tab_cell">
+              私（契約者が法人の場合には当該法人の役員等を含む。以下同じ。）は、次の①に定める暴力団員等または①の各号のいずれかに該当し、もしくは②の各号のいずれかに該当する行為をし、または①にもとづく表明・確約に関して虚偽の申告をしたことが判明した場合には、貴行からの通知によりこの契約が解約されても異議を申しません。また、これにより損害が生じた場合でも、いっさい私の責任とします。
+            </div>
+          </div>
+          <br />
+          <div class="tab_cell_icon">①</div>
+          <div class="tab_cell">
+            貴行との取引に際し、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標ぼうゴロまたは特殊知能暴力集団等、その他これらに準ずる者（以下これらを「暴力団員等」という。）に該当しないこと、および次の各号のいずれにも該当しないことを表明し、かつ将来にわたっても該当しないことを確約いたします。
+          </div>
+        </div>
+        <br />
+        <div class="tab_block">
+          <div class="tab_cell_icon">A</div>
+          <div class="tab_cell">
+            暴力団員等が経営を支配していると認められる関係を有すること
+          </div>
+        </div>
 
         <div class="tab_block">
-
-            <div class="tab_cell">
-                私（契約者が法人の場合には当該法人の役員等を含む。以下同じ。）は、次の①に定める暴力団員等または①の各号のいずれかに該当し、もしくは②の各号のいずれかに該当する行為をし、または①にもとづく表明・確約に関して虚偽の申告をしたことが判明した場合には、貴行からの通知によりこの契約が解約されても異議を申しません。また、これにより損害が生じた場合でも、いっさい私の責任とします。
-            </div>
-        </div>
-        <br>
-        <div class="tab_cell_icon">①</div>
-        <div class="tab_cell">
-            貴行との取引に際し、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標ぼうゴロまたは特殊知能暴力集団等、その他これらに準ずる者（以下これらを「暴力団員等」という。）に該当しないこと、および次の各号のいずれにも該当しないことを表明し、かつ将来にわたっても該当しないことを確約いたします。
-        </div>
-    </div>
-    <br>
-    <div class="tab_block">
-        <div class="tab_cell_icon">A</div>
-        <div class="tab_cell">
-            暴力団員等が経営を支配していると認められる関係を有すること
-        </div>
-    </div>
-
-    <div class="tab_block">
-        <div class="tab_cell_icon">B</div>
-        <div class="tab_cell">
+          <div class="tab_cell_icon">B</div>
+          <div class="tab_cell">
             暴力団員等が経営に実質的に関与していると認められる関係を有すること
+          </div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">C</div>
-        <div class="tab_cell">
+        <div class="tab_block">
+          <div class="tab_cell_icon">C</div>
+          <div class="tab_cell">
             私もしくは第三者の不正の利益を図る目的または第三者に損害を加える目的をもってするなど、不当に暴力団員等を利用していると認められる関係を有すること
+          </div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">D</div>
-        <div class="tab_cell">
+        <div class="tab_block">
+          <div class="tab_cell_icon">D</div>
+          <div class="tab_cell">
             暴力団員等に対して資金等を提供し、または便宜を供与するなどの関与をしていると認められる関係を有すること
+          </div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">E</div>
-        <div class="tab_cell">
+        <div class="tab_block">
+          <div class="tab_cell_icon">E</div>
+          <div class="tab_cell">
             役員または経営に実質的に関与している者が暴力団員等と社会的に非難されるべき関係を有すること
+          </div>
         </div>
-    </div>
-    <br>
-    <div class="tab_block">
-        <div class="tab_cell_icon">②</div>
-        <div class="tab_cell">
+        <br />
+        <div class="tab_block">
+          <div class="tab_cell_icon">②</div>
+          <div class="tab_cell">
             自らまたは第三者を利用して次の各号に該当する行為を行わないことを確約いたします。
+          </div>
         </div>
-    </div>
-    <br>
-    <div class="tab_block">
-        <div class="tab_cell_icon">A</div>
-        <div class="tab_cell">
-            暴力的な要求行為
+        <br />
+        <div class="tab_block">
+          <div class="tab_cell_icon">A</div>
+          <div class="tab_cell">暴力的な要求行為</div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">B</div>
-        <div class="tab_cell">
-            法的な責任を超えた不当な要求行為
+        <div class="tab_block">
+          <div class="tab_cell_icon">B</div>
+          <div class="tab_cell">法的な責任を超えた不当な要求行為</div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">C</div>
-        <div class="tab_cell">
+        <div class="tab_block">
+          <div class="tab_cell_icon">C</div>
+          <div class="tab_cell">
             取引に関して、脅迫的な言動をし、または暴力を用いる行為
+          </div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">D</div>
-        <div class="tab_cell">
+        <div class="tab_block">
+          <div class="tab_cell_icon">D</div>
+          <div class="tab_cell">
             風説を流布し、偽計を用いまたは威力を用いて貴行の信用を毀損し、または貴行の業務を妨害する行為
+          </div>
         </div>
-    </div>
-    <div class="tab_block">
-        <div class="tab_cell_icon">E</div>
-        <div class="tab_cell">
-            その他前各号に準ずる行為
+        <div class="tab_block">
+          <div class="tab_cell_icon">E</div>
+          <div class="tab_cell">その他前各号に準ずる行為</div>
         </div>
-    </div>
-        </el-col>
+      </el-col>
     </el-row>
-
-    <el-row style="height: 90px; margin-bottom: 20px">
+    <el-row>
+      <el-col
+        :xs="24"
+        :sm="24"
+        class="flex_center"
+        style="background-color: #f6f6f6; height: 40px; margin: 10px 0"
+      >
+        <el-checkbox v-model="checked"
+          >上記内容を確認し、すベて同意する</el-checkbox
+        >
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col
+        :xs="24"
+        :sm="24"
+        style="
+          background-color: #edfbf2;
+          height: 50px;
+          padding: 10px;
+          color: #74be9e;
+          margin-bottom: 20px;
+        "
+      >
+        上記事項を確認，同意のうえ、<br />
+        以下のボタンで入カ画面へお進みください。
+      </el-col>
+    </el-row>
+    <el-row style="margin-bottom: 20px">
       <el-col :xs="24" :sm="24" class="flex_center">
         <van-button
           class="flex_center button_All position_R"
@@ -688,6 +719,7 @@ export default {
       checkList: [],
       seq_no: "",
       url: "",
+      checked: false,
       documentUrl07: "",
       documentUrl08: "",
       form: {
@@ -803,7 +835,7 @@ export default {
 </script>
 
 <style scoped>
-.word2{
+.word2 {
   display: flex !important;
 }
 table {
@@ -812,9 +844,9 @@ table {
 }
 
 .tab_t {
-    font-size: 12px;
-    display: table-cell;
-    padding-left: 5px;
+  font-size: 12px;
+  display: table-cell;
+  padding-left: 5px;
 }
 td,
 th {
