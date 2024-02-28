@@ -118,6 +118,24 @@
             />
           </div>
           <div class="tab_cell word">
+            <span style="font-weight: bold"
+              >ぐんぎんデビット（Visa/JCB）の発行について</span
+            >
+            <br />ぐんぎんデビット（Visa/JCB）をお持ちでない場合、口座開設と同時に発行いただくことができます。ブランドはVisaまたはJCBをご選択ください。
+            <br />なお、１口座から発行できるのは１枚のみです。別口座の場合も同一ブランドは発行できません。
+          </div>
+        </div>
+      </el-col>
+
+      <el-col :span="24" class="padding_l_20">
+        <div class="tab_block">
+          <div class="tab_cell_icon">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_cell word">
             <span style="font-weight: bold">お申込み条件について</span>
             <br />お申込みいただける方は、当行が定める地域にお住まいの個人のお客さまです。15歳以上の方は運転免許証・運転経歴証明書・マイナンバーカードのいずれかをお持ちの方が対象です。15歳未満の方は、申込者さまのマイナンバーカードまたは健康保険証と、親権者の方の運転免許証、運転経歴証明書、またはマイナンバーカードが必要です。
             <br />証券口座、外貨普通預金、外貨定期預金のお申込みは満18歳以上満75歳未満の方に限らせていただきます。
@@ -195,11 +213,15 @@
           </tr>
           <tr>
             <th>長野県</th>
-            <th>長野市・上田市・須坂市・小諸市・佐久市・千曲市・東御市・南佐久郡佐久穂町・北佐久郡軽井沢町・北佐久郡御代田町・埴科郡坂城町</th>
+            <th>
+              長野市・上田市・須坂市・小諸市・佐久市・千曲市・東御市・南佐久郡佐久穂町・北佐久郡軽井沢町・北佐久郡御代田町・埴科郡坂城町
+            </th>
           </tr>
           <tr>
             <th>神奈川県</th>
-            <th>横浜市・川崎市・相模原市・横須賀市・鎌倉市・藤沢市・厚木市・大和市・伊勢原市・海老名市・座間市・綾瀬市・逗子市・三浦市・茅ヶ崎市・平塚市・秦野市・愛川町・葉山町・寒川町・清川村</th>
+            <th>
+              横浜市・川崎市・相模原市・横須賀市・鎌倉市・藤沢市・厚木市・大和市・伊勢原市・海老名市・座間市・綾瀬市・逗子市・三浦市・茅ヶ崎市・平塚市・秦野市・愛川町・葉山町・寒川町・清川村
+            </th>
           </tr>
           <tr>
             <th>茨城県</th>
@@ -207,10 +229,423 @@
           </tr>
           <tr>
             <th>千葉県</th>
-            <th>千葉市・野田市・流山市・柏市・我孫子市・松戸市・白井市・八千代市・習志野市・船橋市・鎌ケ谷市・市川市・浦安市</th>
+            <th>
+              千葉市・野田市・流山市・柏市・我孫子市・松戸市・白井市・八千代市・習志野市・船橋市・鎌ケ谷市・市川市・浦安市
+            </th>
           </tr>
         </table>
       </el-col>
+
+      <el-col :span="24" class="padding_l_20">
+        <p class="p_02">ご留意・ご同意事項</p>
+
+        <div class="word" style="width: 100%">
+          以下の項目をご確認してください。全ての項目に同意いただけない場合はお申込みができません。
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab_t">
+            以下の項目をご確認してください。全ての項目に同意いただけない場合はお申込みができません。
+          </div>
+        </div>
+        <br />
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">私の居住地は日本のみです。</div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            私は、「外国政府等において重要な公的地位にある方等」に該当しません。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">私は、米国籍ではありません。</div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            米国籍の場合は、口座開設は群馬銀行の店頭で行います。(FATCA)
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/spapplikitei.pdf','3')"
+              >ぐんぎん手続きアプリ利用規定
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」、 「<a
+              target="_blank"
+              style="color: #000000; text-decoration: underline"
+              href="javascript:void(0)"
+              onclick="openURL('https://www.gunmabank.co.jp/kojin/ib/af_login/kitei.html','2')"
+              >各種預金規定
+              <img
+                class="this"
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」 、 「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kojin/benri/app/gunginid/pdf/idkitei.pdf','3')"
+              >ぐんぎんID利用規定<img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」に同意します
+          </div>
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            インターネットバンキングを申込むお客さまは、 「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/ib_kitei.pdf','3')"
+              >インターネットバンキング利用規定
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」に同意します。
+          </div>
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            ぐんぎんデビットを申込むお客さまは、 「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/debit_visa_member.pdf','3')"
+              >ぐんぎんVisaデビット会員規約
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」または「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/debit_jcb_member.pdf','3')"
+              >ぐんぎんＪＣＢデビット会員規約
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」に同意します。
+          </div>
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            インターネット支店の取引を申込むお客さまは、 「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/netbranchkitei.pdf','3')"
+              >インターネット支店取引規定
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」に同意します。
+          </div>
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            個人情報の取り扱いについて、「<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/privacy/annai2.html','2')"
+              >利用目的説明書
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >」の内容に同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            今回開設しようとする口座を、当行で開設するのは初めてです。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            事業を営むための口座や、屋号の付された名義の口座を開設希望の場合は、最寄りの群馬銀行本支店で申込みを受付けします。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            普通預金の申込みの場合、ICキャッシュカード（磁気併用タイプ）を作ることに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            2021年10月1日以降、新規に開設する普通預金口座について、通帳発行・繰越をする場合には、<a
+              style="color: #000000; text-decoration: underline"
+              onclick="openURL('https://www.gunmabank.co.jp/tesuryo/#hakko','2')"
+              >所定の手数料
+              <img
+                style="width: 6px; height: 6px"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+            >がかかることに同意します。
+          </div>
+        </div>
+
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            ぐんぎんIDを保有していない場合、口座開設と同時にぐんぎんIDを申込むことに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            ぐんぎんデビットの発行は満15歳以上（中学生は発行不可）のお客さまに限ります。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            証券口座、NISA口座、外貨普通預金口座および外貨定期預金口座のお申込みは満18歳以上満75歳未満に限ります。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            登録いただいたEメールアドレスにメールが届かない場合は、本申込は無効となることに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            お届けの住所に郵便物が未達となった場合は、本申込は無効となることに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            その他、当行が口座開設に不適当と判断した場合は、当行は本申込を謝絶します。その場合、その理由については、当行が開示しないことに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            偽造本人確認書類等により、口座を不正取得しようとした場合は、当局へ通報され書類も返却されないことに同意します。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            他人による口座の利用や譲渡は禁止されています。他人による口座の利用や譲渡を目的とした口座開設はお断りいたします。
+          </div>
+        </div>
+        <div class="tab_block word2">
+          <div class="tab">
+            <img
+              style="width: 12px; height: 12px"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAMAAADnhAzLAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAk1BMVEUAAAACo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kCo2kC o2kCo2kCo2kCo2kCo2kCo2n////wfo4CAAAAL3RSTlMABFWp5PvqtGAGPtvgRmn9/lFSEOzpDHZx ycP48PbCbW4N609TaGtE2dxHWarjrGfnC48AAAABYktHRDCu3C3kAAAAB3RJTUUH5gYVCCAKnwyc NgAAAjt6VFh0UmF3IHByb2ZpbGUgdHlwZSB4bXAAADiNlVVJktswDLzzFXkChZV8jmyJt1TlmOen mxrvniVSWaJAEA00mnT5+/tP+cUrsxc968iWNZbQOIWnSQ0Jj4weu24i+zidTkME9h5Gi6e6bVpt y2oK3xa9WMs1sdA1V9vdAm8EVMUiER26S9VzNl2zBRbGRrBYpPI7zrGncq4QAdlYDOah6zFxdZ+Z 3MLAduIKu66Q6s02r0WY3MhpUpcdvw35VF0URWpqh21R57c2XeQMq8x5lYE3nxgX2fASXWHqeGKJ 1KdbPsoTZBG6uphZPJUmZU6yvJaGu+qKckbOS/aEl+wz45zInffMRPAUPLcDABmlJvpDRrKhLCBw /jELpIBWoRESfTLVwRA8LvOxFBA2EsQyq4PY+16Q4Nd8J9h+axHGWjDcUEpDPpXJg9p66dVzSNug nk/Clse478Mi4PYmuKY5pTs5Lt8n/T44xZ3gCz6D4Urq5EiwwI/4pPrAZngjwY4gxt45AUacX0RZ kREc6KRzVClQU6in+dxtdIYSVPot/ORqNfZa2e2YZLt1mz07nFBMn5tzVW48N+o5EbvjRwUo1LQY tqZB36bazDHCXsMFZ+o6poO+ILMATef+o95egKkqK8/ItnyN/A6Y4i08Ih7Qfao3gI4PjNmzetfq NR64uVBTvuUmf5ZheeLmHvlH3FyAyxW5/T838nF+Qp4fx8gnu/vmdn8SXa0Px28hacfUmz8BpyBn OXKc3+UfFd5r8YZYG3AAAAB7SURBVBjTZdDbFkJQFIXhucumIpSSyDk6KOv93672QMNe/Xfru5sL +CYWS0OSaa3WGNvYNOZsB3E9+uW7SnaktQeCg07HECdiRThzipFwuoD+QsolRcYpQ86pQGnqUgVA rdNVLWrmG9th9+0+yeM5fUd0r7eURt8JdX0AXzIq9/iAVRcAAAAldEVYdGRhdGU6Y3JlYXRlADIw MjItMDYtMjFUMDg6MzI6MTArMDA6MDDO+sD4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIx VDA4OjMyOjEwKzAwOjAwv6d4RAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwA AAAASUVORK5CYII="
+            />
+          </div>
+          <div class="tab_t">
+            当行にお届けの住所と現在のお住まいが異なる方で、財形預金のご契約がある場合は、財形預金の変更届を職場を通じて当行へ提出していただきます。
+          </div>
+        </div>
+      </el-col>
+        <el-col :span="24" class="padding_l_20">
+          <div class="Outer_frame">
+        <p style="margin-left: 0px; font-size: 1em; margin-top: 20px;font-weight:bold;line-height: 30px; color: #02a369;">反社会的勢力ではないことの表明・確約に関する同意</p>
+
+        <div class="tab_block">
+
+            <div class="tab_cell">
+                私（契約者が法人の場合には当該法人の役員等を含む。以下同じ。）は、次の①に定める暴力団員等または①の各号のいずれかに該当し、もしくは②の各号のいずれかに該当する行為をし、または①にもとづく表明・確約に関して虚偽の申告をしたことが判明した場合には、貴行からの通知によりこの契約が解約されても異議を申しません。また、これにより損害が生じた場合でも、いっさい私の責任とします。
+            </div>
+        </div>
+        <br>
+        <div class="tab_cell_icon">①</div>
+        <div class="tab_cell">
+            貴行との取引に際し、現在、暴力団、暴力団員、暴力団員でなくなった時から5年を経過しない者、暴力団準構成員、暴力団関係企業、総会屋等、社会運動等標ぼうゴロまたは特殊知能暴力集団等、その他これらに準ずる者（以下これらを「暴力団員等」という。）に該当しないこと、および次の各号のいずれにも該当しないことを表明し、かつ将来にわたっても該当しないことを確約いたします。
+        </div>
+    </div>
+    <br>
+    <div class="tab_block">
+        <div class="tab_cell_icon">A</div>
+        <div class="tab_cell">
+            暴力団員等が経営を支配していると認められる関係を有すること
+        </div>
+    </div>
+
+    <div class="tab_block">
+        <div class="tab_cell_icon">B</div>
+        <div class="tab_cell">
+            暴力団員等が経営に実質的に関与していると認められる関係を有すること
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">C</div>
+        <div class="tab_cell">
+            私もしくは第三者の不正の利益を図る目的または第三者に損害を加える目的をもってするなど、不当に暴力団員等を利用していると認められる関係を有すること
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">D</div>
+        <div class="tab_cell">
+            暴力団員等に対して資金等を提供し、または便宜を供与するなどの関与をしていると認められる関係を有すること
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">E</div>
+        <div class="tab_cell">
+            役員または経営に実質的に関与している者が暴力団員等と社会的に非難されるべき関係を有すること
+        </div>
+    </div>
+    <br>
+    <div class="tab_block">
+        <div class="tab_cell_icon">②</div>
+        <div class="tab_cell">
+            自らまたは第三者を利用して次の各号に該当する行為を行わないことを確約いたします。
+        </div>
+    </div>
+    <br>
+    <div class="tab_block">
+        <div class="tab_cell_icon">A</div>
+        <div class="tab_cell">
+            暴力的な要求行為
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">B</div>
+        <div class="tab_cell">
+            法的な責任を超えた不当な要求行為
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">C</div>
+        <div class="tab_cell">
+            取引に関して、脅迫的な言動をし、または暴力を用いる行為
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">D</div>
+        <div class="tab_cell">
+            風説を流布し、偽計を用いまたは威力を用いて貴行の信用を毀損し、または貴行の業務を妨害する行為
+        </div>
+    </div>
+    <div class="tab_block">
+        <div class="tab_cell_icon">E</div>
+        <div class="tab_cell">
+            その他前各号に準ずる行為
+        </div>
+    </div>
+        </el-col>
     </el-row>
 
     <el-row style="height: 90px; margin-bottom: 20px">
@@ -368,23 +803,32 @@ export default {
 </script>
 
 <style scoped>
+.word2{
+  display: flex !important;
+}
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.tab_t {
+    font-size: 12px;
+    display: table-cell;
+    padding-left: 5px;
 }
 td,
 th {
   border: 1px solid #efefef;
 }
-tr th:first-child{
-  background-color: #EAFAEC;
+tr th:first-child {
+  background-color: #eafaec;
   width: 40%;
 }
 th {
   font-weight: 100;
   text-align: left;
-    vertical-align: top;
-    padding: 5px;
+  vertical-align: top;
+  padding: 5px;
 }
 .width_img {
   width: 100%;
