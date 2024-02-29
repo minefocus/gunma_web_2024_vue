@@ -83,7 +83,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="name_first" id="name_first" class="input_inner_100" v-model.trim="form.name_first"
-                      :maxlength="15" @blur="halfToFull('name_first')" placeholder=""
+                      :maxlength="15" @blur="halfToFull('name_first')" placeholder="半角数字7桁"
                       @input="deleteAllBackgroundColor(['name_first']),noPlace('name_first')"></el-input>
                   </el-col>
                 </el-row>
@@ -206,7 +206,7 @@
                         <el-row class="flex_center_start">
                           <el-col :xs="24" :sm="24" class="">
                             <el-input ref="id_online_password" id="id_online_password" v-model="form.online_password" 
-                              type="password" class="input_inner_100" maxlength="6" placeholder="半角数字6桁" show-password
+                              type="password" class="input_inner_100" maxlength="6" placeholder="半角数字4桁" show-password
                               @blur="toSBCNum('online_password')" @input="
                                         deleteAllBackgroundColor(['id_online_password'])
                                         " />
@@ -233,7 +233,7 @@
                           <el-col :xs="24" :sm="24" class="">
                             <el-input ref="id_online_password02" id="id_online_password02"
                               v-model="form.online_password02" type="password" class="input_inner_100" maxlength="6"
-                              placeholder="半角数字6桁" show-password @blur="toSBCNum('online_password02')" @input="
+                              placeholder="半角数字4桁" show-password @blur="toSBCNum('online_password02')" @input="
                                           deleteAllBackgroundColor([
                                           'id_online_password02',
                                           ])

@@ -52,7 +52,7 @@
                   id="email_01"
                   class="input_inner_100"
                   v-model.trim="email"
-                  placeholder="例：awa_tarou@mail.jp"
+                  placeholder="例：gunma_tarou@mail.jp"
                   @input="deleteAllBackgroundColor(['email_01'])"
                   @blur="toSBCNum"
                 ></el-input>

@@ -96,7 +96,7 @@
               target="_blank"
               font-size="0.7em"
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kojin/apply/uketori.html','2')"
+              @click="open('https://www.gunmabank.co.jp/kojin/apply/uketori.html')"
               >こちら
               <img
                 style="width: 9px; height: 9px"
@@ -239,10 +239,6 @@
       <el-col :span="24" class="padding_l_20">
         <p class="p_02">ご留意・ご同意事項</p>
 
-        <div class="word" style="width: 100%">
-          以下の項目をご確認してください。全ての項目に同意いただけない場合はお申込みができません。
-        </div>
-
         <div class="tab_block word2">
           <div class="tab_t">
             以下の項目をご確認してください。全ての項目に同意いただけない場合はお申込みができません。
@@ -300,7 +296,7 @@
           <div class="tab_t">
             「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/spapplikitei.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kitei/pdf/spapplikitei.pdf')"
               >ぐんぎん手続きアプリ利用規定
               <img
                 style="width: 6px; height: 6px"
@@ -309,7 +305,7 @@
               target="_blank"
               style="color: #000000; text-decoration: underline"
               href="javascript:void(0)"
-              onclick="openURL('https://www.gunmabank.co.jp/kojin/ib/af_login/kitei.html','2')"
+              @click="open('https://www.gunmabank.co.jp/kojin/ib/af_login/kitei.html')"
               >各種預金規定
               <img
                 class="this"
@@ -317,7 +313,7 @@
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
             >」 、 「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kojin/benri/app/gunginid/pdf/idkitei.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kojin/benri/app/gunginid/pdf/idkitei.pdf')"
               >ぐんぎんID利用規定<img
                 style="width: 6px; height: 6px"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
@@ -335,7 +331,7 @@
           <div class="tab_t">
             インターネットバンキングを申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/ib_kitei.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kitei/pdf/ib_kitei.pdf')"
               >インターネットバンキング利用規定
               <img
                 style="width: 6px; height: 6px"
@@ -354,14 +350,14 @@
           <div class="tab_t">
             ぐんぎんデビットを申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/debit_visa_member.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kitei/pdf/debit_visa_member.pdf')"
               >ぐんぎんVisaデビット会員規約
               <img
                 style="width: 6px; height: 6px"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
             >」または「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/debit_jcb_member.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kitei/pdf/debit_jcb_member.pdf')"
               >ぐんぎんＪＣＢデビット会員規約
               <img
                 style="width: 6px; height: 6px"
@@ -380,7 +376,7 @@
           <div class="tab_t">
             インターネット支店の取引を申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/kitei/pdf/netbranchkitei.pdf','3')"
+              @click="open('https://www.gunmabank.co.jp/kitei/pdf/netbranchkitei.pdf')"
               >インターネット支店取引規定
               <img
                 style="width: 6px; height: 6px"
@@ -399,7 +395,7 @@
           <div class="tab_t">
             個人情報の取り扱いについて、「<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/privacy/annai2.html','2')"
+              @click="open('https://www.gunmabank.co.jp/privacy/annai2.html')"
               >利用目的説明書
               <img
                 style="width: 6px; height: 6px"
@@ -450,7 +446,7 @@
           <div class="tab_t">
             2021年10月1日以降、新規に開設する普通預金口座について、通帳発行・繰越をする場合には、<a
               style="color: #000000; text-decoration: underline"
-              onclick="openURL('https://www.gunmabank.co.jp/tesuryo/#hakko','2')"
+              @click="open('https://www.gunmabank.co.jp/tesuryo/#hakko')"
               >所定の手数料
               <img
                 style="width: 6px; height: 6px"
@@ -844,7 +840,7 @@ table {
 }
 
 .tab_t {
-  font-size: 12px;
+  font-size: 14px;
   display: table-cell;
   padding-left: 5px;
 }
@@ -925,7 +921,7 @@ p {
 .word {
   color: #000;
   line-height: 20px;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 10px;
 }
 .top_waring {
@@ -971,7 +967,7 @@ p {
 }
 .p_02 {
   margin-left: 0px;
-  font-size: 1em;
+  font-size: 14px;
   margin-top: 20px;
   line-height: 30px;
   color: #02a369;

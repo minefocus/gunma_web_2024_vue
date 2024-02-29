@@ -58,9 +58,17 @@
         <el-col
           :span="24"
           class="flex_center"
-          style="font-size: 14px; width: 100%"
+          style="
+            font-size: 14px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+          "
         >
-        
+          <div style="font-size: 17px; font-weight: bold; color: #03a369">
+            続いて、在留カードを撮影します。
+          </div>
           <div
             class=" "
             style="
@@ -68,21 +76,27 @@
               align-items: center;
               justify-content: center;
               flex-direction: column;
+              background-color: #f7f7f7;
               margin: 10px 0;
               padding: 10px;
               width: 100%;
             "
           >
-            <div style="font-size: 17px;font-weight: bold;color: #03A369;">続いて、在留カードを撮影します。</div>
-            <div style="margin:15px 0;padding:0 10px; width: 100%;border: 2px solid #00a56f;" class="flex_s_c">
-              <div class="flex_center" style="width: 100%; padding: 10px 0;color:red">
-                  在留資格が「永住者」以外の方はお申込みできません。群馬銀行本支店で受付をいたします
-                </div>
+            <div
+              style="margin: 15px 0; padding: 0 10px; width: 100%"
+              class="flex_s_c"
+            >
+              <div
+                class="flex_center"
+                style="width: 100%; padding: 10px 0; color: red"
+              >
+                在留資格が「永住者」以外の方はお申込みできません。群馬銀行本支店で受付をいたします
+              </div>
               <div class="mar_l_r flex_c_c" style="width: 200px">
                 <img class="rending_img width_img" :src="url01" />
               </div>
             </div>
-            <div style="padding: 0 10px;">
+            <div style="padding: 0 10px">
               本人確認は株式会社Liquidの「本人認証サ一ビス」にて行います。これより、株式会社Liquidのペ一ジへ遷移します。
             </div>
           </div>
@@ -94,7 +108,6 @@
       <el-row style="height: 90px">
         <el-col :xs="24" :sm="24" class="flex_center">
           <div class="flex_center btnw">
-
             <van-button
               class="flex_center button_All position_R application_w"
               type="primary"
@@ -122,12 +135,12 @@ export default {
   data() {
     return {
       url01: urlImage01,
-      
-      form:{
-        tokushima_flg:'',
-        introduce_flg:'',
-        introduce_cd :''
-      }
+
+      form: {
+        tokushima_flg: "",
+        introduce_flg: "",
+        introduce_cd: "",
+      },
     };
   },
   mixins: [myMixin],
@@ -136,15 +149,15 @@ export default {
   },
   mounted() {
     // this.getUrl()
-    this.getState()
+    this.getState();
   },
   methods: {
     getUrl() {
       let params = {
         seq_no: this.getSeqNo,
         redirect_url: "/awab/kouzakaisetu/#/inputCustomer",
-        introduce_cd:this.form.introduce_cd,
-        tokushima_flg:this.form.tokushima_flg
+        introduce_cd: this.form.introduce_cd,
+        tokushima_flg: this.form.tokushima_flg,
       };
       startLoading();
       TAKE_PHOTO_POST(params)
@@ -168,20 +181,18 @@ export default {
         });
     },
     goBack() {
-        this.$router.push({
-          name: "explanation",
-          params: {},
-        });
-      },
+      this.$router.push({
+        name: "explanation",
+        params: {},
+      });
+    },
     goUrl() {
       window.open(this.toUrl);
     },
     getState() {
-
       this.form.tokushima_flg = decrypt(this.$store.state.user.tokushima_flg);
       this.form.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
       this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
-      
     },
   },
 };
@@ -203,12 +214,12 @@ export default {
   width: 260px;
 }
 @media screen and (max-width: 767px) {
-      .btnw {
-      width: 100%;
-    }
-    .application_w {
-      width: 150px;
-    }
+  .btnw {
+    width: 100%;
+  }
+  .application_w {
+    width: 150px;
+  }
   .flex_s_c {
     display: flex;
     align-items: center;

@@ -554,7 +554,23 @@
                     <el-radio :label="'07'">公務員</el-radio>
                     <el-radio :label="'08'">医師・弁護士・公認会計士・司法書士・税理士・一級建築士・大学教授</el-radio>
                   </el-radio-group>
-              <el-row class="mar_top_15" style="color:red;margin-top: 10px;">
+
+          </div>
+        </el-col>
+      </el-row>
+
+        <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">お勤め先名・学校名呼称
+              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="18" class="back_wight border_l" id="checkList">
+          <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
+
+              <el-row class="mar_top_15" style="color:red;">
               <el-col :xs="24" :sm="16">
                 <el-row class="flex_center_start" >
                   <el-col :xs="24" :sm="24" class="">
