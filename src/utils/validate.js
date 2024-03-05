@@ -882,8 +882,8 @@ export function PasswordCheck(password){
     }
   }
   //  【チェック7】：  ③圧縮後３桁：先頭桁にゼロをセットしてチェック、最終桁にゼロをセットしてチェック（２パターンのチェック）
-    if(SixX02.length == 3){
-        if("0"+SixX02 == password || SixX02+"0" == password){
+    if(SixX02.length <= 3){
+        if(SixX02.padStart(4,"0") == password || SixX02.padEnd(4,"0") == password){
           return true
         }
     }
@@ -903,8 +903,8 @@ export function PasswordCheck(password){
     }
   }
   //  【チェック7】：  ③圧縮後３桁：先頭桁にゼロをセットしてチェック、最終桁にゼロをセットしてチェック（２パターンのチェック）
-    if(SixH02.length == 3){
-        if("0"+SixH02 == password || SixH02+"0" == password){
+    if(SixH02.length <= 3){
+        if(SixH02.padStart(4,"0") == password || SixH02.padEnd(4,"0") == password){
           return true
         }
     }
@@ -914,7 +914,9 @@ export function PasswordCheck(password){
   // 2，最后4位进行check
   let tele_number  =  decrypt(store.state.user.tele_number01)+''+decrypt(store.state.user.tele_number02)+''+decrypt(store.state.user.tele_number03)
   let phone_number = decrypt(store.state.user.phone_number01)+''+decrypt(store.state.user.phone_number02)+''+decrypt(store.state.user.phone_number03)
-  if(tele_number.slice(-4) == password || phone_number.slice(-4) == password){
+  let work_tele_number = decrypt(store.state.user.work_tele_number01)+''+decrypt(store.state.user.work_tele_number02)+''+decrypt(store.state.user.work_tele_number03)
+
+  if(tele_number.slice(-4) == password || phone_number.slice(-4) == password || work_tele_number.slice(-4) == password){
     return true
   }
 
