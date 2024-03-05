@@ -234,7 +234,7 @@ export function zenkana2Hankana(str) {
     .replace(/゜/g, 'ﾟ');
 };
 
-
+// 转全角
 export function halfToFull(str) {
   let newValue = '';
   for (let i = 0; i < str.length; i++) {
@@ -792,6 +792,155 @@ function toZenkanaCaseMAPPING(){
   return rtn
 }
 
+// todo
+// 新 連続番号  check
+
+export function PasswordCheck(password){
+  //同一番号・連続番号かチェックを行う
+  
+  if(password.length==4){
+    let num01 = password.charAt(0);
+    let num02 = password.charAt(1);
+    let num03 = password.charAt(2);
+    let num04 = password.charAt(3);
+    //①同一番号：1111、2222、3333、4444、5555、6666、7777、8888、9999、0000
+   if(num01==num02&&num02==num03&&num03==num04){
+     return true
+   }
+  //②連続番号：0123、1234、2345、3456、4567、5678、6789 
+  if(password == "0123" || password == "1234"|| password == "2345"|| password == "3456"|| password == "4567"|| password == "5678"|| password == "6789"){
+    return true  
+  }
+   //③倒序番号：9876、8765、7654、6543、5432、4321、3210
+   if(password == "9876" || password == "8765"|| password == "7654"|| password == "6543"|| password == "5432"|| password == "4321"|| password == "3210"){
+    return true  
+  }
+
+  // 获取  西历生日 
+  let birthday =  decrypt(store.state.user.birthday);
+  let ymd = birthday.split('/')
+  let Y = ymd[0]
+  let M = ymd[1]
+  let D = ymd[2]
+  // 1，西历转和历  和历年
+  let Hlyear = calendarBirthday(birthday)
+  if(Hlyear.length == 1){
+    Hlyear = "0" + Hlyear
+  }
+  // 2，月日单位的前补零成2位的
+  if(M.length == 1){
+    M = "0" + M
+  }
+  if(D.length == 1){
+    D = "0" + D
+  }
+  //  【チェック１】：生年月日の西暦4桁『2002』
+  if(Y == password){
+      return true
+  }
+  // 3，西历和历都取后6位（Y1Y2M1M2D1D2)
+  // 西暦（YYYYMMDD）のうち、下６桁
+   let SixX = (Y+M+D).slice(2)
+  // 和暦（GYYMMDD）のうち、下６桁
+   let SixH = Hlyear+M+D
+  // 4，分别对3中西历和历的6位进行如下check
+  let XO1 = SixX.charAt(0)
+  let XO2 = SixX.charAt(1)
+  let XO3 = SixX.charAt(2)
+  let XO4 = SixX.charAt(3)
+  let XO5 = SixX.charAt(4)
+  let XO6 = SixX.charAt(5)
+
+  let HO1 = SixH.charAt(0)
+  let HO2 = SixH.charAt(1)
+  let HO3 = SixH.charAt(2)
+  let HO4 = SixH.charAt(3)
+  let HO5 = SixH.charAt(4)
+  let HO6 = SixH.charAt(5)
+  //          【チェック2】：  ①生年月日（６桁）の年月チェック：先頭「１、２、３、４桁」が入力と一致するかをチェック 　年月
+  //          【チェック3】：  ②生年月日（６桁）の年日チェック：先頭「１、２、５、６桁」が入力と一致するかをチェック　　年日
+  //          【チェック4】：  ③生年月日（６桁）の月日チェック：先頭「３、４、５、６桁」が入力と一致するかをチェック　　月日
+  if(password == XO1+XO2+XO3+XO4 || password == HO1+HO2+HO3+HO4 ||
+     password == XO1+XO2+XO5+XO6 || password == HO1+HO2+HO5+HO6 ||
+     password == XO3+XO4+XO5+XO6 || password == HO3+HO4+HO5+HO6 
+    ){
+    return true
+  }
+
+  // 5，分别对3中西历和历的6位如果存在0的场合，去掉6位中所有的0、进行如下check
+  // 西历
+  if(SixX.indexOf("0") != -1){
+    let SixX02 = SixX.replace(/0/g,'')
+  // 【チェック5】： ①圧縮後４桁：そのままチェック
+    if(SixX02.length == 4 && password == SixX02){
+      return true
+    }
+  //  【チェック6】：  ②圧縮後５桁：先頭から４桁をチェック、最終から４桁（下４桁）をチェック（２パターンのチェック）
+    if(SixX02.length == 5 ){
+      if(SixX02.substring(0, 4) == password || SixX02.substring(1, 5) == password ){
+        return true
+    }
+  }
+  //  【チェック7】：  ③圧縮後３桁：先頭桁にゼロをセットしてチェック、最終桁にゼロをセットしてチェック（２パターンのチェック）
+    if(SixX02.length == 3){
+        if("0"+SixX02 == password || SixX02+"0" == password){
+          return true
+        }
+    }
+  }
+ 
+  // 和历
+  if(SixH.indexOf("0") != -1){
+    let SixH02 = SixH.replace(/0/g,'')
+  // 【チェック5】： ①圧縮後４桁：そのままチェック
+    if(SixH02.length == 4 && password == SixH02){
+      return true
+    }
+  //  【チェック6】：  ②圧縮後５桁：先頭から４桁をチェック、最終から４桁（下４桁）をチェック（２パターンのチェック）
+    if(SixH02.length == 5 ){
+      if(SixH02.substring(0, 4) == password || SixH02.substring(1, 5) == password ){
+        return true
+    }
+  }
+  //  【チェック7】：  ③圧縮後３桁：先頭桁にゼロをセットしてチェック、最終桁にゼロをセットしてチェック（２パターンのチェック）
+    if(SixH02.length == 3){
+        if("0"+SixH02 == password || SixH02+"0" == password){
+          return true
+        }
+    }
+  }
+  // 住宅和连携，勤务先的电话，都check
+  // 1，去掉-
+  // 2，最后4位进行check
+  let tele_number  =  decrypt(store.state.user.tele_number01)+''+decrypt(store.state.user.tele_number02)+''+decrypt(store.state.user.tele_number03)
+  let phone_number = decrypt(store.state.user.phone_number01)+''+decrypt(store.state.user.phone_number02)+''+decrypt(store.state.user.phone_number03)
+  if(tele_number.slice(-4) == password || phone_number.slice(-4) == password){
+    return true
+  }
+
+  // 1,画面中入力的时候是半角的时候应该都处理成全角的了，所以取住所的カナ
+  // 2,取出所有的数字半角转换，
+  // 3，不足4位的时候，前补零到4位进行check，后补零到4位进行check
+  // 4，大于等于4位的时候，上4位，下4位分别check
+  let str = toSBC(decrypt(store.state.user.kana_address_other))
+   let number = str.match(/\d+/g).join('');
+   if(number.length < 4){
+    if(number.padStart(4,'0') == password || number.padEnd(4,'0') == password){
+      return true
+   }
+  }
+  if(number.length >= 4){
+    if(number.slice(0,4) == password || number.slice(-4) == password){
+      return true
+   }
+   }
+}
+return false
+}
+
+
+
+// 重复
 export function repeatNum(password){
   if(password.length==4){
     let num01 = password.charAt(0);
@@ -816,7 +965,7 @@ export function repeatNum(password){
 return false
 }
 //日期转和历
-export function calendarBirthday(birthday) {
+export function calendarBirthday(birthday) {``
  //明治
  let maiji = new Date('1868/10/23').getTime();
  //大正
