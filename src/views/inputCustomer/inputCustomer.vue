@@ -55,7 +55,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="name_last" id="name_last" class="input_inner_100" v-model.trim="form.name_last"
-                      placeholder="15文字まで（例）阿波" :maxlength="15" @blur="halfToFull('name_last')"
+                      placeholder="9文字まで（例）群馬" :maxlength="9" @blur="halfToFull('name_last')"
                       @input="deleteAllBackgroundColor(['name_last']),noPlace('name_last')">
                     </el-input>
                   </el-col>
@@ -70,8 +70,52 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="name_first" id="name_first" class="input_inner_100" v-model.trim="form.name_first"
-                      :maxlength="15" @blur="halfToFull('name_first')" placeholder="15文字まで（例）太郎"
+                      :maxlength="9" @blur="halfToFull('name_first')" placeholder="9文字まで（例）太郎"
                       @input="deleteAllBackgroundColor(['name_first']),noPlace('name_first')"></el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">お名前（フリガナ）
+              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="18" class="back_wight border_l">
+          <div class="content_ input_01 flex_c_c">
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="11">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="4">
+                    <div class="tittle_out_in">
+                      <span class="flex_title">セイ </span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="20" class="">
+                    <el-input ref="kana_last_name" id="kana_last_name" class="input_inner_100"
+                      v-model.trim="form.kana_last_name" placeholder="19文字まで（例）グンマ" :maxlength="19"
+                      @blur="changeLastKanaName('kana_last_name'),jatoEn()" @input="kanaOnInput('kana_last_name','kana_last_name')">
+                    </el-input>
+                  </el-col>
+                </el-row>
+              </el-col>
+              <el-col :xs="24" :sm="11" class="padidng_left">
+                <el-row class="row_height_100">
+                  <el-col :xs="24" :sm="4">
+                    <div class="tittle_out_in">
+                      <span class="flex_title">メイ </span>
+                    </div>
+                  </el-col>
+                  <el-col :xs="24" :sm="20" class="">
+                    <el-input ref="kana_first_name" id="kana_first_name" class="input_inner_100"
+                      v-model.trim="form.kana_first_name" :maxlength="19" @blur="changeLastKanaName('kana_first_name'),jatoEn()"
+                      placeholder="19文字まで（例）タロウ" @input="kanaOnInput('kana_first_name','kana_first_name')"></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -97,9 +141,9 @@
    
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="name_last" id="name_last" class="input_inner_100" v-model.trim="form.name_last"
-                      placeholder="半角18文字まで（例）a wa" :maxlength="16" @blur="halfToFull('name_last')"
-                      @input="deleteAllBackgroundColor(['name_last']),noPlace('name_last')">
+                    <el-input ref="name_en" id="name_en" class="input_inner_100" v-model.trim="form.name_en"
+                      placeholder="18文字まで（例）TARO GUNMA" :maxlength="18" @blur="halfToFull('name_en')"
+                      @input="deleteAllBackgroundColor(['name_en']),noPlace('name_en')">
                     </el-input>
                   </el-col>
                 </el-row>
@@ -119,53 +163,7 @@
         </el-col>
       </el-row>
       <!--------------------------------------------------------------------------->
-      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
-        <el-col :xs="24" :sm="6" class="border_r">
-          <div class="flex_center tittle_out">
-            <span class="flex_title font_w">お名前（フリガナ）
-              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
-            </span>
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="18" class="back_wight border_l">
-          <div class="content_ input_01 flex_c_c">
-            <el-row class="flex_bet">
-              <el-col :xs="24" :sm="11">
-                <el-row class="row_height_100">
-                  <el-col :xs="24" :sm="4">
-                    <div class="tittle_out_in">
-                      <span class="flex_title">セイ </span>
-                    </div>
-                  </el-col>
-                  <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="kana_last_name" id="kana_last_name" class="input_inner_100"
-                      v-model.trim="form.kana_last_name" placeholder="15文字まで（例）アワ" :maxlength="15"
-                      @blur="changeLastKanaName('kana_last_name')" @input="kanaOnInput('kana_last_name','kana_last_name')">
-                    </el-input>
-                  </el-col>
-                </el-row>
-              </el-col>
-              <el-col :xs="24" :sm="11" class="padidng_left">
-                <el-row class="row_height_100">
-                  <el-col :xs="24" :sm="4">
-                    <div class="tittle_out_in">
-                      <span class="flex_title">メイ </span>
-                    </div>
-                  </el-col>
-                  <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="kana_first_name" id="kana_first_name" class="input_inner_100"
-                      v-model.trim="form.kana_first_name" :maxlength="15" @blur="changeLastKanaName('kana_first_name')"
-                      placeholder="15文字まで（例）タロウ" @input="kanaOnInput('kana_first_name','kana_first_name')"></el-input>
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row>
-          </div>
-        </el-col>
-      </el-row>
-
-      <!-- -------------- -->
-
+    
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
@@ -202,6 +200,11 @@
               </el-col>
 
             </el-row>
+             <el-row class="flex_bet">
+              <el-col :xs="24" :sm="11">
+                 <el-checkbox v-model="studentCode" style="margin:10px 5px 0">私は中学生ではありません</el-checkbox>
+              </el-col>
+            </el-row>
           </div>
         </el-col>
 
@@ -230,7 +233,7 @@
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
-            <span class="flex_title font_w">住所
+            <span class="flex_title font_w">自宅住所（漢字）
               <!-- <span class="flex_center border_red_around" style="font-weight: normal">必須</span> -->
             </span>
           </div>
@@ -338,25 +341,24 @@
                 </el-row>
               </el-col>
             </el-row>
-            <el-row class="flex_bet" style="margin:10px 0">
-              <el-col :xs="24" :sm="24">
-                <el-row class="row_height_100">
-                  <el-col :xs="24" :sm="9">
-                    <div class="tittle_out_in">
-                      <span class="flex_title_2">マンション・部屋番号（フリガナ）</span>
-                    </div>
-                  </el-col>
-                  <el-col :xs="24" :sm="10" class="">
-                    <el-input ref="kana_address_other" id="kana_address_other" class="input_inner_100"
-                      v-model="form.kana_address_other" placeholder="20文字まで" :maxlength="20"
-                      @blur="changeLastKanaName('kana_address_other')"
-                      @input="kanaOnInput02('kana_address_other','kana_address_other')">
-                    </el-input>
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row>
+
           </div>
+        </el-col>
+      </el-row>
+       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">自宅住所（フリガナ）
+              <span class="flex_center border_red_around" style="font-weight: normal;">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col ref='sex' :xs="24" :sm="18" class="back_wight border_l">
+           <div class="content_ input_01 flex_c_c">
+           <el-input ref="kana_address" id="kana_address" class="input_inner_100"
+                      v-model.trim="form.kana_address" :maxlength="130" @blur="changeLastKanaName('kana_address')"
+                      placeholder="130文字まで" @input="kanaOnInput('kana_address','kana_address')"></el-input>
+           </div>
         </el-col>
       </el-row>
       <!---------------------->
@@ -370,40 +372,7 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c">
-            <!-- <el-row class="flex_bet padding_row">
-              <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <span class="_waring" style="color: red">お持ちの電話をお選びください</span>
-              </el-col>
-            </el-row>
-            <el-row class="flex_bet padding_row" >
-              <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <div style="width: 100%">
-                  <el-radio v-model="tele_flg" class="font_s" label="0" @change="showredio()" style="white-space: normal">
-                    自宅（固定電話）と携帯電話を持っています</el-radio>
-                </div>
-              </el-col>
-            </el-row>
-            <el-row class="flex_bet padding_row">
-              <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <div style="width: 100%">
-                  <el-radio v-model="tele_flg" class="font_s" label="1" @change="showredio()" style="white-space: normal">
-                    自宅（固定電話）しか持っていません</el-radio>
-                </div>
-              </el-col>
-            </el-row>
-            <el-row class="flex_bet padding_row">
-              <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <div style="width: 100%">
-                  <el-radio v-model="tele_flg" class="font_s" label="2" @change="showredio()" style="white-space: normal">
-                    携帯電話しか持っていません</el-radio>
-                </div>
-              </el-col>
-            </el-row>
-            <el-row class="flex_bet padding_row">
-              <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <span class="_waring" style="color: red">お申込み内容の確認のためお電話をさせていただく場合がありますのでご了承ください。</span>
-              </el-col>
-            </el-row> -->
+           
 
             <el-row class="flex_bet padding_row" >
               <el-col :xs="24" :sm="24">
@@ -413,10 +382,7 @@
                       <el-col :span="24">
                         <div class="tittle_out_in padding_t_32 flex_title p_l_10">
                           <span class="flex_title">自宅（固定電話）
-                             <!-- <span class="flex_center border_red_around"
-                              style="font-weight: normal">必須</span> -->
                               </span>
-
                         </div>
                       </el-col>
                     </el-row>
@@ -438,7 +404,6 @@
                             ]),replaceNum('tele_number')
                           ">
                         </el-input>
-                        <!-- <div class="tips_top _err _perr" id="tele_number" style="height: 15px;left:0"></div> -->
                       </el-col>
                       <el-col :xs="2" :sm="2" class="flex_center">ー</el-col>
                       <el-col :xs="6" :sm="4" class="">
@@ -475,10 +440,7 @@
                       <el-col :span="24">
                         <div class="tittle_out_in padding_t_32 flex_title">
                           <span class="flex_title">携帯 
-                            <!-- <span class="flex_center border_red_around"
-                              style="font-weight: normal">必須</span> -->
                               </span>
-
                         </div>
                       </el-col>
                     </el-row>
@@ -500,7 +462,6 @@
                             ]),replaceNum('phone_number01')
                           ">
                         </el-input>
-                        <!-- <div class="tips_top _err _perr" id="id_phone_number" style="height: 15px;left:0"></div> -->
                       </el-col>
                       <el-col :xs="2" :sm="2" class="flex_center">ー</el-col>
                       <el-col :xs="6" :sm="4" class="">
@@ -545,14 +506,14 @@
         <el-col :xs="24" :sm="18" class="back_wight border_l" id="checkList">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
             <el-radio-group v-model="account_reason">
-                    <el-radio :label="'01'">会社員・会社役員</el-radio>
-                    <el-radio :label="'02'">自営業・自由業</el-radio>
-                    <el-radio :label="'03'">年金受給</el-radio>
-                    <el-radio :label="'04'">アルバイト・パート・派遣・契約社員</el-radio>
-                    <el-radio :label="'05'">無職</el-radio>
-                    <el-radio :label="'06'">学生</el-radio>
-                    <el-radio :label="'07'">公務員</el-radio>
-                    <el-radio :label="'08'">医師・弁護士・公認会計士・司法書士・税理士・一級建築士・大学教授</el-radio>
+                    <el-radio :label="'1'">会社員・会社役員</el-radio>
+                    <el-radio :label="'2'">自営業・自由業</el-radio>
+                    <el-radio :label="'3'">年金受給</el-radio>
+                    <el-radio :label="'4'">アルバイト・パート・派遣・契約社員</el-radio>
+                    <el-radio :label="'5'">無職</el-radio>
+                    <el-radio :label="'6'">学生</el-radio>
+                    <el-radio :label="'7'">公務員</el-radio>
+                    <el-radio :label="'8'">医師・弁護士・公認会計士・司法書士・税理士・一級建築士・大学教授</el-radio>
                   </el-radio-group>
 
           </div>
@@ -575,8 +536,8 @@
                 <el-row class="flex_center_start" >
                   <el-col :xs="24" :sm="24" class="">
                     <div class="waring_01"></div>
-                           <el-select ref="account_store_number" id="account_store_number"
-                          v-model="form.account_store_number" placeholder="選択してください" style="width: 100%" >
+                           <el-select ref="work_name_code" id="work_name_code"
+                          v-model="form.work_name_code" placeholder="選択してください" style="width: 100%" >
                           <el-option v-for="item in store_list" :key="item.store_number"
                             :label="item.store_nm" :value="item.store_number" />
                         </el-select>
@@ -592,7 +553,7 @@
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="checkList01">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
-            <span class="flex_title font_w">お勤め先（学校名）
+            <span class="flex_title font_w">お勤め先・学校名（漢字）
               <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
             </span>
           </div>
@@ -624,7 +585,6 @@
                           maxlength="60" v-model="form.work_name" placeholder="60文字まで（例）◯◯商事株式会社　◯◯営業所"
                           @input="deleteAllBackgroundColor(['id_work_name'])">
                         </el-input>
-                        <!-- <div class="tips_top _err position_02" id="id_work_name" style="height: 15px;"></div> -->
                       </el-col>
                     </el-row>
                   </el-col>
@@ -652,8 +612,6 @@
                     <el-row class="tips_top_row">
                       <el-col :span="24" class="waring_01" style="color:red"><span>学生や無職の方は、自宅電話番号もしくは携帯電話番号をご入力ください。</span>
                       </el-col>
-                      <!-- <el-col :span="24" class="waring_01" style="color:red"><span>をご入力いただいても結構でございます。</span>
-                      </el-col> -->
                       <el-col :span="24"><span class="_waring" style="">半角数字10-11桁</span>
                       </el-col>
                     </el-row>
@@ -704,8 +662,7 @@
        <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
-            <span class="flex_title font_w">お勤め先（学校）住所
-              <!-- <span class="flex_center border_red_around" style="font-weight: normal">必須</span> -->
+            <span class="flex_title font_w">お勤め先・学校住所（漢字）
             </span>
           </div>
         </el-col>
@@ -812,24 +769,7 @@
                 </el-row>
               </el-col>
             </el-row>
-            <el-row class="flex_bet" style="margin:10px 0">
-              <el-col :xs="24" :sm="24">
-                <el-row class="row_height_100">
-                  <el-col :xs="24" :sm="9">
-                    <div class="tittle_out_in">
-                      <span class="flex_title_2">マンション・部屋番号（フリガナ）</span>
-                    </div>
-                  </el-col>
-                  <el-col :xs="24" :sm="10" class="">
-                    <el-input ref="kana_address_other" id="kana_address_other" class="input_inner_100"
-                      v-model="form.kana_address_other" placeholder="20文字まで" :maxlength="20"
-                      @blur="changeLastKanaName('kana_address_other')"
-                      @input="kanaOnInput02('kana_address_other','kana_address_other')">
-                    </el-input>
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row>
+
           </div>
         </el-col>
       </el-row>
@@ -838,14 +778,6 @@
 
     <el-row style="height: 90px;">
       <el-col :xs="24" :sm="24" class="flex_center">
-
-        <!-- <van-button class="flex_center button_ btn_w_ position_R" type="primary" @click="toPage"
-          color="linear-gradient( #01216B, #01216B)">
-
-          <span>次へ</span>
-          <span class="position_L">〉</span>
-
-        </van-button> -->
       <van-button class="flex_center button_All  position_R" type="primary"  @click="toPage()" >
           <span>次へ</span>
           <span class="position_L">〉</span>
@@ -857,11 +789,11 @@
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import SetDom from "@/utils/setDomErr.js";
-import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,PATTERFULL} from "@/utils/validate.js";
+import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,PATTERFULL,kanaToRoman} from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
 import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
-import constants from '@/utils/constants.js'
+import {constants} from '@/utils/constants.js'
 import myMixin from '../mixin.js';
 import {decrypt} from '../../utils/jse'
 export default {
@@ -901,7 +833,7 @@ export default {
         {store_number:"000",store_nm:"その他（勤務先名と併せて入力してください）"},
       ],
       form: {
-        account_store_number:'',
+        work_name_code:'',
         name_first: '',
         name_last: '',
         kana_last_name: "",
@@ -911,10 +843,8 @@ export default {
         address_number:"",
         zip_code: "", //郵便番号
         address_other: "", //マンション・部屋番号
-        kana_address_other: "",//マンション・部屋番号（フリガナ）
-        other_item: "",
+
         work_name: "",
-        // work_zip_code:"",
         work_address: "",
         phone_number01: "",
         phone_number02: "",
@@ -925,6 +855,8 @@ export default {
         work_tele_number01: "",
         work_tele_number02: "",
         work_tele_number03: "",
+        name_en:'',
+        kana_address:''
       },
       address_pref_list: constants.prefecturesCodeList,
       DomList: [],
@@ -937,7 +869,9 @@ export default {
       minDate: new Date(1945, 0, 1),
       maxDate: new Date(2999, 10, 1),
       show: false,
-      initApiflg: ''
+      initApiflg: '',
+      studentCode:false
+
     };
   },
   mixins:[myMixin],
@@ -985,10 +919,6 @@ export default {
     //kana入力限制
   kanaOnInput01(eventName,id) {
     this.deleteBackgroundColor(eventName,id)
-    // this.form[eventName] = this.form[eventName].replace(/~|!|`|\.|@|,|#|\$|\/|%|\?|<|>|\^|&|\*|_|\+|=|{|}|\[|\]|;|'|"|:|\\/g, '');
-    // ！＠＃＄％＾＆＊（）＿＋｜｝｛”：？＞＜ー＝「」￥；’、。・
-    // this.form[eventName] = this.form[eventName].replace(/~|!|`|\.|@|,|#|\$|\/|%|\?|<|>|\^|&|\*|_|\+|=|{|}|\[|\]|;|'|"|:|\||\\/g, '');
-    // this.form[eventName] = this.form[eventName].replace(/～|！|＠|＃|＄|％|＾|＆|＊|＋|｜|｝|｛|”|：|？|＞|＜|＝|「|＿|‘|」|￥|；|’|、|。|・/g, '');
     this.form[eventName] = this.form[eventName].replace(/[^ぁ-んァ-ン一-龥〃仝々ゞゝゐゔゑヾヽヷヰヸヴヱヹヲヺヶa-zA-Zａ-ｚＡ-Ｚ0-9\uFF10-\uFF19（）ー\(\)\-\−\－\―]/g,'')
   },
   //kana入力限制
@@ -1056,9 +986,6 @@ export default {
           endLoading();
         });
     },
-    showInput() {
-      this.form.other_item = "";
-    },
     toPage() {
       if (this.check()) {
         startLoading();
@@ -1090,6 +1017,9 @@ export default {
     // 全角转半角
     toSBCNum(key) {
       this.form[key] = toSBC(this.form[key].trim());
+    },
+    jatoEn(){
+      this.form.name_en = kanaToRoman(this.form.kana_first_name+this.form.kana_last_name)
     },
     confirm(value) {
       this.deleteAllBackgroundColor(["birthday01"]);
@@ -1226,9 +1156,7 @@ export default {
         this.Err("address_pref", MESSAGE.MsgErrCheck037, "address_pref");
         return false;
       }
-      //市区町村・番地
-      //未入力：市区町村・番地を入力してください													
-      //誤入力：市区町村・番地は全角20文字までで入力してください													
+      //市区町村・番地										
       if (isEmpty(this.form.address_city)) {
         this.Err("address_city", MESSAGE.MsgErrCheck038, "address_city");
         return false;
@@ -1254,13 +1182,7 @@ export default {
 
       }
 
-      if (!isEmpty(this.form.kana_address_other)) {
-         if(this.form.kana_address_other > 20 || !Symbol02(toSBC(this.form.kana_address_other.trim())) || !PATTERFULL(this.form.kana_address_other)){
-       this.Err("kana_address_other", MESSAGE.MsgErrCheck041, "kana_address_other");
-        return false;
-        }
 
-      }
 
       if (isEmpty(this.tele_flg)) {
         this.$message.error(MESSAGE.MsgErrCheck042);
@@ -1295,17 +1217,6 @@ export default {
         return false;
       }
 
-      if (this.checkList.includes("11")) {
-        if (isEmpty(this.form.other_item)) {
-          this.Err("p3_i4", MESSAGE.MsgErrCheck048, "p3_i4");
-          SetDom.scallto(this.$refs.checkList01)
-          return false;
-        } else if (this.form.other_item.length > 20 || !PATTERFULL(this.form.other_item)) {
-          this.Err("p3_i4", MESSAGE.MsgErrCheck049, "p3_i4");
-          SetDom.scallto(this.$refs.checkList01)
-          return false;
-        }
-      }
 
       if (isEmpty(this.form.work_name)) {
           this.Err("id_work_name", 'お勤め先（学校名）を入力してください', "id_work_name");
@@ -1321,7 +1232,6 @@ export default {
         this.Errs(["id_work_tele_number", "id_work_tele_number_1", "id_work_tele_number_2",], MESSAGE.MsgErrCheck051, "id_work_tele_number");
           return false;
         } else if (!isEmpty(num02) && (!checkHalNum(num02) || num02.length < 10 || num02.length > 11)) {
-        // SetDom.setErr(MESSAGE.MsgErrCheck010, 'id_work_tele_number');
         this.Errs(["id_work_tele_number", "id_work_tele_number_1", "id_work_tele_number_2",], MESSAGE.MsgErrCheck052, "id_work_tele_number");
         return false;
       }
@@ -1359,7 +1269,6 @@ export default {
       if(this.form.zip_code !=decrypt(this.$store.state.user.zip_code)){
 
        this.setState({
-          account_store_number: '',
           account_reason:'',
           account_reason_other:'',
        })
@@ -1388,12 +1297,11 @@ export default {
         job_kbn:JSON.stringify( this.checkList.sort((a, b) => {
           return a - b;
         })),
-        job_kbn_other: this.form.other_item,
         work_name: this.form.work_name,
         work_tele_number01: this.form.work_tele_number01,
         work_tele_number02: this.form.work_tele_number02,
         work_tele_number03: this.form.work_tele_number03,
-        kana_address_other: this.form.kana_address_other,
+
         initApiflg:this.initApiflg,
         work_address:this.form.work_address,
         // work_zip_code:this.form.work_zip_code
@@ -1416,7 +1324,7 @@ export default {
       this.form.address_city = decrypt(this.$store.state.user.address_city);
       this.form.address_number = decrypt(this.$store.state.user.address_number);
       this.form.address_other = decrypt(this.$store.state.user.address_other);
-      this.form.kana_address_other = decrypt(this.$store.state.user.kana_address_other);
+  
       this.form.phone_number01 = decrypt(this.$store.state.user.phone_number01);
       this.form.phone_number02 = decrypt(this.$store.state.user.phone_number02);
       this.form.phone_number03 = decrypt(this.$store.state.user.phone_number03);
@@ -1424,7 +1332,6 @@ export default {
       this.form.tele_number_02 = decrypt(this.$store.state.user.tele_number02);
       this.form.tele_number_03 = decrypt(this.$store.state.user.tele_number03);
       this.checkList = decrypt(this.$store.state.user.job_kbn)==''?[]:JSON.parse(decrypt(this.$store.state.user.job_kbn));
-      this.form.other_item = decrypt(this.$store.state.user.job_kbn_other);
       this.form.work_name = decrypt(this.$store.state.user.work_name);
       this.form.work_tele_number01 = decrypt(this.$store.state.user.work_tele_number01);
       this.form.work_tele_number02 = decrypt(this.$store.state.user.work_tele_number02);

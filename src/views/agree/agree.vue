@@ -68,15 +68,28 @@
       <el-col :xs="24" :sm="24" style="padding: 10px 20px">
         <el-select
           v-model="form.account_store_number"
+          popper-class="customDropdown"
+          :popper-append-to-body="false"
           placeholder="選択してください"
           style="width: 100%"
         >
           <el-option
-            v-for="item in store_list"
+            v-for="item in country_list"
             :key="item.store_number"
             :label="item.store_nm"
             :value="item.store_number"
-          />
+          >
+            <span
+              style="
+                float: left;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 100%;
+              "
+              >{{ item.store_nm }}</span
+            >
+          </el-option>
         </el-select>
       </el-col>
 
@@ -96,7 +109,9 @@
               target="_blank"
               font-size="0.7em"
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kojin/apply/uketori.html')"
+              @click="
+                open('https://www.gunmabank.co.jp/kojin/apply/uketori.html')
+              "
               >こちら
               <img
                 style="width: 9px; height: 9px"
@@ -296,27 +311,35 @@
           <div class="tab_t">
             「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kitei/pdf/spapplikitei.pdf')"
+              @click="
+                open('https://www.gunmabank.co.jp/kitei/pdf/spapplikitei.pdf')
+              "
               >ぐんぎん手続きアプリ利用規定
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」、 「<a
               target="_blank"
               style="color: #000000; text-decoration: underline"
               href="javascript:void(0)"
-              @click="open('https://www.gunmabank.co.jp/kojin/ib/af_login/kitei.html')"
+              @click="
+                open('https://www.gunmabank.co.jp/kojin/ib/af_login/kitei.html')
+              "
               >各種預金規定
               <img
                 class="this"
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」 、 「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kojin/benri/app/gunginid/pdf/idkitei.pdf')"
+              @click="
+                open(
+                  'https://www.gunmabank.co.jp/kojin/benri/app/gunginid/pdf/idkitei.pdf'
+                )
+              "
               >ぐんぎんID利用規定<img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」に同意します
           </div>
         </div>
@@ -331,11 +354,13 @@
           <div class="tab_t">
             インターネットバンキングを申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kitei/pdf/ib_kitei.pdf')"
+              @click="
+                open('https://www.gunmabank.co.jp/kitei/pdf/ib_kitei.pdf')
+              "
               >インターネットバンキング利用規定
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」に同意します。
           </div>
         </div>
@@ -350,18 +375,26 @@
           <div class="tab_t">
             ぐんぎんデビットを申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kitei/pdf/debit_visa_member.pdf')"
+              @click="
+                open(
+                  'https://www.gunmabank.co.jp/kitei/pdf/debit_visa_member.pdf'
+                )
+              "
               >ぐんぎんVisaデビット会員規約
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」または「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kitei/pdf/debit_jcb_member.pdf')"
+              @click="
+                open(
+                  'https://www.gunmabank.co.jp/kitei/pdf/debit_jcb_member.pdf'
+                )
+              "
               >ぐんぎんＪＣＢデビット会員規約
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」に同意します。
           </div>
         </div>
@@ -376,11 +409,13 @@
           <div class="tab_t">
             インターネット支店の取引を申込むお客さまは、 「<a
               style="color: #000000; text-decoration: underline"
-              @click="open('https://www.gunmabank.co.jp/kitei/pdf/netbranchkitei.pdf')"
+              @click="
+                open('https://www.gunmabank.co.jp/kitei/pdf/netbranchkitei.pdf')
+              "
               >インターネット支店取引規定
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」に同意します。
           </div>
         </div>
@@ -399,7 +434,7 @@
               >利用目的説明書
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >」の内容に同意します。
           </div>
         </div>
@@ -450,7 +485,7 @@
               >所定の手数料
               <img
                 style="width: 6px; height: 6px"
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" /></a
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJBAMAAAD0ltBnAAAABGdBTUEAALGPC/xhBQAAACBjSFJN AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAKlBMVEUAAAC4tbW4tbW4tbW4 tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbW4tbX///9WDRsmAAAADHRSTlMAQAguECDkHMjA8vBSnxKm AAAAAWJLR0QN9rRh9QAAAAd0SU1FB+YGFQgYKrP9AAUAAAI8elRYdFJhdyBwcm9maWxlIHR5cGUg eG1wAAA4jZVVS7LjIAzcc4o5ApaEBMdxgtm9qlnO8acb5+vk/eyKjYVQt1qCpH8ff9MfXhEt6VlH 1Mi+uPrJS5hkFy8e3nzTLrKN0+k0RGBvbrSU0GJds/XIpvCt3pLVWAMLi8ZqWzHHGwFVsUhEh26S 9RxV16iOhd4J5otkfvvZt1DOJSKAjfkgD133iZv7ZHIPA9uJK+y2QnKp1ktOQnIjpkmLbPh18Mm6 KJLU0AbbooXfWnWRM6wy51UG3nxinKTjJbrC1PDEEsmHWy7pCVi4rkXMzA+pSZqTTK+G4c66Ip0R 85It4CXbZBwTufGeTARPwbPvAGAUGqgPFYmKtIDA+WcWoIBSoRDibSrVoBA8rvO+JAg2AsKS1S7s Yy0o8CvfCbbdS4SxJgw7Uqngk0ke0uZrrY4hraN7PgmbnuO+D4uA/U1wDSts3alx+p70++Bs7oBe 8BkMl0KnRoIFZY9PqXdshjcKXBDEWLtCgOHnl6bMYAQHOukcZTaoKbqnlrnb6IxOUGn38FOr1Vhr ZbV9il2s2azZ7oRk2tyc4GLsZ9Qco8UE8ZmPw7ZgBj2PTgcCxk09waVgqFyCt0CDIzIT0Cjcf+y3 F2B2laUXZP0a+R0wmzfxiHhCL7N7Hej4wJg1yw+lXv1Jm6s06TttwOJHDNNBm0fkH2lzBU43bZbf ayOX8xPteTlGPtndd7fHk+hmfTp+E0Xbp978CRQ25ExH9vM7/QceNmv5K3ZbMgAAAD1JREFUCNdj YOA5AwQMUEpQx8TFxYbhTEwAA0MMw7EaMHWUp3PmzB6Go4yCQMBwlIGB9QADw6ndu3cdYAAAoN0U 1mh+6ToAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjItMDYtMjFUMDg6MjQ6NDIrMDA6MDDdFXAyAAAA JXRFWHRkYXRlOm1vZGlmeQAyMDIyLTA2LTIxVDA4OjI0OjQyKzAwOjAwrEjIjgAAABl0RVh0U29m dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII="/></a
             >がかかることに同意します。
           </div>
         </div>
@@ -692,11 +727,7 @@
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import { isEmpty, validMailAddress } from "@/utils/validate.js";
-import {
-  MESSAGE,
-  showMessage,
-  popMessageFromApi,
-  ErrMessage,
+import {MESSAGE,showMessage,popMessageFromApi,ErrMessage,
 } from "@/utils/message.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import {
@@ -705,7 +736,7 @@ import {
   UPT_AGREEN_AT,
 } from "@/api/account/api.js";
 import urlImage01 from "@/assets/img/img_driver_01@3x.png";
-
+import {country} from "@/utils/constants.js"
 export default {
   data() {
     return {
@@ -721,12 +752,10 @@ export default {
       form: {
         account_store_number: "",
       },
-      store_list: [{ store_number: "1", store_nm: "日本" }],
+      country_list: country,
     };
   },
-  computed: {},
   mixins: [],
-  created() {},
   mounted() {
     if (!this.$store.state.page.isPc) {
       this.url = this.$route.fullPath;
@@ -738,11 +767,9 @@ export default {
       this.setSeq();
     }
   },
-  components: {},
   methods: {
     setSeq() {
       this.setSeqNo(this.seq_no);
-
       this.InitAgree();
     },
     ...mapMutations({ setSeqNo: "user/setSeqNo" }),
@@ -751,7 +778,7 @@ export default {
     },
     nextPage() {
       try {
-        if (this.checkList.length != 6) {
+        if (!this.checked) {
           showMessage(MESSAGE.MSGTypeError, MESSAGE.MsgErrCheck017);
           return;
         }
@@ -779,13 +806,9 @@ export default {
       startLoading();
       AGREE_INIT_POST(params)
         .then((res) => {
-          // popMessageFromApi(res)
           if (!res.success) {
             this.openMsg(res);
-          } else {
-            this.GetDocument();
-          }
-
+          } 
           endLoading();
         })
         .catch((err) => {
@@ -796,29 +819,6 @@ export default {
       ErrMessage(res, () => {
         this.$router.push({ name: "registerMail", params: {} });
       });
-    },
-    GetDocument() {
-      let data = {
-        seq_no: this.getSeqNo,
-      };
-      GET_DOCUMENTS(data)
-        .then((res) => {
-          popMessageFromApi(res);
-          if (res.success) {
-            let documents = res.data.documents;
-            for (let document of documents) {
-              if (document.document_type == "07") {
-                this.documentUrl07 = document.reference_url;
-              } else if (document.document_type == "08") {
-                this.documentUrl08 = document.reference_url;
-              }
-            }
-          }
-          endLoading();
-        })
-        .catch((err) => {
-          endLoading();
-        });
     },
     toPage() {
       this.$router.push({
@@ -1067,4 +1067,13 @@ p {
 /* .el-checkbox{
     color: #01216b !important;
   } */
+
+/deep/ .el-select-dropdown.customDropdown {
+  width: 95%;
+}
+/* /deep/ .el-select-dropdown.customDropdown .el-select-dropdown__item {
+    display: inline-block;
+    width: 100%;
+    overflow: initial;
+} */
 </style>

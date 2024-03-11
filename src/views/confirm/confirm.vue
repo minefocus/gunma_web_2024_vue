@@ -585,14 +585,15 @@
           <div class="content_ input_01 flex_c_c">
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
-                <el-row class="first_title">
+
+              <el-row class="first_title">
                   <el-col
                     :xs="24"
                     :sm="24"
                     style="display: flex; justify-content: space-between"
                   >
-                    <div class=" ">
-                      <span class="font_weight_bold">決済口座情報</span>
+                    <div class="flex_center">
+                      <span class="font_weight_bold">カードデザイン</span>
                     </div>
                     <van-button
                       round
@@ -607,6 +608,36 @@
                       @click="toPage('inputApplication')"
                       >修正</van-button
                     >
+                  </el-col>
+                </el-row>
+
+                <!-- <el-row class="second_title">
+                  <el-col
+                    :xs="24"
+                    :sm="24"
+                    style="display: flex; justify-content: space-between"
+                  >
+                    <div class=" ">
+                      <span style="">デビットカ一ド</span>
+                    </div>
+                  </el-col>
+                </el-row> -->
+
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="" style="margin: 10px">
+                    <img style="height: 160px" :src="url01" />
+                  </el-col>
+                </el-row>
+                 <el-divider ></el-divider>
+                <el-row class="first_title">
+                  <el-col
+                    :xs="24"
+                    :sm="24"
+                    style="display: flex; justify-content: space-between"
+                  >
+                    <div class=" ">
+                      <span class="font_weight_bold">決済口座情報</span>
+                    </div>
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -643,39 +674,6 @@
                   </el-col>
                 </el-row>
 
-                <el-divider></el-divider>
-                <el-row class="first_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
-                    <div class="m_15px">
-                      <span class="font_weight_bold"
-                        >キャッシュカード情報入力</span
-                      >
-                    </div>
-                  </el-col>
-                </el-row>
-
-                <el-row class="second_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
-                    <div class=" ">
-                      <span style="">デビットカ一ドz</span>
-                    </div>
-                  </el-col>
-                </el-row>
-
-                <el-row class="third_text">
-                  <el-col :xs="24" :sm="24" class="" style="margin: 10px">
-                    <img style="height: 160px" :src="url01" />
-                  </el-col>
-                </el-row>
-
                 <el-row class="second_title">
                   <el-col
                     :xs="24"
@@ -691,8 +689,8 @@
                   <el-col :xs="24" :sm="24" class=""> **** </el-col>
                 </el-row>
 
-                <el-divider v-if="pageS.contractor_flg != '0'"></el-divider>
-                <el-row class="first_title" v-if="pageS.contractor_flg != '0'">
+                <el-divider ></el-divider>
+                <el-row class="first_title">
                   <el-col
                     :xs="24"
                     :sm="24"
@@ -753,7 +751,7 @@ import urlImage01 from "../../assets/img/card_visa@3x.png";
 import urlImage02 from "../../assets/img/picture02.png";
 import { isEmpty } from "@/utils/validate.js";
 import myMixin from "../mixin.js";
-import constants from "@/utils/constants.js";
+import {constants} from "@/utils/constants.js";
 import { decrypt } from "../../utils/jse";
 export default {
   data() {

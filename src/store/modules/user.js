@@ -3,7 +3,6 @@ const state = {
     initApiflg:'',
     tele_flg: '',
     contractor_flg: '',
-    kana_address_other:'',
     seq_no: '', //管理番号
     cord_type:'',
     kana_last_name:'',//お名前_セイ

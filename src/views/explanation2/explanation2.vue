@@ -155,7 +155,7 @@ export default {
     getUrl() {
       let params = {
         seq_no: this.getSeqNo,
-        redirect_url: "/awab/kouzakaisetu/#/inputCustomer",
+        redirect_url: "/gunmab/visa/#/inputCustomer",
         introduce_cd: this.form.introduce_cd,
         tokushima_flg: this.form.tokushima_flg,
       };

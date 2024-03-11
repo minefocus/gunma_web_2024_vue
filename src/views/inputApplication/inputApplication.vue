@@ -37,7 +37,38 @@
     <div style="width: 100%; margin-top: 10px" class="back_img_">
      
       <!-- -------------- -->
-     
+     <el-row class="border_ margin_1 mobile_margin back_all
+            flex_center_web">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">カードデザイン
+              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col :xs="24" :sm="18" class="back_wight border_l">
+          <div class="content_ input_01 flex_c_c">
+            <!-- <el-row class="">
+              <el-col :span="24">
+                <div class="weight">デビットカ一ド</div>
+              </el-col>
+            </el-row> -->
+
+            <el-row class="" ref="cord_type" id="cord_type">
+              <el-row class="" ref="cord_type" id="cord_type">
+                <el-col :xs="24" :sm="12" class="flex_center" style="height: 180px">
+    
+                    <img style="height: 170px; width: 280px" :src="url01" @click="cord_typeBtn('0')" />
+                
+                </el-col>
+
+              </el-row>
+            </el-row>
+
+          
+          </div>
+        </el-col>
+      </el-row>
     <el-row class="flex_item_center border_ margin_1 mobile_margin back_all ">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
@@ -88,39 +119,9 @@
                   </el-col>
                 </el-row>
               </el-col>
+              
             </el-row>
-          </div>
-        </el-col>
-      </el-row>
-      <el-row class="border_ margin_1 mobile_margin back_all
-            flex_center_web">
-        <el-col :xs="24" :sm="6" class="border_r">
-          <div class="flex_center tittle_out">
-            <span class="flex_title font_w">キャッシュカード情報入力
-              <span class="flex_center border_red_around" style="font-weight: normal">必須</span>
-            </span>
-          </div>
-        </el-col>
-        <el-col :xs="24" :sm="18" class="back_wight border_l">
-          <div class="content_ input_01 flex_c_c">
-            <el-row class="">
-              <el-col :span="24">
-                <div class="weight">デビットカ一ド</div>
-              </el-col>
-            </el-row>
-
-            <el-row class="" ref="cord_type" id="cord_type">
-              <el-row class="" ref="cord_type" id="cord_type">
-                <el-col :xs="24" :sm="12" class="flex_center" style="height: 180px">
-    
-                    <img style="height: 170px; width: 280px" :src="url01" @click="cord_typeBtn('0')" />
-                
-                </el-col>
-
-              </el-row>
-            </el-row>
-
-            <el-row class="flex_bet">
+               <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row class="">
                   <el-col :xs="24" :sm="24">
@@ -175,6 +176,8 @@
           </div>
         </el-col>
       </el-row>
+      
+    
 
       <!-- -------------- -->
       <el-row class="border_ margin_1 mobile_margin back_all

@@ -70,7 +70,9 @@
 
       <el-row>
         <el-col :span="24" class="padding_l_20">
-          <div class="Main_title" style="width: 100%;margin-top:14px">本人確認書類について</div>
+          <div class="Main_title" style="width: 100%;margin-top:14px">
+            本人確認書類について
+          </div>
         </el-col>
         <el-col :span="24" class="padding_l_20">
           <div class="word" style="width: 100%">
@@ -187,10 +189,12 @@
                 target="_blank"
                 style="color: #000000; text-decoration: underline"
                 href="javascript:void(0)"
-                @click="open('https://www.gunmabank.co.jp/kojin/apply/uketori.html')"
+                @click="
+                  open('https://www.gunmabank.co.jp/kojin/apply/uketori.html')
+                "
                 >こちら<img
                   class="this"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDRTE2N0NBQjQ3NUYxMUU3OTg3MkU5NkFFRTMxNkUyMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDRTE2N0NBQzQ3NUYxMUU3OTg3MkU5NkFFRTMxNkUyMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNFMTY3Q0E5NDc1RjExRTc5ODcyRTk2QUVFMzE2RTIxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNFMTY3Q0FBNDc1RjExRTc5ODcyRTk2QUVFMzE2RTIxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EHETrwAAAHVJREFUeNpiZEACO7Zu/c9AADAxkAhYgKY6QNknoLQ+ED/ColYOiC+yAIn9UAFFKP3Jw9v7A7pqoMECyE56CsR/iHISlLYBmvoEaAqIvQJI/8CilgNZAww4EmsDGABtOYDmbgUgdR8ozoiu4RJQ8h8xwQ4QYACAhSHZ3MvzzAAAAABJRU5ErkJggg==" /></a
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAJCAYAAAAGuM1UAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDRTE2N0NBQjQ3NUYxMUU3OTg3MkU5NkFFRTMxNkUyMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDRTE2N0NBQzQ3NUYxMUU3OTg3MkU5NkFFRTMxNkUyMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkNFMTY3Q0E5NDc1RjExRTc5ODcyRTk2QUVFMzE2RTIxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkNFMTY3Q0FBNDc1RjExRTc5ODcyRTk2QUVFMzE2RTIxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EHETrwAAAHVJREFUeNpiZEACO7Zu/c9AADAxkAhYgKY6QNknoLQ+ED/ColYOiC+yAIn9UAFFKP3Jw9v7A7pqoMECyE56CsR/iHISlLYBmvoEaAqIvQJI/8CilgNZAww4EmsDGABtOYDmbgUgdR8ozoiu4RJQ8h8xwQ4QYACAhSHZ3MvzzAAAAABJRU5ErkJggg=="/></a
               >。
               <br />カード等の発行を伴わないお申込みの場合は、メールでお手続きの完了をお知らせします。
               <br />※お受け取りを当行が確認するまでは、入金、振込、払い戻し等の取引の全部または一部を制限する場合があります。<br />
@@ -220,16 +224,14 @@ export default {
   data() {
     return {};
   },
-
-  computed: {},
-  created() {},
-  mounted() {},
-  components: {},
   methods: {
-    open(url) {
-        window.open(url, '_blank')
-      },
-  },
+    toPage() {
+      this.$router.push({
+        name: "registerMail",
+        params: {}
+      });
+    }
+  }
 };
 </script>
 

@@ -40,7 +40,7 @@ module.exports = {
             // change xxx-api/login => mock/login
             // detail: https://cli.vuejs.org/config/#devserver-proxy
             [process.env.VUE_APP_BASE_API]: {
-                target: `http://localhost:8080/awab/kouzakaisetu/web`,
+                target: `http://localhost:8080/gunmab/visa/web`,
                 changeOrigin: true,
                 ws: false,
                 pathRewrite: {
