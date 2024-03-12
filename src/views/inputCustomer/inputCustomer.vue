@@ -23,7 +23,6 @@
 
       </el-col>
     </el-row>
-
     <el-row>
       <el-col :span="24" class="top_waring">
         撮影した書類から読み取った情報が、入力フィールドに反映されています。誤りがないかご確認いただき、必要に応じて修正をお願いいたします。
@@ -55,7 +54,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="name_last" id="name_last" class="input_inner_100" v-model.trim="form.name_last"
-                      placeholder="9文字まで（例）群馬" :maxlength="9" @blur="halfToFull('name_last')"
+                      placeholder="10文字まで（例）群馬" :maxlength="10" @blur="halfToFull('name_last')"
                       @input="deleteAllBackgroundColor(['name_last']),noPlace('name_last')">
                     </el-input>
                   </el-col>
@@ -70,7 +69,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="name_first" id="name_first" class="input_inner_100" v-model.trim="form.name_first"
-                      :maxlength="9" @blur="halfToFull('name_first')" placeholder="9文字まで（例）太郎"
+                      :maxlength="10" @blur="halfToFull('name_first')" placeholder="10文字まで（例）太郎"
                       @input="deleteAllBackgroundColor(['name_first']),noPlace('name_first')"></el-input>
                   </el-col>
                 </el-row>
@@ -99,7 +98,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_last_name" id="kana_last_name" class="input_inner_100"
-                      v-model.trim="form.kana_last_name" placeholder="19文字まで（例）グンマ" :maxlength="19"
+                      v-model.trim="form.kana_last_name" placeholder="20文字まで（例）グンマ" :maxlength="20"
                       @blur="changeLastKanaName('kana_last_name'),jatoEn()" @input="kanaOnInput('kana_last_name','kana_last_name')">
                     </el-input>
                   </el-col>
@@ -114,8 +113,8 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_first_name" id="kana_first_name" class="input_inner_100"
-                      v-model.trim="form.kana_first_name" :maxlength="19" @blur="changeLastKanaName('kana_first_name'),jatoEn()"
-                      placeholder="19文字まで（例）タロウ" @input="kanaOnInput('kana_first_name','kana_first_name')"></el-input>
+                      v-model.trim="form.kana_first_name" :maxlength="20" @blur="changeLastKanaName('kana_first_name'),jatoEn()"
+                      placeholder="20文字まで（例）タロウ" @input="kanaOnInput('kana_first_name','kana_first_name')"></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -141,9 +140,9 @@
    
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="name_en" id="name_en" class="input_inner_100" v-model.trim="form.name_en"
-                      placeholder="18文字まで（例）TARO GUNMA" :maxlength="18" @blur="halfToFull('name_en')"
-                      @input="deleteAllBackgroundColor(['name_en']),noPlace('name_en')">
+                    <el-input ref="name_en" id="name_en" class="input_inner_100"  v-model="form.name_en"
+                      placeholder="18文字まで（例）TARO GUNMA" :maxlength="50" @blur="trimandUpdace()"
+                      @input="deleteAllBackgroundColor(['name_en']),EN()">
                     </el-input>
                   </el-col>
                 </el-row>
@@ -200,9 +199,9 @@
               </el-col>
 
             </el-row>
-             <el-row class="flex_bet">
+             <el-row v-if="age == 15" class="flex_bet">
               <el-col :xs="24" :sm="11">
-                 <el-checkbox v-model="studentCode" style="margin:10px 5px 0">私は中学生ではありません</el-checkbox>
+                 <el-checkbox ref="studentCode" id="studentCode" v-model="studentCode" style="margin:10px 5px 0">私は中学生ではありません</el-checkbox>
               </el-col>
             </el-row>
           </div>
@@ -334,7 +333,7 @@
                   </el-col>
                   <el-col :xs="24" :sm="10" class="">
                     <el-input ref="address_other" id="address_other" class="input_inner_100"
-                      v-model="form.address_other" placeholder="20文字まで" :maxlength="20"
+                      v-model="form.address_other" placeholder="80文字まで" :maxlength="80"
                       @blur="halfToFull('address_other')" @input="kanaOnInput01('address_other','address_other')">
                     </el-input>
                   </el-col>
@@ -505,7 +504,7 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l" id="checkList">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
-            <el-radio-group v-model="account_reason">
+            <el-radio-group v-model="form.account_reason">
                     <el-radio :label="'1'">会社員・会社役員</el-radio>
                     <el-radio :label="'2'">自営業・自由業</el-radio>
                     <el-radio :label="'3'">年金受給</el-radio>
@@ -594,6 +593,23 @@
           </div>
         </el-col>
       </el-row>
+
+      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">お勤め先・学校名（フリガナ）
+              <span class="flex_center border_red_around" style="font-weight: normal;">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col ref='sex' :xs="24" :sm="18" class="back_wight border_l">
+           <div class="content_ input_01 flex_c_c">
+           <el-input ref="work_kana_address" id="work_kana_address" class="input_inner_100"
+                      v-model.trim="form.work_kana_address" :maxlength="20" @blur="changeLastKanaName('work_kana_address')"
+                      placeholder="20文字まで（例）○○ショウジ" @input="kanaOnInput('work_kana_address','work_kana_address')"></el-input>
+           </div>
+        </el-col>
+      </el-row>
       <!-- -------------- -->
       <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
@@ -680,8 +696,8 @@
                   <el-col :xs="24" :sm="15">
                     <el-row class="flex_center" style="justify-content: flex-start;">
                       <el-col :xs="16" :sm="16" class="">
-                        <el-input ref="zip_code" id="zip_code" class="input_inner_100" v-model="form.zip_code" type='tel'
-                          placeholder="半角数字７文字（ハイフンなし）" :maxlength="7" @input="deleteAllBackgroundColor(['zip_code']),replaceNum('zip_code')" @blur="toSBCNum('zip_code')">
+                        <el-input ref="work_zip_code" id="work_zip_code" class="input_inner_100" v-model="form.work_zip_code" type='tel'
+                          placeholder="半角数字７文字（ハイフンなし）" :maxlength="7" @input="deleteAllBackgroundColor(['work_zip_code']),replaceNum('work_zip_code')" @blur="toSBCNum('work_zip_code')">
                         </el-input>
                       </el-col>
                       <el-col :xs="8" :sm="5" class="flex_center">
@@ -704,8 +720,8 @@
                   </el-col>
                   <el-col :xs="24" :sm="10" class="">
 
-                    <el-select ref="address_pref" id="address_pref" v-model="form.address_pref" placeholder="選択してください"
-                      style="width: 100%" @change="deleteAllBackgroundColor(['address_pref'])">
+                    <el-select ref="work_address_pref" id="work_address_pref" v-model="form.work_address_pref" placeholder="選択してください"
+                      style="width: 100%" @change="deleteAllBackgroundColor(['work_address_pref'])">
                       <el-option-group v-for="group in address_pref_list" :key="group.label" :label="group.label">
                         <el-option v-for="item in group.options" :key="item.label" :label="item.label"
                           :value="item.label">
@@ -726,9 +742,9 @@
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="10" class="">
-                    <el-input ref="address_city" id="address_city" class="input_inner_100" v-model="form.address_city"
-                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('address_city')"
-                      @input="deleteAllBackgroundColor(['address_city'])">
+                    <el-input ref="work_address_city" id="work_address_city" class="input_inner_100" v-model="form.work_address_city"
+                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('work_address_city')"
+                      @input="deleteAllBackgroundColor(['work_address_city'])">
                     </el-input>
                   </el-col>
                 </el-row>
@@ -744,9 +760,9 @@
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="10" class="">
-                    <el-input ref="address_number" id="address_number" class="input_inner_100" v-model="form.address_number"
-                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('address_number')"
-                      @input="deleteAllBackgroundColor(['address_number'])">
+                    <el-input ref="work_address_number" id="work_address_number" class="input_inner_100" v-model="form.work_address_number"
+                      placeholder="20文字まで" :maxlength="20" @blur="halfToFull('work_address_number')"
+                      @input="deleteAllBackgroundColor(['work_address_number'])">
                     </el-input>
                   </el-col>
                 </el-row>
@@ -761,16 +777,31 @@
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="10" class="">
-                    <el-input ref="address_other" id="address_other" class="input_inner_100"
-                      v-model="form.address_other" placeholder="20文字まで" :maxlength="20"
-                      @blur="halfToFull('address_other')" @input="kanaOnInput01('address_other','address_other')">
+                    <el-input ref="work_address_other" id="work_address_other" class="input_inner_100"
+                      v-model="form.work_address_other" placeholder="80文字まで" :maxlength="80"
+                      @blur="halfToFull('work_address_other')" @input="kanaOnInput01('work_address_other','work_address_other')">
                     </el-input>
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
-
           </div>
+        </el-col>
+      </el-row>
+        <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-col :xs="24" :sm="6" class="border_r">
+          <div class="flex_center tittle_out">
+            <span class="flex_title font_w">お勤め先・学校住所（フリガナ）
+              <span class="flex_center border_red_around" style="font-weight: normal;">必須</span>
+            </span>
+          </div>
+        </el-col>
+        <el-col ref='sex' :xs="24" :sm="18" class="back_wight border_l">
+           <div class="content_ input_01 flex_c_c">
+           <el-input ref="work_kana_address" id="work_kana_address" class="input_inner_100"
+                      v-model.trim="form.work_kana_address" :maxlength="130" @blur="changeLastKanaName('work_kana_address')"
+                      placeholder="130文字まで" @input="kanaOnInput('work_kana_address','work_kana_address')"></el-input>
+           </div>
         </el-col>
       </el-row>
     </div>
@@ -789,7 +820,7 @@
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import SetDom from "@/utils/setDomErr.js";
-import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,PATTERFULL,kanaToRoman} from "@/utils/validate.js";
+import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,PATTERFULL,kanaToRoman,FullTohalf,getUserAge } from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
 import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
@@ -799,27 +830,8 @@ import {decrypt} from '../../utils/jse'
 export default {
   data() {
     return {
-      textarea: "",
-      f_value: "",
       value: "",
-      value1: "",
-      valuedate: "",
-      tele_flg: "",
-      firstinput: false,
-      secondInput: false,
       show: "",
-      checked01: "",
-      checked02: "",
-      checked03: "",
-      checked04: "",
-      checked05: "",
-      checked06: "",
-      checked07: "",
-      checked08: "",
-      checked09: "",
-      checked10: "",
-      checked11: "",
-      account_reason:'',
       checkList: [],
       store_list:[
         {store_number:"011",store_nm:"株式会社○○○○"},
@@ -843,7 +855,7 @@ export default {
         address_number:"",
         zip_code: "", //郵便番号
         address_other: "", //マンション・部屋番号
-
+        account_reason:'',
         work_name: "",
         work_address: "",
         phone_number01: "",
@@ -856,12 +868,17 @@ export default {
         work_tele_number02: "",
         work_tele_number03: "",
         name_en:'',
-        kana_address:''
+        kana_address:'',
+        work_zip_code:'',
+        work_address_pref:'',
+        work_address_city:'',
+        work_address_number:'',
+        work_address_other:'',
+        work_kana_address:''
       },
       address_pref_list: constants.prefecturesCodeList,
       DomList: [],
       id_document_type_1: "", //本人確認書類コード
-      name: "", //氏名
       birthday: "", //生年月日
       address: "", // 住所
       sex: "", //性別
@@ -870,7 +887,8 @@ export default {
       maxDate: new Date(2999, 10, 1),
       show: false,
       initApiflg: '',
-      studentCode:false
+      studentCode:false,
+      age:0
 
     };
   },
@@ -911,6 +929,15 @@ export default {
         let num = this.form[key]+'';
         this.form[key] = num.replace(/[^0-9]/g, "");
     },
+  EN() {
+        let num = this.form.name_en+'';
+        console.log(this.form.name_en);
+        this.form.name_en = num.replace(/[^a-zA-Z\s]/g, '');
+    },
+  trimandUpdace(){
+    this.form.name_en =  this.form.name_en.trim().toLocaleUpperCase()
+
+  },
       //kana入力限制
   kanaOnInput(eventName,id) {
     this.deleteBackgroundColor(eventName,id)
@@ -1019,7 +1046,10 @@ export default {
       this.form[key] = toSBC(this.form[key].trim());
     },
     jatoEn(){
-      this.form.name_en = kanaToRoman(this.form.kana_first_name+this.form.kana_last_name)
+      if(isEmpty( this.form.name_en) && !isEmpty(this.form.kana_last_name)&&!isEmpty(this.form.kana_first_name)){
+          this.form.name_en = kanaToRoman(this.form.kana_last_name+' '+this.form.kana_first_name).toUpperCase()
+      }
+      
     },
     confirm(value) {
       this.deleteAllBackgroundColor(["birthday01"]);
@@ -1037,6 +1067,8 @@ export default {
       this.birthday = year + '/' + mouth + '/' + day
       this.currentDate = new Date(year, mouth-1, day);
       this.show = false
+      this.age = getUserAge(this.birthday,true);
+      console.log(this.age);
     },
     deleteBackgroundColor(id) {
       SetDom.deleteBackgroundColor(id);
@@ -1087,15 +1119,20 @@ export default {
         },100)
       },300)
     },
+    banjiao(){
+     console.log(this.form.kana_last_name+" "+this.form.kana_first_name);
+     console.log(FullTohalf(this.form.kana_last_name+" "+this.form.kana_first_name)); 
+    },
     check() {
       this.deleteAllBackgroundColor(['name_first', 'sex', 'name_last', 'kana_last_name', 'kana_first_name', 'birthday01', 'birthday02', 'id_phone_number', "id_phone_number_2",
         "id_phone_number_3","address_number", "tele_number", "tele_number_2", "tele_number_3", 'p3_i4', 'id_work_name',
         "id_work_tele_number", "id_work_tele_number_1", "id_work_tele_number_2",]);
 
+      // お名前（漢字）			
       if (isEmpty(this.form.name_last)) {
         this.Err("name_last", MESSAGE.MsgErrCheck026, "name_last");
         return false;
-      } else if (this.form.name_last.length > 15|| !PATTERFULL(this.form.name_last)) {
+      } else if (this.form.name_last.length > 10|| !PATTERFULL(this.form.name_last)) {
         this.Err("name_last", MESSAGE.MsgErrCheck027, "name_last");
         return false;
       }
@@ -1103,16 +1140,21 @@ export default {
       if (isEmpty(this.form.name_first)) {
         this.Err("name_first", MESSAGE.MsgErrCheck028, "name_first");
         return false;
-      } else if (this.form.name_first.length > 15|| !PATTERFULL(this.form.name_first)) {
+      } else if (this.form.name_first.length > 10|| !PATTERFULL(this.form.name_first)) {
         this.Err("name_first", MESSAGE.MsgErrCheck029, "name_first");
         return false;
       }
 
+      if((this.form.name_last+"　"+this.form.name_first).length>10){
+       this.Errs(["name_last", "name_first"],MESSAGE.MsgErrCheck077,"name_last");
+        return false;
+      }
 
+      //お名前（フリガナ）
       if (isEmpty(this.form.kana_last_name)) {
         this.Err("kana_last_name", MESSAGE.MsgErrCheck030, "kana_last_name");
         return false;
-      } else if (this.form.kana_last_name.length > 15 || checkHal02(this.form.kana_last_name) || !PATTERFULL(this.form.kana_last_name)) {
+      } else if (this.form.kana_last_name.length > 20 || checkHal02(this.form.kana_last_name) || !PATTERFULL(this.form.kana_last_name)) {
         this.Err("kana_last_name", MESSAGE.MsgErrCheck031, "kana_last_name");
         return false;
       }
@@ -1121,10 +1163,35 @@ export default {
       if (isEmpty(this.form.kana_first_name)) {
         this.Err("kana_first_name", MESSAGE.MsgErrCheck032, "kana_first_name");
         return false;
-      } else if (this.form.kana_first_name.length > 15 || checkHal02(this.form.kana_first_name) || !PATTERFULL(this.form.kana_first_name)) {
-        this.Err("kana_first_name", MESSAGE.MsgErrCheck031, "kana_first_name");
+      } else if (this.form.kana_first_name.length > 20 || checkHal02(this.form.kana_first_name) || !PATTERFULL(this.form.kana_first_name)) {
+        this.Err("kana_first_name", MESSAGE.MsgErrCheck078, "kana_first_name");
         return false;
       }
+      //全角カナの姓と名合わせて２０文字以下								
+     if((this.form.kana_last_name+"　"+this.form.kana_first_name).length>20){
+        this.Errs(["kana_last_name", "kana_first_name"],MESSAGE.MsgErrCheck079,"kana_last_name");
+        return false;
+     }
+     //半角表現で２０文字を超過
+     if(FullTohalf(this.form.kana_last_name+" "+this.form.kana_first_name).length>20){
+        this.Errs(["kana_last_name", "kana_first_name"],MESSAGE.MsgErrCheck080,"kana_last_name");
+        return false;
+     }
+
+
+    // お名前（英語表記）
+    if (isEmpty(this.form.name_en)) {
+        this.Err("name_en", MESSAGE.MsgErrCheck081, "name_en");
+        return false;
+      } else if (this.form.name_en.length > 18|| !PATTERFULL(this.form.kana_first_name)) {
+        this.Err("name_en", MESSAGE.MsgErrCheck082, "name_en");
+        return false;
+      }else if(this.form.name_en.indexOf(' ') ==-1){
+        this.Err("name_en", MESSAGE.MsgErrCheck083, "name_en");
+        return false;
+      }
+
+
 
       //生日
       if (isEmpty(this.birthday)) {
@@ -1133,6 +1200,11 @@ export default {
         this.ErrOnlyColor("birthday02", "birthday02");
 
         this.scrollTop('birthday')
+        return false;
+      }
+
+      if(this.age == 15 && !this.studentCode){
+        this.Err("studentCode", MESSAGE.MsgErrCheck085, "studentCode");
         return false;
       }
       //性別
@@ -1169,27 +1241,19 @@ export default {
         this.Err("address_number",'丁目・地番を入力してください', "address_number");
         return false;
       } else if (this.form.address_number > 20 || !PATTERFULL(this.form.address_number)) {
-        this.Err("address_number",'丁目・地番は全角20文字までで入力してください', "address_number");
+        this.Err("address_number",'丁目・地番は全角20文字まで入力してください', "address_number");
         return false;
       }
 
       //マンション・部屋番号
       if (!isEmpty(this.form.address_other)) {
-        if(this.form.address_other > 20 || !Symbol02(toSBC(this.form.address_other.trim())) || !PATTERFULL(this.form.address_other)){
-        this.Err("address_other", MESSAGE.MsgErrCheck040, "address_other");
+        if(this.form.address_other > 80 || !Symbol02(toSBC(this.form.address_other.trim())) || !PATTERFULL(this.form.address_other)){
+        this.Err("address_other", MESSAGE.MsgErrCheck084, "address_other");
         return false;
         }
 
       }
 
-
-
-      if (isEmpty(this.tele_flg)) {
-        this.$message.error(MESSAGE.MsgErrCheck042);
-         this.scrollTop('tele_flg_checkbox')
-        return false;
-      }
-      if (this.tele_flg == "0" || this.tele_flg == "1") {
         let num03 =this.form.tele_number +this.form.tele_number_02 +this.form.tele_number_03;
         if (isEmpty(num03)) {
           this.Errs(["tele_number", "tele_number_2", "tele_number_3"],MESSAGE.MsgErrCheck043,"tele_number");
@@ -1198,8 +1262,7 @@ export default {
           this.Errs(["tele_number", "tele_number_2", "tele_number_3"],MESSAGE.MsgErrCheck044,"tele_number");
           return false;
         }
-      }
-      if (this.tele_flg == "0" || this.tele_flg == "2") {
+
         let num01 =this.form.phone_number01 +this.form.phone_number02 + this.form.phone_number03;
         if (isEmpty(num01)) {
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck045,"id_phone_number");
@@ -1208,8 +1271,6 @@ export default {
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck046,"id_phone_number");
           return false;
         }
-      }
-
 
       if (isEmpty(this.checkList)) {
         this.$message.error(MESSAGE.MsgErrCheck047);
@@ -1274,7 +1335,6 @@ export default {
        })
       }
       this.setState({
-        tele_flg: this.tele_flg,
         id_document_type_1: this.id_document_type_1,  //本人確認書類コード id_document_type_1_1
         birthday: this.birthday,  //生年月日
         address: this.address,// 住所
@@ -1294,9 +1354,7 @@ export default {
         tele_number01: this.form.tele_number,
         tele_number02: this.form.tele_number_02,
         tele_number03: this.form.tele_number_03,
-        job_kbn:JSON.stringify( this.checkList.sort((a, b) => {
-          return a - b;
-        })),
+
         work_name: this.form.work_name,
         work_tele_number01: this.form.work_tele_number01,
         work_tele_number02: this.form.work_tele_number02,
@@ -1310,7 +1368,6 @@ export default {
     getState() {
 
       this.initApiflg =decrypt(this.$store.state.user.initApiflg);
-      this.tele_flg = decrypt(this.$store.state.user.tele_flg);
       this.form.name_first = decrypt(this.$store.state.user.name_first);
       this.form.name_last = decrypt(this.$store.state.user.name_last);
       this.form.kana_last_name = decrypt(this.$store.state.user.kana_last_name);
@@ -1324,14 +1381,12 @@ export default {
       this.form.address_city = decrypt(this.$store.state.user.address_city);
       this.form.address_number = decrypt(this.$store.state.user.address_number);
       this.form.address_other = decrypt(this.$store.state.user.address_other);
-  
       this.form.phone_number01 = decrypt(this.$store.state.user.phone_number01);
       this.form.phone_number02 = decrypt(this.$store.state.user.phone_number02);
       this.form.phone_number03 = decrypt(this.$store.state.user.phone_number03);
       this.form.tele_number = decrypt(this.$store.state.user.tele_number01);
       this.form.tele_number_02 = decrypt(this.$store.state.user.tele_number02);
       this.form.tele_number_03 = decrypt(this.$store.state.user.tele_number03);
-      this.checkList = decrypt(this.$store.state.user.job_kbn)==''?[]:JSON.parse(decrypt(this.$store.state.user.job_kbn));
       this.form.work_name = decrypt(this.$store.state.user.work_name);
       this.form.work_tele_number01 = decrypt(this.$store.state.user.work_tele_number01);
       this.form.work_tele_number02 = decrypt(this.$store.state.user.work_tele_number02);

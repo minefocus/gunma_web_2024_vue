@@ -113,9 +113,9 @@
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="name_first" id="name_first" class="input_inner_100" v-model.trim="form.name_first"
-                      :maxlength="15" @blur="halfToFull('name_first')" placeholder="半角数字7桁"
-                      @input="deleteAllBackgroundColor(['name_first']),noPlace('name_first')"></el-input>
+                    <el-input ref="account_number" id="account_number" class="input_inner_100" v-model.trim="form.account_number"
+                      :maxlength="15" @blur="halfToFull('account_number')" placeholder="半角数字7桁"
+                      @input="deleteAllBackgroundColor(['account_number']),noPlace('account_number')"></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -210,9 +210,7 @@
                           <el-col :xs="24" :sm="24" class="">
                             <el-input ref="id_online_password" id="id_online_password" v-model="form.online_password" 
                               type="password" class="input_inner_100" maxlength="6" placeholder="半角数字4桁" show-password
-                              @blur="toSBCNum('online_password')" @input="
-                                        deleteAllBackgroundColor(['id_online_password'])
-                                        " />
+                              @blur="toSBCNum('online_password')" @input="deleteAllBackgroundColor(['id_online_password'])" />
                           </el-col>
                         </el-row>
                       </el-col>
@@ -227,7 +225,6 @@
                           <div>
                            確認のため、再度入力してください
                           </div>
-      
                         </div>
                       </el-col>
 
@@ -321,7 +318,8 @@
           account_reason_other:"",
           tokushima_flg:'',
           introduce_flg:'',
-          introduce_nm:''
+          introduce_nm:'',
+          account_number:''
         },
         contractor_flg: "",
         account_store_number_list: [],

@@ -129,30 +129,7 @@
             </el-row>
 
             <el-divider></el-divider>
-            <el-row class="flex_bet">
-              <el-col :xs="24" :sm="24">
-                <el-row class="first_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
-                    <div class="flex_center">
-                      <span class="font_weight_bold">お名前（英文表記）</span>
-                    </div>
-                  </el-col>
-                </el-row>
-                <el-row class="second_title"> </el-row>
-                <el-row class="third_text">
-                  <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.name_last | NOVALUE }}
-                  </el-col>
-                </el-row>
-              </el-col>
-            </el-row>
-
-            <el-divider></el-divider>
-            <el-row class="flex_bet">
+             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
                   <el-col
@@ -201,6 +178,30 @@
             </el-row>
 
             <el-divider></el-divider>
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col
+                    :xs="24"
+                    :sm="24"
+                    style="display: flex; justify-content: space-between"
+                  >
+                    <div class="flex_center">
+                      <span class="font_weight_bold">お名前（英文表記）</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="second_title"> </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{ pageF.name_last | NOVALUE }}
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+
+            <el-divider></el-divider>
+           
 
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
@@ -215,6 +216,11 @@
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
                     {{ pageF.birthday | NOVALUE }}
+                  </el-col>
+                </el-row>
+                    <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    私は中学生ではありません
                   </el-col>
                 </el-row>
               </el-col>
@@ -249,7 +255,7 @@
                     style="display: flex; justify-content: space-between"
                   >
                     <div class="">
-                      <span class="font_weight_bold">住所</span>
+                      <span class="font_weight_bold">自宅住所（漢字）</span>
                     </div>
                   </el-col>
                 </el-row>
@@ -333,27 +339,27 @@
                     {{ pageF.address_other | NOVALUE }}
                   </el-col>
                 </el-row>
-                <el-row class="second_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
-                    <div class=" ">
-                      <span class="" style=""
-                        >マンション・部屋番号（フリガナ）</span
-                      >
+
+              </el-col>
+            </el-row>
+            <el-divider></el-divider>
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col :xs="24" :sm="24">
+                    <div class="">
+                      <span class="font_weight_bold">自宅住所（フリガナ）</span>
                     </div>
                   </el-col>
                 </el-row>
+
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.kana_address_other | NOVALUE }}
+                     {{ pageF.address_other | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
-
             <el-divider></el-divider>
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
@@ -425,8 +431,43 @@
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
                   <el-col :xs="24" :sm="24">
+                    <div class="">
+                      <span class="font_weight_bold">お勤め先名・学校名呼称</span>
+                    </div>
+                  </el-col>
+                </el-row>
+
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                     {{ pageF.address_other | NOVALUE }}
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+            <el-divider></el-divider>
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col :xs="24" :sm="24">
                     <div class=" ">
-                      <span class="font_weight_bold">お勤め先（学校名）</span>
+                      <span class="font_weight_bold">お勤め先・学校名（漢字）</span>
+                    </div>
+                  </el-col>
+                </el-row>
+                <el-row class="third_text">
+                  <el-col :xs="24" :sm="24" class="">
+                    {{ pageF.work_name | NOVALUE }}
+                  </el-col>
+                </el-row>
+              </el-col>
+            </el-row>
+          <el-divider></el-divider>
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col :xs="24" :sm="24">
+                    <div class=" ">
+                      <span class="font_weight_bold">お勤め先・学校名（フリガナ）</span>
                     </div>
                   </el-col>
                 </el-row>
@@ -548,22 +589,21 @@
                     {{ pageF.address_other | NOVALUE }}
                   </el-col>
                 </el-row>
-                <el-row class="second_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
+              </el-col>
+            </el-row>
+            <el-divider></el-divider>
+            <el-row class="flex_bet">
+              <el-col :xs="24" :sm="24">
+                <el-row class="first_title">
+                  <el-col :xs="24" :sm="24">
                     <div class=" ">
-                      <span class="" style=""
-                        >マンション・部屋番号（フリガナ）</span
-                      >
+                      <span class="font_weight_bold">お勤め先・学校住所（フリガナ）</span>
                     </div>
                   </el-col>
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.kana_address_other | NOVALUE }}
+                    {{ pageF.work_name | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
