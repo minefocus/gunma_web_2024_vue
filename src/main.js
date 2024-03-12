@@ -36,6 +36,13 @@ Vue.filter('moneyFormat', money => {
 Object.keys(Allfilters.filters).forEach(key => {
     Vue.filter(key, Allfilters.filters[key])
 })
+Vue.directive('inputRestrict', {
+    bind: function(el) {
+      el.addEventListener('input', function(event) {
+        event.target.value = event.target.value.replace(/[^A-Za-z0-9\s]/g, '');
+      });
+    }
+  });
 const IE11RouterFix = {
     methods: {
         hashChangeHandler: function() { this.$router.push(window.location.hash.substring(1, window.location.hash.length)) },

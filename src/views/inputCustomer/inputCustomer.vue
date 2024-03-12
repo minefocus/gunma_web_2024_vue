@@ -502,7 +502,7 @@
             </span>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="18" class="back_wight border_l" id="checkList">
+        <el-col :xs="24" :sm="18" class="back_wight border_l" id="account_reason">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
             <el-radio-group v-model="form.account_reason">
                     <el-radio :label="'1'">会社員・会社役員</el-radio>
@@ -519,7 +519,7 @@
         </el-col>
       </el-row>
 
-        <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先名・学校名呼称
@@ -549,7 +549,7 @@
         </el-col>
       </el-row>
       <!-- -------------- -->
-      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="checkList01">
+      <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="checkList01">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先・学校名（漢字）
@@ -581,7 +581,7 @@
                     <el-row class="flex_center_start">
                       <el-col :xs="24" :sm="24" class="" style="padding-top: 5px">
                         <el-input ref="id_work_name" id="id_work_name" @blur="halfToFull('work_name')" class="" 
-                          maxlength="60" v-model="form.work_name" placeholder="60文字まで（例）◯◯商事株式会社　◯◯営業所"
+                          maxlength="60" v-model="form.work_name" placeholder="60文字まで（例）○○商事"
                           @input="deleteAllBackgroundColor(['id_work_name'])">
                         </el-input>
                       </el-col>
@@ -594,7 +594,7 @@
         </el-col>
       </el-row>
 
-      <el-row class="flex_item_center border_ margin_1 mobile_margin back_all">
+      <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先・学校名（フリガナ）
@@ -604,9 +604,9 @@
         </el-col>
         <el-col ref='sex' :xs="24" :sm="18" class="back_wight border_l">
            <div class="content_ input_01 flex_c_c">
-           <el-input ref="work_kana_address" id="work_kana_address" class="input_inner_100"
-                      v-model.trim="form.work_kana_address" :maxlength="20" @blur="changeLastKanaName('work_kana_address')"
-                      placeholder="20文字まで（例）○○ショウジ" @input="kanaOnInput('work_kana_address','work_kana_address')"></el-input>
+           <el-input ref="work_name_kana" id="work_name_kana" class="input_inner_100"
+                      v-model.trim="form.work_name_kana" :maxlength="20" @blur="changeLastKanaName('work_name_kana')"
+                      placeholder="20文字まで（例）○○ショウジ" @input="kanaOnInput('work_name_kana','work_name_kana')"></el-input>
            </div>
         </el-col>
       </el-row>
@@ -857,6 +857,7 @@ export default {
         address_other: "", //マンション・部屋番号
         account_reason:'',
         work_name: "",
+        work_name_kana:"",
         work_address: "",
         phone_number01: "",
         phone_number02: "",
@@ -975,16 +976,13 @@ export default {
             if(!isEmpty(res.data.address_city)){
                 this.form.address_city= res.data.address_city
             }
-          
           }
-
       }).catch((error)=>{
           endLoading()
       })
       } catch (error) {
          endLoading()
       }
-
     },
     init() {
       let params = {
@@ -1254,6 +1252,25 @@ export default {
 
       }
 
+    if(halfToFull(this.form.zip_code+"　"+this.form.address_pref+"　"+this.form.address_city+"　"+this.form.address_number+"　"+this.form.address_other).length>80){
+      this.$message.error(MESSAGE.MsgErrCheck086);
+        this.scrollTop('account_reason')        
+        return false;
+    }
+
+
+       if (isEmpty(this.form.kana_address)) {
+          this.Err("kana_address",'自宅住所（フリガナ）のメイを入力してください', "kana_address");
+          return false;
+        } else if(this.form.kana_address > 130 || checkHal02(this.form.kana_address)|| !PATTERFULL(this.form.kana_address)){
+          this.Err("kana_address",'自宅住所（フリガナ）は全角130文字まで入力してください', "kana_address");
+          return false;
+        }else if (FullTohalf(this.form.kana_address) > 130) {
+          this.Err("kana_address",'自宅住所（フリガナ）は半角カナに変換した際に、130文字以内になるように入力してください。', "kana_address");
+          return false;
+        }
+      
+
         let num03 =this.form.tele_number +this.form.tele_number_02 +this.form.tele_number_03;
         if (isEmpty(num03)) {
           this.Errs(["tele_number", "tele_number_2", "tele_number_3"],MESSAGE.MsgErrCheck043,"tele_number");
@@ -1271,22 +1288,42 @@ export default {
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck046,"id_phone_number");
           return false;
         }
-
-      if (isEmpty(this.checkList)) {
+      //ご職業
+      if (isEmpty(this.form.account_reason)) {
         this.$message.error(MESSAGE.MsgErrCheck047);
-        this.scrollTop('checkList')        
+        this.scrollTop('account_reason')        
         return false;
       }
-
-
+      //お勤め先名・学校名呼称  todo
+      if(this.form.account_reason == 1 ||this.form.account_reason == 2 ||this.form.account_reason ==4 ||this.form.account_reason ==6 ||this.form.account_reason ==7||this.form.account_reason == 8){
+       if (isEmpty(this.form.work_name_code)) {
+        this.Err("work_name_code", "......", "work_name_code");
+        return false;
+      } 
+      
+      //お勤め先・学校名（漢字）
+      
       if (isEmpty(this.form.work_name)) {
-          this.Err("id_work_name", 'お勤め先（学校名）を入力してください', "id_work_name");
+          this.Err("id_work_name", 'お勤め先・学校名（漢字）を入力してください', "id_work_name");
           return false;
-        } else if (!isEmpty(this.form.work_name) && this.form.work_name.length > 60 || !PATTERFULL(this.form.work_name)) {
-        this.Err("id_work_name", 'お勤め先（学校名）は全角60文字までで入力してください', "id_work_name");
+        } else if ( this.form.work_name.length > 60 || !PATTERFULL(this.form.work_name)) {
+        this.Err("id_work_name", 'お勤め先（学校名）は全角60文字まで入力してください', "id_work_name");
         return false;
       }
-
+      //お勤め先・学校名（フリガナ）
+      if (isEmpty(this.form.work_name_kana)) {
+          this.Err("work_name_kana", 'お勤め先・学校名（フリガナ）を入力してください', "work_name_kana");
+          return false;
+        } else if ( this.form.work_name_kana.length > 20 || checkHal02(this.form.work_name_kana)|| !PATTERFULL(this.form.work_name_kana)) {
+        this.Err("work_name_kana", 'お勤め先・学校名（フリガナ）は全角20文字まで入力してください', "work_name_kana");
+        return false;
+      }else if (FullTohalf(this.form.work_name_kana) > 20) {
+          this.Err("kana_address",'お勤め先・学校名（フリガナ）は半角カナに変換した際に、20文字以内になるように入力してください。', "kana_address");
+          return false;
+        }
+      
+      }
+      //お勤め先電話番号
       let num02 = this.form.work_tele_number01 + this.form.work_tele_number02 + this.form.work_tele_number03;
 
       if (isEmpty(num02)) {
@@ -1297,13 +1334,58 @@ export default {
         return false;
       }
 
-      if(isEmpty(this.form.work_address) ){
-        this.Err("id_work_address",'お勤め先（学校）住所を入力してください', "id_work_address");
+
+      //郵便番号
+      if (isEmpty(this.form.work_zip_code)) {
+        this.Err("work_zip_code", MESSAGE.MsgErrCheck035, "work_zip_code");
         return false;
-      }else if (! this.form.work_address.length > 60 || !PATTERFULL(this.form.work_address)) {
-        this.Err("id_work_address", 'お勤め先（学校）住所は全角60文字までで入力してください', "id_work_address");
+      } else if (!checkHalNum(this.form.work_zip_code)||this.form.work_zip_code.length != 7) {
+        this.Err("work_zip_code",MESSAGE.MsgErrCheck036, "work_zip_code");
         return false;
       }
+
+
+      //都道府県
+      if (isEmpty(this.form.work_address_pref)) {
+        this.Err("work_address_pref", MESSAGE.MsgErrCheck037, "work_address_pref");
+        return false;
+      }
+      //市区町村・番地										
+      if (isEmpty(this.form.work_address_city)) {
+        this.Err("work_address_city", MESSAGE.MsgErrCheck038, "work_address_city");
+        return false;
+      } else if (this.form.work_address_city > 20 || !PATTERFULL(this.form.work_address_city)) {
+        this.Err("work_address_city",  MESSAGE.MsgErrCheck039, "work_address_city");
+        return false;
+      }
+
+      if (isEmpty(this.form.work_address_number)) {
+        this.Err("work_address_number",'丁目・地番を入力してください', "work_address_number");
+        return false;
+      } else if (this.form.work_address_number > 20 || !PATTERFULL(this.form.work_address_number)) {
+        this.Err("work_address_number",'丁目・地番は全角20文字まで入力してください', "work_address_number");
+        return false;
+      }
+
+      //マンション・部屋番号
+      if (!isEmpty(this.form.work_address_other)) {
+        if(this.form.work_address_other > 80 || !Symbol02(toSBC(this.form.work_address_other.trim())) || !PATTERFULL(this.form.work_address_other)){
+        this.Err("work_address_other", MESSAGE.MsgErrCheck084, "work_address_other");
+        return false;
+        }
+
+      }
+
+    if(halfToFull(this.form.work_zip_code+"　"+this.form.work_address_pref+"　"+this.form.work_address_city+"　"+this.form.work_address_number+"　"+this.form.work_address_other).length>80){
+      this.$message.error(MESSAGE.MsgErrCheck087);
+        this.scrollTop('account_reason')        
+        return false;
+    }
+
+
+
+
+
       return true;
     },
     showredio() {
