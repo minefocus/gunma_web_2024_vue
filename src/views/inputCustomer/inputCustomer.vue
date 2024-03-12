@@ -1382,7 +1382,16 @@ export default {
         return false;
     }
 
-
+  if (isEmpty(this.form.work_kana_address)) {
+          this.Err("work_kana_address", '自宅住所（フリガナ）を入力してください', "work_kana_address");
+          return false;
+        } else if ( this.form.work_kana_address.length > 130 || checkHal02(this.form.work_kana_address)|| !PATTERFULL(this.form.work_kana_address)) {
+        this.Err("work_kana_address", '自宅住所（フリガナ）は全角130文字まで入力してください', "work_kana_address");
+        return false;
+      }else if (FullTohalf(this.form.work_kana_address) > 130) {
+          this.Err("work_kana_address",'自宅住所（フリガナ）は半角カナに変換した際に、130文字以内になるように入力してください。', "work_kana_address");
+          return false;
+        }
 
 
 
