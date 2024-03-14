@@ -1097,9 +1097,12 @@ export function PasswordCheck(password) {
     // 2,取出所有的数字半角转换，
     // 3，不足4位的时候，前补零到4位进行check，后补零到4位进行check
     // 4，大于等于4位的时候，上4位，下4位分别check
-    let str = toSBC(decrypt(store.state.user.kana_address_other));
-    let number = str.match(/\d+/g).join("");
-    if (number.length < 4) {
+    let str = toSBC(decrypt(store.state.user.kana_address));
+    let number = str.match(/\d+/g);
+    if(number!=null){
+      number = number.join("")
+    
+    if (number.length < 4 ) {
       if (
         number.padStart(4, "0") == password ||
         number.padEnd(4, "0") == password
@@ -1113,6 +1116,27 @@ export function PasswordCheck(password) {
       }
     }
   }
+
+  let str02 = toSBC(decrypt(store.state.user.work_kana_address));
+  let number02 = str02.match(/\d+/g);
+  if(number02!=null){
+    number02 = number02.join("")
+  
+  if (number02.length < 4 ) {
+    if (
+      number02.padStart(4, "0") == password ||
+      number02.padEnd(4, "0") == password
+    ) {
+      return true;
+    }
+  }
+  if (number02.length >= 4) {
+    if (number02.slice(0, 4) == password || number02.slice(-4) == password) {
+      return true;
+    }
+  }
+}
+}
   return false;
 }
 

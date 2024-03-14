@@ -139,6 +139,13 @@ export function CHECK_AGE(data) {
   })
 }
 
+export function EKYC_BACK_INIT(data) {
+  return request({
+    url: API_PATH.EKYC_BACK_INIT,
+    method: REQ_METHOD.METHOD_POST,
+    data
+  })
+}
 
 
 

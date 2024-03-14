@@ -123,10 +123,10 @@
   </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters,mapMutations } from "vuex";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
 import { startLoading, endLoading } from "@/utils/loading";
-import { TAKE_PHOTO_POST } from "@/api/account/api.js";
+import { TAKE_PHOTO_POST,EKYC_BACK_INIT } from "@/api/account/api.js";
 import urlImage01 from "@/assets/img/img_residence@3x.png";
 
 import myMixin from "../mixin.js";
@@ -135,12 +135,12 @@ export default {
   data() {
     return {
       url01: urlImage01,
-
       form: {
-        tokushima_flg: "",
         introduce_flg: "",
-        introduce_cd: "",
+        application_seq:'',
+        application_id:''
       },
+      id_document_type_1:''
     };
   },
   mixins: [myMixin],
@@ -148,16 +148,40 @@ export default {
     ...mapGetters("user", ["getSeqNo"]),
   },
   mounted() {
-    // this.getUrl()
-    this.getState();
+    if (this.$route.query.hasOwnProperty('application_id')) {
+      this.form.application_id = this.$route.query.application_id
+    }
+    this.setState();
+    this.getMsg();
   },
   methods: {
+    ...mapMutations({
+      setSeqNo: "user/setSeqNo",
+      setApplication_1: "user/setApplication_1",
+      setState:"user/setState"
+    }),
+    getMsg(){
+
+      let params = {
+        application_id:this.form.application_id
+      };
+      startLoading();
+      EKYC_BACK_INIT(params).then((res) => {
+          popMessageFromApi(res);
+          endLoading();
+          if (res.success) {
+            this.id_document_type_1 = res.data.id_document_type;
+          }
+        })
+        .catch((err) => {
+          endLoading();
+        });
+    },
     getUrl() {
       let params = {
         seq_no: this.getSeqNo,
         redirect_url: "/gunmab/visa/#/inputCustomer",
-        introduce_cd: this.form.introduce_cd,
-        tokushima_flg: this.form.tokushima_flg,
+        application_seq: "2"
       };
       startLoading();
       TAKE_PHOTO_POST(params)
@@ -189,11 +213,12 @@ export default {
     goUrl() {
       window.open(this.toUrl);
     },
-    getState() {
-      this.form.tokushima_flg = decrypt(this.$store.state.user.tokushima_flg);
-      this.form.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
-      this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
-    },
+    setState() {
+      this.setState({
+        application_id_1: this.form.application_id,
+        id_document_type_1: this.id_document_type_1
+    })
+    }
   },
 };
 </script>

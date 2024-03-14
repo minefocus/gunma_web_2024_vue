@@ -148,7 +148,7 @@
                 </el-row>
               <el-row class="flex_bet padding_row">
               <el-col :xs="24" :sm="24" style="flex-direction: column">
-                <span class="_waring" style="color: red">姓名合わせて16文字以内で入力ください。<br>
+                <span class="_waring" style="color: red">姓名合わせて18文字以内で入力ください。<br>
                 文字数が足りない場合は、名をイニシャルにしてください。<br>
                 例）TAROU　GUNMAMAEBASHI<br>
                 　　→　T　GUNMAMAEBASHI
@@ -502,9 +502,9 @@
             </span>
           </div>
         </el-col>
-        <el-col :xs="24" :sm="18" class="back_wight border_l" id="account_reason">
+        <el-col :xs="24" :sm="18" class="back_wight border_l" id="job_kbn">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
-            <el-radio-group v-model="form.account_reason">
+            <el-radio-group v-model="form.job_kbn" @input="radioChange()">
                     <el-radio :label="'1'">会社員・会社役員</el-radio>
                     <el-radio :label="'2'">自営業・自由業</el-radio>
                     <el-radio :label="'3'">年金受給</el-radio>
@@ -519,7 +519,7 @@
         </el-col>
       </el-row>
 
-        <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
+        <el-row v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先名・学校名呼称
@@ -549,7 +549,7 @@
         </el-col>
       </el-row>
       <!-- -------------- -->
-      <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="checkList01">
+      <el-row v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 " class="flex_item_center border_ margin_1 mobile_margin back_all"  ref="checkList01">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先・学校名（漢字）
@@ -581,7 +581,7 @@
                     <el-row class="flex_center_start">
                       <el-col :xs="24" :sm="24" class="" style="padding-top: 5px">
                         <el-input ref="id_work_name" id="id_work_name" @blur="halfToFull('work_name')" class="" 
-                          maxlength="60" v-model="form.work_name" placeholder="60文字まで（例）○○商事"
+                          maxlength="10" v-model="form.work_name" placeholder="10文字まで（例）○○商事"
                           @input="deleteAllBackgroundColor(['id_work_name'])">
                         </el-input>
                       </el-col>
@@ -594,7 +594,7 @@
         </el-col>
       </el-row>
 
-      <el-row v-if="form.account_reason==1 ||form.account_reason==2 ||form.account_reason==4 ||form.account_reason==6 ||form.account_reason==7 ||form.account_reason==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
+      <el-row v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 " class="flex_item_center border_ margin_1 mobile_margin back_all">
         <el-col :xs="24" :sm="6" class="border_r">
           <div class="flex_center tittle_out">
             <span class="flex_title font_w">お勤め先・学校名（フリガナ）
@@ -855,7 +855,7 @@ export default {
         address_number:"",
         zip_code: "", //郵便番号
         address_other: "", //マンション・部屋番号
-        account_reason:'',
+        job_kbn:'',
         work_name: "",
         work_name_kana:"",
         work_address: "",
@@ -880,6 +880,7 @@ export default {
       address_pref_list: constants.prefecturesCodeList,
       DomList: [],
       id_document_type_1: "", //本人確認書類コード
+      id_document_type_2: "", //本人確認書類コード
       birthday: "", //生年月日
       address: "", // 住所
       sex: "", //性別
@@ -889,25 +890,31 @@ export default {
       show: false,
       initApiflg: '',
       studentCode:false,
-      age:0
-
+      age:0,
+      application_seq:''
     };
   },
   mixins:[myMixin],
   computed: {
-    ...mapGetters("user", ["getSeqNo", "getApplication","getAllVlues"]),
+    ...mapGetters("user", ["getSeqNo", "getApplication","getAllVlues","getApplication_2"]),
   },
   created() {
   },
   mounted() {
     document.getElementsByClassName('body_')[0].scrollTo(0, 0)
    if(!this.$store.state.page.isPc){
-    if (this.$route.query.hasOwnProperty('seq_no')) {
-      this.setSeqNo(decodeURIComponent(this.$route.query.seq_no));
-    }
-    if (this.$route.query.hasOwnProperty('application_id_1')) {
-      this.setApplication(this.$route.query.application_id_1);
-    }
+    // if (this.$route.query.hasOwnProperty('seq_no')) {
+    //   this.setSeqNo(decodeURIComponent(this.$route.query.seq_no));
+    // }
+     if (this.$route.query.hasOwnProperty('application_seq') &&   this.$route.query.hasOwnProperty('application_id')) {
+          this.application_seq = this.$route.query.application_id;
+          if( this.application_seq == 1){
+              this.setApplication_1(this.$route.query.application_id);   
+          }else{
+              this.setApplication_2(this.$route.query.application_id);
+          }
+     }
+ 
 
     this.getState();
     if (!this.initApiflg=='1') {
@@ -920,7 +927,8 @@ export default {
   methods: {
     ...mapMutations({
       setSeqNo: "user/setSeqNo",
-      setApplication: "user/setApplication",
+      setApplication_1: "user/setApplication_1",
+      setApplication_2: "user/setApplication_2",
       setState:"user/setState",
     }),
   noPlace(key){
@@ -985,8 +993,15 @@ export default {
       }
     },
     init() {
+      let applicationId ="";
+          if(this.application_seq == 1){
+              applicationId = this.getApplication
+          }else{
+              applicationId = getApplication_2
+          }
+      
       let params = {
-        application_id: this.getApplication,
+        application_id: applicationId,
       };
       startLoading();
       CUSTOMER_INPUT_INIT_POST(params)
@@ -995,7 +1010,12 @@ export default {
           popMessageFromApi(res,() => { this.$router.push({ name: "explanation", params: {}, }) });
           endLoading();
           if (res.success) {
-            this.id_document_type_1 = res.data.id_document_type; //本人確認書類コード
+              if(this.application_seq == 1){
+              this.id_document_type_1 = res.data.id_document_type; //本人確認書類コード
+          }else{
+              this.id_document_type_2 = res.data.id_document_type; //本人確認書類コード
+          }
+           
             this.form.name_last = res.data.name_last; //姓
             this.form.name_first = res.data.name_first; //名
             this.birthday = res.data.birthday; //生年月日
@@ -1012,27 +1032,28 @@ export default {
         });
     },
     toPage() {
-      if (this.check()) {
-        startLoading();
-        let data = {
-          seq_no:this.getSeqNo,
-          birthday:this.birthday.replace(/\//g, '')
-        }
-          CHECK_AGE(data).then(res=>{
-            popMessageFromApi(res);
-            endLoading();
-              if(res.success){
-                this.setValues();
-                this.$router.push({
-                name: "inputApplication",
-                params: {},
-              });
-            }
-          }).catch(err=>{
-            endLoading();
-          })
+      this.setValues();
+      // if (this.check()) {
+      //   startLoading();
+      //   let data = {
+      //     seq_no:this.getSeqNo,
+      //     birthday:this.birthday.replace(/\//g, '')
+      //   }
+      //     CHECK_AGE(data).then(res=>{
+      //       popMessageFromApi(res);
+      //       endLoading();
+      //         if(res.success){
+      //           this.setValues();
+      //           this.$router.push({
+      //           name: "inputApplication",
+      //           params: {},
+      //         });
+      //       }
+      //     }).catch(err=>{
+      //       endLoading();
+      //     })
     
-      }
+      // }
     },
 
     // 半角 转 全角
@@ -1067,6 +1088,11 @@ export default {
       this.show = false
       this.age = getUserAge(this.birthday,true);
       console.log(this.age);
+    },
+    radioChange(){
+      this.form.work_name_code = ""
+      this.form.work_name = ""
+
     },
     deleteBackgroundColor(id) {
       SetDom.deleteBackgroundColor(id);
@@ -1200,11 +1226,16 @@ export default {
         this.scrollTop('birthday')
         return false;
       }
-
+      if(this.age < 15){
+        this.ErrOnlyColor("birthday01", "birthday01");
+        this.ErrOnlyColor("birthday02", "birthday02");
+        return false;
+      }
       if(this.age == 15 && !this.studentCode){
         this.Err("studentCode", MESSAGE.MsgErrCheck085, "studentCode");
         return false;
       }
+      
       //性別
       if (isEmpty(this.sex)) {
         this.$message.error(MESSAGE.MsgErrCheck034);
@@ -1254,7 +1285,7 @@ export default {
 
     if(halfToFull(this.form.zip_code+"　"+this.form.address_pref+"　"+this.form.address_city+"　"+this.form.address_number+"　"+this.form.address_other).length>80){
       this.$message.error(MESSAGE.MsgErrCheck086);
-        this.scrollTop('account_reason')        
+        this.scrollTop('job_kbn')        
         return false;
     }
 
@@ -1289,13 +1320,13 @@ export default {
           return false;
         }
       //ご職業
-      if (isEmpty(this.form.account_reason)) {
+      if (isEmpty(this.form.job_kbn)) {
         this.$message.error(MESSAGE.MsgErrCheck047);
-        this.scrollTop('account_reason')        
+        this.scrollTop('job_kbn')        
         return false;
       }
       //お勤め先名・学校名呼称  todo
-      if(this.form.account_reason == 1 ||this.form.account_reason == 2 ||this.form.account_reason ==4 ||this.form.account_reason ==6 ||this.form.account_reason ==7||this.form.account_reason == 8){
+      if(this.form.job_kbn == 1 ||this.form.job_kbn == 2 ||this.form.job_kbn ==4 ||this.form.job_kbn ==6 ||this.form.job_kbn ==7||this.form.job_kbn == 8){
        if (isEmpty(this.form.work_name_code)) {
         this.Err("work_name_code", "......", "work_name_code");
         return false;
@@ -1306,8 +1337,8 @@ export default {
       if (isEmpty(this.form.work_name)) {
           this.Err("id_work_name", 'お勤め先・学校名（漢字）を入力してください', "id_work_name");
           return false;
-        } else if ( this.form.work_name.length > 60 || !PATTERFULL(this.form.work_name)) {
-        this.Err("id_work_name", 'お勤め先（学校名）は全角60文字まで入力してください', "id_work_name");
+        } else if ( this.form.work_name.length > 10 || !PATTERFULL(this.form.work_name)) {
+        this.Err("id_work_name", 'お勤め先（学校名）は全角10文字まで入力してください', "id_work_name");
         return false;
       }
       //お勤め先・学校名（フリガナ）
@@ -1378,20 +1409,20 @@ export default {
 
     if(halfToFull(this.form.work_zip_code+"　"+this.form.work_address_pref+"　"+this.form.work_address_city+"　"+this.form.work_address_number+"　"+this.form.work_address_other).length>80){
       this.$message.error(MESSAGE.MsgErrCheck087);
-        this.scrollTop('account_reason')        
+        this.scrollTop('job_kbn')        
         return false;
     }
 
-  if (isEmpty(this.form.work_kana_address)) {
+    if (isEmpty(this.form.work_kana_address)) {
           this.Err("work_kana_address", '自宅住所（フリガナ）を入力してください', "work_kana_address");
           return false;
-        } else if ( this.form.work_kana_address.length > 130 || checkHal02(this.form.work_kana_address)|| !PATTERFULL(this.form.work_kana_address)) {
+      } else if ( this.form.work_kana_address.length > 130 || checkHal02(this.form.work_kana_address)|| !PATTERFULL(this.form.work_kana_address)) {
         this.Err("work_kana_address", '自宅住所（フリガナ）は全角130文字まで入力してください', "work_kana_address");
         return false;
       }else if (FullTohalf(this.form.work_kana_address) > 130) {
           this.Err("work_kana_address",'自宅住所（フリガナ）は半角カナに変換した際に、130文字以内になるように入力してください。', "work_kana_address");
           return false;
-        }
+      }
 
 
 
@@ -1418,15 +1449,16 @@ export default {
     setValues() {
 
 
-      if(this.form.zip_code !=decrypt(this.$store.state.user.zip_code)){
+      // if(this.form.zip_code !=decrypt(this.$store.state.user.zip_code)){
 
-       this.setState({
-          account_reason:'',
-          account_reason_other:'',
-       })
-      }
+      //  this.setState({
+      //     job_kbn:'',
+      //     job_kbn_other:'',
+      //  })
+      // }
       this.setState({
         id_document_type_1: this.id_document_type_1,  //本人確認書類コード id_document_type_1_1
+        id_document_type_2: this.id_document_type_2,  //本人確認書類コード id_document_type_1_1
         birthday: this.birthday,  //生年月日
         address: this.address,// 住所
         sex: this.sex, //性別
@@ -1435,25 +1467,34 @@ export default {
         address_city: this.form.address_city, //住所（市区町村）
         address_number: this.form.address_number,
         address_other: this.form.address_other,//住所（その他）
+        kana_address:this.form.kana_address,
         name_first: this.form.name_first,
         name_last: this.form.name_last,
         kana_last_name: this.form.kana_last_name,
         kana_first_name: this.form.kana_first_name,
+        name_en:this.form.name_en,
         phone_number01: this.form.phone_number01,
         phone_number02: this.form.phone_number02,
         phone_number03: this.form.phone_number03,
         tele_number01: this.form.tele_number,
         tele_number02: this.form.tele_number_02,
         tele_number03: this.form.tele_number_03,
-
+        job_kbn: this.form.job_kbn,
+        work_name_code: this.form.work_name_code,
         work_name: this.form.work_name,
         work_tele_number01: this.form.work_tele_number01,
         work_tele_number02: this.form.work_tele_number02,
         work_tele_number03: this.form.work_tele_number03,
-
         initApiflg:this.initApiflg,
         work_address:this.form.work_address,
-        // work_zip_code:this.form.work_zip_code
+        work_name_kana:this.form.work_name_kana,
+        work_zip_code:this.form.work_zip_code,
+        work_address_pref:this.form.work_address_pref,
+        work_address_city:this.form.work_address_city,
+        work_address_number:this.form.work_address_number,
+        work_address_other:this.form.work_address_other,
+        work_address_other:this.form.work_address_other,
+        work_kana_address:this.form.work_kana_address
       });
     },
     getState() {
@@ -1463,6 +1504,7 @@ export default {
       this.form.name_last = decrypt(this.$store.state.user.name_last);
       this.form.kana_last_name = decrypt(this.$store.state.user.kana_last_name);
       this.form.kana_first_name = decrypt(this.$store.state.user.kana_first_name);
+      this.form.name_en = decrypt(this.$store.state.user.name_en);
       this.birthday = decrypt(this.$store.state.user.birthday);
       let date = this.birthday.split('/')
       this.currentDate = new Date(date[0], date[1]-1, date[2]);
@@ -1472,19 +1514,29 @@ export default {
       this.form.address_city = decrypt(this.$store.state.user.address_city);
       this.form.address_number = decrypt(this.$store.state.user.address_number);
       this.form.address_other = decrypt(this.$store.state.user.address_other);
+      this.form.kana_address =  decrypt(this.$store.state.user.kana_address);
       this.form.phone_number01 = decrypt(this.$store.state.user.phone_number01);
       this.form.phone_number02 = decrypt(this.$store.state.user.phone_number02);
       this.form.phone_number03 = decrypt(this.$store.state.user.phone_number03);
       this.form.tele_number = decrypt(this.$store.state.user.tele_number01);
       this.form.tele_number_02 = decrypt(this.$store.state.user.tele_number02);
       this.form.tele_number_03 = decrypt(this.$store.state.user.tele_number03);
+      this.form.job_kbn = decrypt(this.$store.state.user.job_kbn);
+      this.form.work_name_code = decrypt(this.$store.state.user.work_name_code);
       this.form.work_name = decrypt(this.$store.state.user.work_name);
       this.form.work_tele_number01 = decrypt(this.$store.state.user.work_tele_number01);
       this.form.work_tele_number02 = decrypt(this.$store.state.user.work_tele_number02);
       this.form.work_tele_number03 = decrypt(this.$store.state.user.work_tele_number03);
       this.form.work_address = decrypt(this.$store.state.user.work_address);
       this.id_document_type_1 = decrypt(this.$store.state.user.id_document_type_1);
-
+      this.id_document_type_2 = decrypt(this.$store.state.user.id_document_type_2);
+      this.form.work_name_kana = decrypt(this.$store.state.user.work_name_kana);
+      this.form.work_zip_code = decrypt(this.$store.state.user.work_zip_code);
+      this.form.work_address_pref = decrypt(this.$store.state.user.work_address_pref);
+      this.form.work_address_city = decrypt(this.$store.state.user.work_address_city);
+      this.form.work_address_number = decrypt(this.$store.state.user.work_address_number);
+      this.form.work_address_other = decrypt(this.$store.state.user.work_address_other);
+      this.form.work_kana_address = decrypt(this.$store.state.user.work_kana_address);
     },
   },
 };

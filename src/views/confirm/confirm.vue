@@ -106,7 +106,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.name_last | NOVALUE }}
+                    {{ form.name_last | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -122,7 +122,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.name_first | NOVALUE }}
+                    {{ form.name_first | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -155,7 +155,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.kana_last_name | NOVALUE }}
+                    {{ form.kana_last_name | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -171,7 +171,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.kana_first_name | NOVALUE }}
+                    {{ form.kana_first_name | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -194,7 +194,7 @@
                 <el-row class="second_title"> </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.name_last | NOVALUE }}
+                    {{ form.name_en | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -215,7 +215,7 @@
 
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.birthday | NOVALUE }}
+                    {{ form.birthday | NOVALUE }}
                   </el-col>
                 </el-row>
                     <el-row class="third_text">
@@ -239,7 +239,7 @@
 
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.sex == "1" ? "男性" : "女性" }}
+                    {{ form.sex == "1" ? "男性" : "女性" }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -272,7 +272,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.zip_code | NOVALUE }}
+                    {{ form.zip_code | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -288,7 +288,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_pref | NOVALUE }}
+                    {{ form.address_pref | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -304,7 +304,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_city | NOVALUE }}
+                    {{ form.address_city | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -320,7 +320,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_number | NOVALUE }}
+                    {{ form.address_number | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -336,7 +336,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_other | NOVALUE }}
+                    {{ form.address_other | NOVALUE }}
                   </el-col>
                 </el-row>
 
@@ -355,7 +355,7 @@
 
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                     {{ pageF.address_other | NOVALUE }}
+                     {{ form.kana_address | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -388,7 +388,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.tele_number_content | NOVALUE }}
+                    {{ form.tele_number_content | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -404,7 +404,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.phone_number_content | NOVALUE }}
+                    {{ form.phone_number_content | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -421,13 +421,13 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.phone_number_content | NOVALUE }}
+                    {{ form.job_kbn | Jobs }}
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
-            <el-divider></el-divider>
-            <el-row class="flex_bet">
+            <el-divider v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 "></el-divider>
+            <el-row class="flex_bet" v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 ">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
                   <el-col :xs="24" :sm="24">
@@ -439,13 +439,13 @@
 
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                     {{ pageF.address_other | NOVALUE }}
+                     {{ form.work_name_code | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
-            <el-divider></el-divider>
-            <el-row class="flex_bet">
+            <el-divider v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 "></el-divider>
+            <el-row class="flex_bet" v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 ">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
                   <el-col :xs="24" :sm="24">
@@ -456,13 +456,13 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.work_name | NOVALUE }}
+                    {{ form.work_name | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
             </el-row>
-          <el-divider></el-divider>
-            <el-row class="flex_bet">
+          <el-divider v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 "></el-divider>
+            <el-row class="flex_bet" v-if="form.job_kbn==1 ||form.job_kbn==2 ||form.job_kbn==4 ||form.job_kbn==6 ||form.job_kbn==7 ||form.job_kbn==8 ">
               <el-col :xs="24" :sm="24">
                 <el-row class="first_title">
                   <el-col :xs="24" :sm="24">
@@ -473,7 +473,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.work_name | NOVALUE }}
+                    {{ form.work_name_kana | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -490,7 +490,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.work_tele_number_content | NOVALUE }}
+                    {{ form.work_tele_number_content | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -522,7 +522,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.zip_code | NOVALUE }}
+                    {{ form.work_zip_code | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -538,7 +538,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_pref | NOVALUE }}
+                    {{ form.work_address_pref | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -554,7 +554,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_city | NOVALUE }}
+                    {{ form.work_address_city | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -570,7 +570,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_number | NOVALUE }}
+                    {{ form.work_address_number | NOVALUE }}
                   </el-col>
                 </el-row>
                 <el-row class="second_title">
@@ -586,7 +586,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.address_other | NOVALUE }}
+                    {{ form.work_address_other | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -603,7 +603,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageF.work_name | NOVALUE }}
+                    {{ form.work_kana_address | NOVALUE }}
                   </el-col>
                 </el-row>
               </el-col>
@@ -651,18 +651,6 @@
                   </el-col>
                 </el-row>
 
-                <!-- <el-row class="second_title">
-                  <el-col
-                    :xs="24"
-                    :sm="24"
-                    style="display: flex; justify-content: space-between"
-                  >
-                    <div class=" ">
-                      <span style="">デビットカ一ド</span>
-                    </div>
-                  </el-col>
-                </el-row> -->
-
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="" style="margin: 10px">
                     <img style="height: 160px" :src="url01" />
@@ -693,7 +681,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageS.account_store_nm | NOVALUE }}
+                    {{ form.account_store_nm | NOVALUE }}
                   </el-col>
                 </el-row>
 
@@ -710,7 +698,7 @@
                 </el-row>
                 <el-row class="third_text">
                   <el-col :xs="24" :sm="24" class="">
-                    {{ pageS.account_reason | NOVALUE }}
+                    {{ form.account_number | NOVALUE }}
                   </el-col>
                 </el-row>
 
@@ -857,7 +845,6 @@ export default {
       description: "",
       form: {
         introduce_flg: "",
-        tokushima_flg: "",
         introduce_cd: "",
       },
       flg: false,
@@ -868,7 +855,7 @@ export default {
   mixins: [myMixin],
   created() {},
   computed: {
-    ...mapGetters("user", ["getSeqNo", "getApplication"]),
+    ...mapGetters("user", ["getSeqNo", "getApplication","getDatas"]),
   },
   mounted() {
     document.getElementsByClassName("body_")[0].scrollTo(0, 0);
@@ -989,7 +976,7 @@ export default {
         introduce_flg: this.pageS.introduce_flg,
         introduce_cd: this.pageS.introduce_cd,
         introduce_nm: this.pageS.introduce_nm,
-        tokushima_flg: this.form.tokushima_flg,
+
       };
       startLoading();
       ACCOUNT_APPLICATION_POST(data)
@@ -1022,179 +1009,24 @@ export default {
       });
     },
     getState() {
-      this.pageF.name_first = decrypt(this.$store.state.user.name_first);
-      this.pageF.name_last = decrypt(this.$store.state.user.name_last);
-      this.pageF.kana_last_name = decrypt(
-        this.$store.state.user.kana_last_name
-      );
-      this.pageF.kana_first_name = decrypt(
-        this.$store.state.user.kana_first_name
-      );
-      this.pageF.address_city = decrypt(this.$store.state.user.address_city);
-      this.pageF.address_number = decrypt(
-        this.$store.state.user.address_number
-      );
-      this.pageF.address_pref = decrypt(this.$store.state.user.address_pref);
-
-      this.pageF.zip_code = decrypt(this.$store.state.user.zip_code);
-      this.pageF.address_other = decrypt(this.$store.state.user.address_other);
-      this.pageF.kana_address_other = decrypt(
-        this.$store.state.user.kana_address_other
-      );
-      this.pageF.birthday = decrypt(this.$store.state.user.birthday);
-      this.pageF.sex = decrypt(this.$store.state.user.sex);
-      this.pageF.tele_flg = decrypt(this.$store.state.user.tele_flg);
-      this.pageF.phone_number01 = decrypt(
-        this.$store.state.user.phone_number01
-      );
-      this.pageF.phone_number02 = decrypt(
-        this.$store.state.user.phone_number02
-      );
-      this.pageF.phone_number03 = decrypt(
-        this.$store.state.user.phone_number03
-      );
-      if (
-        !isEmpty(this.pageF.phone_number01) &&
-        !isEmpty(this.pageF.phone_number02) &&
-        !isEmpty(this.pageF.phone_number03)
-      ) {
-        this.pageF.phone_number_content =
-          this.pageF.phone_number01 +
-          "-" +
-          this.pageF.phone_number02 +
-          "-" +
-          this.pageF.phone_number03;
-      } else {
-        this.pageF.phone_number_content = "";
+      this.form = this.getDatas;
+      console.log(this.form);
+      if(!isEmpty(this.form.phone_number01)&&!isEmpty(this.form.phone_number02)&&!isEmpty(this.form.phone_number03)){
+        this.form.phone_number_content = this.form.phone_number01+'-'+this.form.phone_number02+'-'+this.form.phone_number03
+      }else{
+        this.form.phone_number_content = ''
       }
-      this.pageF.tele_number = decrypt(this.$store.state.user.tele_number01);
-      this.pageF.tele_number_02 = decrypt(this.$store.state.user.tele_number02);
-      this.pageF.tele_number_03 = decrypt(this.$store.state.user.tele_number03);
-      if (
-        !isEmpty(this.pageF.tele_number) &&
-        !isEmpty(this.pageF.tele_number_02) &&
-        !isEmpty(this.pageF.tele_number_03)
-      ) {
-        this.pageF.tele_number_content =
-          this.pageF.tele_number +
-          "-" +
-          this.pageF.tele_number_02 +
-          "-" +
-          this.pageF.tele_number_03;
-      } else {
-        this.pageF.tele_number_content = "";
+      if(!isEmpty(this.form.tele_number01)&&!isEmpty(this.form.tele_number02)&&!isEmpty( this.form.tele_number03)){
+          this.form.tele_number_content = this.form.tele_number01 + "-" + this.form.tele_number02 + "-"+ this.form.tele_number03
+      }else{
+          this.form.tele_number_content =''
       }
-      this.pageF.checkList =
-        decrypt(this.$store.state.user.job_kbn) == ""
-          ? []
-          : JSON.parse(decrypt(this.$store.state.user.job_kbn));
-      this.pageF.other_item = decrypt(this.$store.state.user.job_kbn_other);
-      this.pageF.work_name = decrypt(this.$store.state.user.work_name);
-      this.pageF.work_tele_number01 = decrypt(
-        this.$store.state.user.work_tele_number01
-      );
-      this.pageF.work_tele_number02 = decrypt(
-        this.$store.state.user.work_tele_number02
-      );
-      this.pageF.work_tele_number03 = decrypt(
-        this.$store.state.user.work_tele_number03
-      );
-
-      if (
-        !isEmpty(this.pageF.work_tele_number01) &&
-        !isEmpty(this.pageF.work_tele_number02) &&
-        !isEmpty(this.pageF.work_tele_number03)
-      ) {
-        this.pageF.work_tele_number_content =
-          this.pageF.work_tele_number01 +
-          "-" +
-          this.pageF.work_tele_number02 +
-          "-" +
-          this.pageF.work_tele_number03;
-      } else {
-        this.pageF.work_tele_number_content = "";
+      if(!isEmpty(this.form.work_tele_number01)&&!isEmpty(this.form.work_tele_number02)&&!isEmpty(this.form.work_tele_number03)){
+      this.form.work_tele_number_content = this.form.work_tele_number01 + "-"+ this.form.work_tele_number02 + "-" + this.form.work_tele_number03
+      }else{
+        this.form.work_tele_number_content = ''
       }
-
-      this.pageF.work_address = decrypt(this.$store.state.user.work_address);
-
-      this.pageS.account_store_number = decrypt(
-        this.$store.state.user.account_store_number
-      );
-      this.pageS.account_store_nm = decrypt(
-        this.$store.state.user.account_store_nm
-      );
-
-      this.pageS.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
-
-      this.pageS.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
-      this.pageS.introduce_nm = decrypt(this.$store.state.user.introduce_nm);
-
-      this.pageS.security_password = decrypt(
-        this.$store.state.user.security_password
-      );
-      this.pageS.security_password02 = decrypt(
-        this.$store.state.user.security_password02
-      );
-      this.pageS.contractor_flg = decrypt(
-        this.$store.state.user.contractor_flg
-      );
-
-      this.pageS.creditlimit = decrypt(this.$store.state.user.creditlimit);
-      this.pageS.online_password = decrypt(
-        this.$store.state.user.online_password
-      );
-      this.pageS.online_password02 = decrypt(
-        this.$store.state.user.online_password02
-      );
-
-      this.pageS.checklist =
-        decrypt(this.$store.state.user.account_purpose) == ""
-          ? []
-          : JSON.parse(decrypt(this.$store.state.user.account_purpose));
-      this.pageS.account_reason = decrypt(
-        this.$store.state.user.account_reason
-      );
-
-      this.pageS.account_purpose_other = decrypt(
-        this.$store.state.user.account_purpose_other
-      );
-      this.pageS.account_reason_other = decrypt(
-        this.$store.state.user.account_reason_other
-      );
-
-      this.pageS.cord_type = decrypt(this.$store.state.user.cord_type);
-
-      // 徳島県
-      this.form.tokushima_flg = decrypt(this.$store.state.user.tokushima_flg);
-      // 紹介コードはお持ちですか？
-      this.form.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
-      // 绍介code显示
-      this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
-
-      if (this.form.tokushima_flg === "0" || this.form.introduce_flg === "1") {
-        this.flg = true;
-      }
-
-      if (
-        this.form.introduce_flg === "0" &&
-        this.form.introduce_cd === "0172"
-      ) {
-        this.flg = true;
-      }
-      if (
-        (this.form.introduce_flg === "0" &&
-          this.form.introduce_cd === "0172") ||
-        this.form.introduce_flg === "1"
-      ) {
-        this.flg_2 = true;
-      }
-
-      if (
-        this.form.introduce_flg === "0" &&
-        this.form.introduce_cd !== "0172"
-      ) {
-        this.flg_3 = true;
-      }
+      
     },
   },
 };

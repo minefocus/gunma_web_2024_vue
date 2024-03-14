@@ -33,10 +33,7 @@
         </div>
       </el-col>
     </el-row>
-
     <div style="width: 100%; margin-top: 10px" class="back_img_">
-     
-      <!-- -------------- -->
      <el-row class="border_ margin_1 mobile_margin back_all
             flex_center_web">
         <el-col :xs="24" :sm="6" class="border_r">
@@ -48,24 +45,13 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c">
-            <!-- <el-row class="">
-              <el-col :span="24">
-                <div class="weight">デビットカ一ド</div>
-              </el-col>
-            </el-row> -->
-
             <el-row class="" ref="cord_type" id="cord_type">
               <el-row class="" ref="cord_type" id="cord_type">
                 <el-col :xs="24" :sm="12" class="flex_center" style="height: 180px">
-    
-                    <img style="height: 170px; width: 280px" :src="url01" @click="cord_typeBtn('0')" />
-                
+                    <img style="height: 170px; width: 280px" :src="url01" />
                 </el-col>
-
               </el-row>
             </el-row>
-
-          
           </div>
         </el-col>
       </el-row>
@@ -82,22 +68,21 @@
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="11">
                 <el-row class="row_height_100">
+                    <el-col :span="24">
+                    <div class="">
+                      <div class="p4_err">確認のため、再度ご入力ください。</div>
+                    </div>
+                  </el-col>
                   <el-col :xs="24" :sm="4">
                     <div class="tittle_out_in">
                       <span class="flex_title">店舗</span>
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
-                                           <el-select ref="account_store_number" id="account_store_number"
-                          v-model="form.account_store_number" placeholder="選択してください" style="width: 100%" @change="
-                            deleteAllBackgroundColor([
-                            'account_store_number',
-                            ])
-                            " @input="
-                            deleteAllBackgroundColor([
-                            'account_store_number',
-                            ])
-                            ">
+                      <el-select ref="account_store_number" id="account_store_number"
+                          v-model="form.account_store_number" placeholder="選択してください" style="width: 100%" 
+                          @change="deleteAllBackgroundColor(['account_store_number'])" 
+                          @input="deleteAllBackgroundColor(['account_store_number'])">
                           <el-option v-for="item in store_list" :key="item.store_number"
                             :label="item.store_nm" :value="item.store_number" />
                         </el-select>
@@ -114,8 +99,8 @@
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="account_number" id="account_number" class="input_inner_100" v-model.trim="form.account_number"
-                      :maxlength="15" @blur="halfToFull('account_number')" placeholder="半角数字7桁"
-                      @input="deleteAllBackgroundColor(['account_number']),noPlace('account_number')"></el-input>
+                      :maxlength="7" @blur="halfToFull('account_number')" placeholder="半角数字７桁"
+                      @input="deleteAllBackgroundColor(['account_number'])"></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -128,7 +113,6 @@
                     <div class="tittle_out_in">
                       <div class="weight">キャッシュカード暗証番号</div>
                     </div>
-
                   </el-col>
                 </el-row>
                 <el-row class="flex_bet">
@@ -146,7 +130,6 @@
                 </el-row>
               </el-col>
             </el-row>
-
             <el-row class="flex_bet">
               <el-col :xs="24" :sm="24">
                 <el-row>
@@ -158,7 +141,6 @@
                       <div class="p4_err">確認のため、再度ご入力ください。</div>
                     </div>
                   </el-col>
-
                   <el-col :xs="24" :sm="16">
                     <el-row class="flex_center_start">
                       <el-col :xs="24" :sm="24" class="">
@@ -176,10 +158,6 @@
           </div>
         </el-col>
       </el-row>
-      
-    
-
-      <!-- -------------- -->
       <el-row class="border_ margin_1 mobile_margin back_all
                 flex_center_web">
         <el-col :xs="24" :sm="6" class="border_r">
@@ -191,7 +169,6 @@
         </el-col>
         <el-col :xs="24" :sm="18" class="back_wight border_l">
           <div class="content_ input_01 flex_c_c" style="justify-content: flex-start">
-     
 
             <el-row >
               <el-col :span="24">
@@ -208,9 +185,9 @@
                       <el-col :xs="24" :sm="16">
                         <el-row class="flex_center_start">
                           <el-col :xs="24" :sm="24" class="">
-                            <el-input ref="id_online_password" id="id_online_password" v-model="form.online_password" 
-                              type="password" class="input_inner_100" maxlength="6" placeholder="半角数字4桁" show-password
-                              @blur="toSBCNum('online_password')" @input="deleteAllBackgroundColor(['id_online_password'])" />
+                            <el-input ref="id_debit_password" id="id_debit_password" v-model="form.debit_password" 
+                              type="password" class="input_inner_100" maxlength="4" placeholder="半角数字4桁" show-password
+                              @blur="toSBCNum('debit_password')" @input="deleteAllBackgroundColor(['id_debit_password'])" />
                           </el-col>
                         </el-row>
                       </el-col>
@@ -231,11 +208,11 @@
                       <el-col :xs="24" :sm="16">
                         <el-row class="flex_center_start">
                           <el-col :xs="24" :sm="24" class="">
-                            <el-input ref="id_online_password02" id="id_online_password02"
-                              v-model="form.online_password02" type="password" class="input_inner_100" maxlength="6"
-                              placeholder="半角数字4桁" show-password @blur="toSBCNum('online_password02')" @input="
+                            <el-input ref="id_debit_password02" id="id_debit_password02"
+                              v-model="form.debit_password02" type="password" class="input_inner_100" maxlength="4"
+                              placeholder="半角数字4桁" show-password @blur="toSBCNum('debit_password02')" @input="
                                           deleteAllBackgroundColor([
-                                          'id_online_password02',
+                                          'id_debit_password02',
                                           ])
                                           " />
                           </el-col>
@@ -272,7 +249,7 @@
 <script>
   import urlImage01 from "../../assets/img/card_visa@3x.png";
   import urlImage02 from "../../assets/img/picture02.png";
-  import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,similarBirthday,isSimilarToPhoneNumber,repeatNum,PATTERFULL} from "@/utils/validate.js";
+  import {isEmpty,checkHalNum,toSBC,halfToFull,PasswordCheck} from "@/utils/validate.js";
   import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
   import SetDom from "@/utils/setDomErr.js";
   import { GET_ACCOUNT_STORE } from "@/api/account/api.js";
@@ -284,55 +261,20 @@
     components: {},
     data() {
       return {
-        textarea: "",
-        f_value: "",
-        value: "",
-        valuedate: "",
-        show1: false,
-        show2: false,
-        date: "",
-        minDate: new Date(1980, 0, 1),
-        maxDate: new Date(2999, 10, 1),
-        currentDate: new Date(),
-        year: "",
-        month: "",
-        day: "",
-        options: [{ label: "1", value: "1" }],
         url01: urlImage01,
         url02: urlImage02,
-        checklist: [],
-        account_reason:"",
         form: {
-          value1: "",
           security_password: "",
           security_password02: "",
-          value4: "",
-          value5: "",
-          value6: "",
-          creditlimit: "",
-          online_password: "",
-          online_password02: "",
-          account_purpose_other: "",
-          introduce_cd: "",
+          debit_password: "",
+          debit_password02: "",
           account_store_number: "",
-          account_reason_other:"",
-          tokushima_flg:'',
-          introduce_flg:'',
-          introduce_nm:'',
           account_number:''
         },
-        contractor_flg: "",
         account_store_number_list: [],
         account_store_number_list_all: [],
-        store_list:[],
+        store_list:[{store_nm:'dadasd',store_number:'2'}],
         DomList: [],
-
-        cord_type: "0",
-        cord_type_err: false,
-        flg:false,
-        flg_2:false,
-        flg_3:false,
-        introduce_nm:""
       };
     },
     mixins: [myMixin],
@@ -343,9 +285,7 @@
     mounted() {
       document.getElementsByClassName('body_')[0].scrollTo(0, 0)
       if (!this.$store.state.page.isPc) {
-        this.cord_typeBtn("0");
         this.getList();
-        
       }
     },
     methods: {
@@ -367,45 +307,37 @@
         this.form[key] = num.replace(/[^0-9]/g, "");
       },
        getList() {
-        try {
-          let zip_code = decrypt(this.$store.state.user.zip_code);
-          let params = {
-            seq_no:this.getSeqNo,
-            zip_code_pre: zip_code.substring(0, 3),
-          };
-          startLoading();
-          GET_ACCOUNT_STORE(params)
-            .then((res) => {
-              popMessageFromApi(res);
-              
-              if (res.success) {
-                this.account_store_number_list = res.data.store_list;
-                this.account_store_number_list_all = res.data.all_store_list;
-                this.getState();
-              }
-              endLoading();
-            })
-            .catch((err) => {
-
-              endLoading();
-            });
-        } catch (error) { }
-      },
-      cord_typeBtn(value) {
-        this.cord_type_err = false;
-        this.cord_type = value;
-      },
-      showInput1() {
-        this.form.account_purpose_other = "";
+        this.getState();
+        // try {
+        //   let zip_code = decrypt(this.$store.state.user.zip_code);
+        //   let params = {
+        //     seq_no:this.getSeqNo,
+        //     zip_code_pre: zip_code.substring(0, 3),
+        //   };
+        //   startLoading();
+        //   GET_ACCOUNT_STORE(params)
+        //     .then((res) => {
+        //       popMessageFromApi(res);
+        //       if (res.success) {
+        //         this.account_store_number_list = res.data.store_list;
+        //         this.account_store_number_list_all = res.data.all_store_list;
+        //         
+        //       }
+        //       endLoading();
+        //     })
+        //     .catch((err) => {
+        //       endLoading();
+        //     });
+        // } catch (error) { }
       },
 
       toPage() {
         if (this.check()) {
           this.setState();
-          this.$router.push({
-            name: "confirm",
-            params: {},
-          });
+          // this.$router.push({
+          //   name: "confirm",
+          //   params: {},
+          // });
         }
       },
       goBack() {
@@ -424,16 +356,8 @@
       toSBCNum(key) {
         this.form[key] = toSBC(this.form[key].trim());
       },
-      showInputF() {
-        // this.form.contractor_number = '';
-        this.form.creditlimit = "";
-        this.form.online_password = "";
-        this.form.online_password02 = "";
-      },
 
-    clean(){
-      this.form.account_reason_other = ''
-    },
+
       deleteBackgroundColor(id) {
         SetDom.deleteAllBackgroundColor(id);
       },
@@ -481,170 +405,65 @@
       },300)
     },
       check() {
-        //お取引の目的
-        if (isEmpty(this.checklist)) {
-          this.$message.error(MESSAGE.MsgErrCheck054);
-          // SetDom.scallto(this.$refs.checklist);
-          this.scrollTop('checklist');
-          return false;
-        }
-
-        if (this.checklist.includes("99")) {
-          if (isEmpty(this.form.account_purpose_other)) {
-            this.Err(
-              "id_account_purpose_other",
-              MESSAGE.MsgErrCheck055,
-              "id_account_purpose_other"
-            );
+        //店舗
+        if(isEmpty(this.form.account_store_number)){
+            this.Err("account_store_number",MESSAGE.MsgErrCheck089,"account_store_number");
             return false;
-          } else if (this.form.account_purpose_other.length > 20 || !PATTERFULL(this.form.account_purpose_other)) {
-            this.Err("id_account_purpose_other",MESSAGE.MsgErrCheck056,"id_account_purpose_other");
+        }
+        //口座番号
+        if(isEmpty(this.form.account_number)){
+            this.Err("account_number",MESSAGE.MsgErrCheck090,"account_number");
             return false;
-          }
-        }
-
-
-      if(this.form.tokushima_flg === '0'  || this.form.introduce_flg ==='1' || (this.form.introduce_flg === '0' && this.form.introduce_cd === '0172')){
-            if(isEmpty(this.form.account_store_number)){
-             this.Err("account_store_number",MESSAGE.MsgErrCheck060,"account_store_number");
-             return false;
-            }
-        }
-
-        if((this.form.introduce_flg === '0' && this.form.introduce_cd === '0172') || this.form.introduce_flg ==='1'){
-            if(isEmpty(this.account_reason)){
-            this.$message.error(MESSAGE.MsgErrCheck074);
-            this.scrollTop('account_reason');
+        }else if(this.form.account_number.length>7){
+            this.Err("account_number",MESSAGE.MsgErrCheck091,"account_number");
             return false;
-            }
-            
-        if (this.account_reason.includes("99")) {
-          if (isEmpty(this.form.account_reason_other)) {
-            this.Err(
-              "account_reason_other",
-              MESSAGE.MsgErrCheck075,
-              "account_reason_other"
-            );
-            return false;
-          } else if (this.form.account_reason_other.length > 50|| !PATTERFULL(this.form.account_reason_other)) {
-            this.Err(
-              "account_reason_other",
-              MESSAGE.MsgErrCheck076,
-              "account_reason_other"
-            );
-            return false;
-          }
-        }
         }
 
-
-
-        if (isEmpty(this.cord_type)) {
-          this.$message.error(MESSAGE.MsgErrCheck004);
-          SetDom.scallto(this.$refs.cord_type);
-          this.cord_type_err = true;
-
-          return false;
-        }
         //キャッシュカード暗証番号
         if (isEmpty(this.form.security_password)) {
-          this.Err(
-            "id_security_password",
-            MESSAGE.MsgErrCheck061,
-            "id_security_password"
-          );
+          this.Err("id_security_password",MESSAGE.MsgErrCheck061,"id_security_password");
           return false;
-        } else if (
-          !checkHalNum(this.form.security_password) ||
-          this.form.security_password.length != 4 
-
-        ) {
-          this.Err(
-            "id_security_password",
-            MESSAGE.MsgErrCheck062,
-            "id_security_password"
-          );
+        } else if (!checkHalNum(this.form.security_password) ||this.form.security_password.length != 4 ) {
+          this.Err( "id_security_password", MESSAGE.MsgErrCheck062, "id_security_password" );
           return false;
-        }else if(
-          similarBirthday(this.form.security_password) ||
-          isSimilarToPhoneNumber(this.form.security_password) ||
-          repeatNum(this.form.security_password)){
-             this.Err(
-            "id_security_password",
-            MESSAGE.MsgErrCheck073,
-            "id_security_password"
-          );
-          return false;  
         }
+
         //キャッシュカード暗証番号（確認）
         if (isEmpty(this.form.security_password02)) {
-          this.Err(
-            "id_security_password02",
-            MESSAGE.MsgErrCheck063,
-            "id_security_password02"
-          );
+          this.Err("id_security_password02", MESSAGE.MsgErrCheck063, "id_security_password02");
           return false;
-        } else if (
-          !checkHalNum(this.form.security_password02) ||
-          this.form.security_password02.length != 4
-        ) {
-          this.Err(
-            "id_security_password02",
-            MESSAGE.MsgErrCheck064,
-            "id_security_password02"
-          );
+        } else if (!checkHalNum(this.form.security_password02) || this.form.security_password02.length != 4 ) {
+          this.Err( "id_security_password02", MESSAGE.MsgErrCheck064, "id_security_password02");
           return false;
         } else if (this.form.security_password02 != this.form.security_password) {
-          this.Err("id_security_password02", MESSAGE.MsgErrCheck065,"id_security_password02"
+           this.Err("id_security_password02", MESSAGE.MsgErrCheck065,"id_security_password02"
           );
           return false;
         }
-        //ご契約済みかどうか選択してください
-         if (isEmpty(this.contractor_flg)) {
-          this.$message.error('ご契約済みかどうか選択してください');
-        
-          return false
-         }
-        //1日あたりの振込限度額
-        if (this.contractor_flg == "1") {
-          if (isEmpty(this.form.creditlimit)) {
-            this.Err("id_creditlimit", MESSAGE.MsgErrCheck066, "id_creditlimit");
+
+          //デビットカード暗証番号
+          if (isEmpty(this.form.debit_password)) {
+            this.Err("id_debit_password",MESSAGE.MsgErrCheck068,"id_debit_password");
             return false;
-          } else if (this.form.creditlimit.replace(/,/g,'') < 0 || this.form.creditlimit.replace(/,/g,'') > 1000000) {
-            this.Err("id_creditlimit", MESSAGE.MsgErrCheck067, "id_creditlimit");
-            return false;
-          }
-          //インターネットバンキング暗証番号
-          if (isEmpty(this.form.online_password)) {
-            this.Err("id_online_password",MESSAGE.MsgErrCheck068,"id_online_password");
-            return false;
-          } else if (this.form.online_password.length != 6 ||!checkHalNum(this.form.online_password)) {
-            this.Err("id_online_password",MESSAGE.MsgErrCheck069, "id_online_password");
-            return false;
-          }else if(this.form.online_password=="000000" || this.form.online_password=="999999"){
-            this.Err("id_online_password",MESSAGE.MsgErrCheck073, "id_online_password");
+          } else if (this.form.debit_password.length != 4 ||!checkHalNum(this.form.debit_password)) {
+            this.Err("id_debit_password",MESSAGE.MsgErrCheck069, "id_debit_password");
             return false;
           }
 
-          if (isEmpty(this.form.online_password02)) {
-            this.Err(
-              "id_online_password02",
-              MESSAGE.MsgErrCheck070,
-              "id_online_password02"
-            );
+          if (isEmpty(this.form.debit_password02)) {
+            this.Err("id_debit_password02",MESSAGE.MsgErrCheck070,"id_debit_password02");
             return false;
-          } else if (this.form.online_password02.length != 6 ||!checkHalNum(this.form.online_password02)) {
-            this.Err("id_online_password02",MESSAGE.MsgErrCheck071,"id_online_password02");
+          } else if (this.form.debit_password02.length != 4 ||!checkHalNum(this.form.debit_password02)) {
+            this.Err("id_debit_password02",MESSAGE.MsgErrCheck071,"id_debit_password02");
             return false;
-          } else if (this.form.online_password02 != this.form.online_password) {
-            this.Err(
-              "id_online_password02",
-              MESSAGE.MsgErrCheck072,
-              "id_online_password02"
-            );
+          } else if (this.form.debit_password02 != this.form.debit_password) {
+            this.Err("id_debit_password02",MESSAGE.MsgErrCheck072,"id_debit_password02");
+            return false;
+          }else if (PasswordCheck(this.form.debit_password02)){
+            this.Errs(["id_debit_password", "id_debit_password02"],MESSAGE.MsgErrCheck092,"id_debit_password");
             return false;
           }
-        }
+        
         return true;
       },
       getName(code) {
@@ -665,70 +484,26 @@
       },
       //store设置值保存
       setState() {
-        let introduce_nm = this.getName(this.form.introduce_cd.substring(1,4));
-        let account_store_nm = this.getName(this.form.account_store_number);
+       let account_store_nm = this.getName(this.form.account_store_number);
         this.$store.commit("user/setState", {
-          cord_type: this.cord_type,
-           introduce_list: JSON.stringify(this.account_store_number_list_all),
-          introduce_cd: this.form.introduce_cd,
-          introduce_nm: introduce_nm,
+          introduce_list: JSON.stringify(this.account_store_number_list_all),
           account_store_number: this.form.account_store_number,
+          account_number: this.form.account_number,
           account_store_nm: account_store_nm,
           security_password: this.form.security_password,
           security_password02: this.form.security_password02,
-          contractor_flg: this.contractor_flg,
-          creditlimit: this.form.creditlimit,
-          online_password: this.form.online_password,
-          online_password02: this.form.online_password02,
-           account_purpose: JSON.stringify(this.checklist.sort((a, b) => {
-            return a - b;
-          })),
-          account_reason:this.account_reason,
-          account_purpose_other: this.form.account_purpose_other,
-          account_reason_other: this.form.account_reason_other,
+          debit_password: this.form.debit_password,
+          debit_password02: this.form.debit_password02
         });
       },
       getState() {
         this.form.account_store_number =decrypt(this.$store.state.user.account_store_number);
-        this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
+        this.form.account_number  =decrypt(this.$store.state.user.account_number);
         this.form.security_password = decrypt(this.$store.state.user.security_password);
         this.form.security_password02 =decrypt(this.$store.state.user.security_password02);
-        this.contractor_flg = decrypt(this.$store.state.user.contractor_flg);
-        this.form.creditlimit = decrypt(this.$store.state.user.creditlimit);
-        this.form.online_password = decrypt(this.$store.state.user.online_password);
-        this.form.online_password02 = decrypt(this.$store.state.user.online_password02);
-        this.cord_type = decrypt(this.$store.state.user.cord_type);
-          if(isEmpty(this.cord_type)){
-          this.cord_type = '0'
-        }
-        this.checklist = decrypt(this.$store.state.user.account_purpose)==''?[]:JSON.parse(decrypt(this.$store.state.user.account_purpose));
-        this.form.account_purpose_other =decrypt(this.$store.state.user.account_purpose_other);
-        this.account_reason = decrypt(this.$store.state.user.account_reason)
-        this.form.account_reason_other =decrypt(this.$store.state.user.account_reason_other);
-        // 徳島県
-        this.form.tokushima_flg = decrypt(this.$store.state.user.tokushima_flg);
-        // 紹介コードはお持ちですか？
-        this.form.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
-        // 绍介code显示
-        this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
-        // 名称
-       this.form.introduce_nm = decrypt(this.$store.state.user.introduce_nm);
-       console.log(this.form.tokushima_flg,this.form.introduce_flg,this.form.introduce_cd);
-        if(this.form.tokushima_flg === '0'  || this.form.introduce_flg ==='1'){
-          this.flg = true
-          this.store_list = this.account_store_number_list
-        }
-        if(this.form.introduce_flg === '0' && this.form.introduce_cd === '0172'){
-          this.flg = true
-          this.store_list = this.account_store_number_list_all
-        }
-        if((this.form.introduce_flg === '0' && this.form.introduce_cd === '0172') || this.form.introduce_flg ==='1'){
-          this.flg_2 = true
-        
-        }
-        if(this.form.introduce_flg === '0' && this.form.introduce_cd !== '0172'){
-           this.flg_3 = true
-        }
+        this.form.debit_password = decrypt(this.$store.state.user.debit_password);
+        this.form.debit_password02 = decrypt(this.$store.state.user.debit_password02);
+        this.account_store_number_list_all = decrypt(this.$store.state.user.introduce_list);
       },
     }
   };

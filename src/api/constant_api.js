@@ -27,6 +27,7 @@ const API = {
   MAILE_APPLY: '', //管理番号を作成して、送信
   AGREE_INIT:'',//管理番号をチェック
   TAKE_PHOTO:'',//口座開設web：「eKYC説明」画面で撮影ボタンを押下
+  EKYC_BACK_INIT:'',
   CUSTOMER_INPUT_INIT:'',//口座開設web：「顧客情報入力」画面初期化
   ACCOUNT_APPLICATION:'',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
   GET_DOCUMENTS:'', //ドキュメント情報取得API
@@ -45,22 +46,23 @@ const API = {
 const STUB = {
 
   // API 具体地址
-  MAILE_APPLY: 'v1/visa/account/mail_apply',//管理番号を作成して、送信
-  AGREE_INIT: 'v1/visa/account/agree_init',//管理番号をチェック
-  TAKE_PHOTO:'v1/visa/account/take_photo',//口座開設web：「eKYC説明」画面で撮影ボタンを押下
-  CUSTOMER_INPUT_INIT:'v1/visa/account/customer_input_init',//口座開設web：「顧客情報入力」画面初期化
-  ACCOUNT_APPLICATION:'v1/visa/account/account_application',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
-  GET_DOCUMENTS:'v1/visa/account/get_documents',//ドキュメント情報取得API
-  GET_ACCOUNT_STORE:'v1/visa/account/get_accout_store',
-  GET_ADDRESS:'v1/visa/account/select_address',
-  UPT_AGREEN_AT:'v1/visa/account/upt_agreen_at',
-  LOCK_INFO:'v1/visa/account/check_lock_info',
-  GET_ACCOUNT:'v1/visa/account/get_account',
-  AUTHENTICATION_INIT:'v1/visa/account/authentication_init', //管理番号を取得する	開設口座案内WEB：「ユーザー認証」画面初期化
-  CHECK_LOCK_INFO:'v1/visa/account/check_lock_info',	    //ロック情報をチェックする	開設口座案内WEB：「ユーザー認証」画面で次へボタンを押下
-  GET_ACOUNT:'v1/visa/account/get_account',	              //口座情報を取得する	開設口座案内WEB：「案内」画面初期化
-  GET_CODE:'v1/visa/account/get_code',
-  CHECK_AGE:'v1/visa/account/check_age', //年齢チェック
+  MAILE_APPLY: 'v1/visa/mail_apply',//管理番号を作成して、送信
+  AGREE_INIT: 'v1/visa/agree_init',//管理番号をチェック
+  TAKE_PHOTO:'v1/visa/take_photo',//口座開設web：「eKYC説明」画面で撮影ボタンを押下
+  EKYC_BACK_INIT:'v1/visa/ekyc_back_init',
+  CUSTOMER_INPUT_INIT:'v1/visa/customer_input_init',//口座開設web：「顧客情報入力」画面初期化
+  ACCOUNT_APPLICATION:'v1/visa/account_application',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
+  GET_DOCUMENTS:'v1/visa/get_documents',//ドキュメント情報取得API
+  GET_ACCOUNT_STORE:'v1/visa/get_accout_store',
+  GET_ADDRESS:'v1/visa/select_address',
+  UPT_AGREEN_AT:'v1/visa/upt_agreen_at',
+  LOCK_INFO:'v1/visa/check_lock_info',
+  GET_ACCOUNT:'v1/visa/get_account',
+  AUTHENTICATION_INIT:'v1/visa/authentication_init', //管理番号を取得する	開設口座案内WEB：「ユーザー認証」画面初期化
+  CHECK_LOCK_INFO:'v1/visa/check_lock_info',	    //ロック情報をチェックする	開設口座案内WEB：「ユーザー認証」画面で次へボタンを押下
+  GET_ACOUNT:'v1/visa/get_account',	              //口座情報を取得する	開設口座案内WEB：「案内」画面初期化
+  GET_CODE:'v1/visa/get_code',
+  CHECK_AGE:'v1/visa/check_age', //年齢チェック
   TEST:'v1/visa/test'
 }
 

@@ -145,9 +145,7 @@ export default {
       url03_2: urlImage03_2,
       toUrl: "",
       form:{
-        tokushima_flg:'',
         introduce_flg:'',
-        introduce_cd :''
       }
     };
   },
@@ -161,11 +159,17 @@ export default {
   },
   methods: {
     getUrl() {
+      let county = ""
+      let countyCode =  decrypt(this.$store.state.user.initApiflg);
+      if(countyCode == 100){
+          county = '/gunmab/visa/#/inputCustomer'
+      }else {
+          county = '/gunmab/visa/#/explanation2'
+      }
       let params = {
         seq_no: this.getSeqNo,
-        redirect_url: "/gunmab/visa/#/inputCustomer",
-        introduce_cd:this.form.introduce_cd,
-        tokushima_flg:this.form.tokushima_flg
+        redirect_url: county,
+        application_seq:'1'
       };
       startLoading();
       TAKE_PHOTO_POST(params)
@@ -174,11 +178,8 @@ export default {
           endLoading();
           if (res.success) {
             this.toUrl = res.data.application_url;
-            // window.open(this.toUrl);
-            this.toUrl = res.data.application_url;
             let a = document.createElement("a");
             a.setAttribute("href", this.toUrl);
-            // a.setAttribute('target','_blank');
             document.body.appendChild(a);
             a.click();
             a.remove();
@@ -199,9 +200,7 @@ export default {
     },
     getState() {
 
-      this.form.tokushima_flg = decrypt(this.$store.state.user.tokushima_flg);
       this.form.introduce_flg = decrypt(this.$store.state.user.introduce_flg);
-      this.form.introduce_cd = decrypt(this.$store.state.user.introduce_cd);
       
     },
   },

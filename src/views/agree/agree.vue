@@ -727,16 +727,21 @@
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import { isEmpty, validMailAddress } from "@/utils/validate.js";
-import {MESSAGE,showMessage,popMessageFromApi,ErrMessage,
+import {
+  MESSAGE,
+  showMessage,
+  popMessageFromApi,
+  ErrMessage
 } from "@/utils/message.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import {
   AGREE_INIT_POST,
   GET_DOCUMENTS,
-  UPT_AGREEN_AT,
+  UPT_AGREEN_AT
 } from "@/api/account/api.js";
 import urlImage01 from "@/assets/img/img_driver_01@3x.png";
-import {country} from "@/utils/constants.js"
+import { country } from "@/utils/constants.js";
+import myMixin from "../mixin.js";
 export default {
   data() {
     return {
@@ -750,12 +755,15 @@ export default {
       documentUrl07: "",
       documentUrl08: "",
       form: {
-        account_store_number: "",
+        account_store_number: ""
       },
-      country_list: country,
+      country_list: country
     };
   },
-  mixins: [],
+  computed: {
+    ...mapGetters("user", ["getSeqNo"])
+  },
+  mixins: [myMixin],
   mounted() {
     if (!this.$store.state.page.isPc) {
       this.url = this.$route.fullPath;
@@ -768,6 +776,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({ setState: "user/setState" }),
     setSeq() {
       this.setSeqNo(this.seq_no);
       this.InitAgree();
@@ -783,35 +792,38 @@ export default {
           return;
         }
         let data = {
-          seq_no: this.getSeqNo,
+          seq_no: this.getSeqNo
         };
         startLoading();
         UPT_AGREEN_AT(data)
-          .then((res) => {
+          .then(res => {
             popMessageFromApi(res);
             endLoading();
             if (res.success) {
+              this.setState({
+                account_store_number: this.form.account_store_number
+              });
               this.toPage();
             }
           })
-          .catch((error) => {
+          .catch(error => {
             endLoading();
           });
       } catch (error) {}
     },
     InitAgree() {
       let params = {
-        seq_no: this.getSeqNo,
+        seq_no: this.getSeqNo
       };
       startLoading();
       AGREE_INIT_POST(params)
-        .then((res) => {
+        .then(res => {
           if (!res.success) {
             this.openMsg(res);
-          } 
+          }
           endLoading();
         })
-        .catch((err) => {
+        .catch(err => {
           endLoading();
         });
     },
@@ -823,10 +835,10 @@ export default {
     toPage() {
       this.$router.push({
         name: "explanation",
-        params: {},
+        params: {}
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

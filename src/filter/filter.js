@@ -64,11 +64,20 @@ const STORENAME= (value) => {
   return status[value]
 }
 
+const Jobs = (value)=>{
+  const status = {}
+  INSIGHT.JobList.forEach(data => {
+    status[data.id] = data.title
+  })
+  return status[value]
+}
+
 export {
   Job,
   Questions,
   Purpose,
   Sex,
   NOVALUE,
-  STORENAME
+  STORENAME,
+  Jobs
 }

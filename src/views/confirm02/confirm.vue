@@ -577,7 +577,6 @@ export default {
       },
       pageS: {
         introduce_flg: '',
-        introduce_cd: '',
         introduce_nm:'',
         account_address_pref: '',
         account_address_city: '',
@@ -679,7 +678,6 @@ export default {
 
       this.pageS.introduce_flg = this.$store.state.user.introduce_flg;
 
-        this.pageS.introduce_cd = this.$store.state.user.introduce_cd;
         this.pageS.introduce_nm = this.$store.state.user.introduce_nm;
 
       this.pageS.introduce_list = this.$store.state.user.introduce_list;
