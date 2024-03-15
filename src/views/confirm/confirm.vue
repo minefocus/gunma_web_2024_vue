@@ -818,7 +818,6 @@ export default {
       },
       pageS: {
         introduce_flg: "",
-        introduce_cd: "",
         introduce_nm: "",
         account_address_pref: "",
         account_address_city: "",
@@ -845,7 +844,6 @@ export default {
       description: "",
       form: {
         introduce_flg: "",
-        introduce_cd: "",
       },
       flg: false,
       flg_2: false,
@@ -974,7 +972,7 @@ export default {
         account_purpose_other: this.pageS.account_purpose_other,
         account_reason_other: this.pageS.account_reason_other,
         introduce_flg: this.pageS.introduce_flg,
-        introduce_cd: this.pageS.introduce_cd,
+
         introduce_nm: this.pageS.introduce_nm,
 
       };

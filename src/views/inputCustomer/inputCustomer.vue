@@ -1303,13 +1303,12 @@ export default {
       
 
         let num03 =this.form.tele_number +this.form.tele_number_02 +this.form.tele_number_03;
-        if (isEmpty(num03)) {
-          this.Errs(["tele_number", "tele_number_2", "tele_number_3"],MESSAGE.MsgErrCheck043,"tele_number");
-          return false;
-        } else if (!checkHalNum(num03) || num03.length < 10 ||num03.length > 11) {
+        if (!isEmpty(num03)) {
+          if (!checkHalNum(num03) || num03.length < 10 ||num03.length > 11) {
           this.Errs(["tele_number", "tele_number_2", "tele_number_3"],MESSAGE.MsgErrCheck044,"tele_number");
           return false;
         }
+        } 
 
         let num01 =this.form.phone_number01 +this.form.phone_number02 + this.form.phone_number03;
         if (isEmpty(num01)) {
@@ -1318,6 +1317,14 @@ export default {
         } else if (!checkHalNum(num01) || num01.length != 11) {
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck046,"id_phone_number");
           return false;
+        }else if(num01.slice(0,3)=="090"||num01.slice(0,3)=="080"||num01.slice(0,3)=="070"||num01.slice(0,3)=="050"||num01.slice(0,3)=="020"){
+          this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck093,"id_phone_number");
+          return false;  
+        }
+
+        if (!isEmpty(num03) && num03 == num01) {
+         this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck094,"id_phone_number");
+          return false;  
         }
       //ご職業
       if (isEmpty(this.form.job_kbn)) {
@@ -1328,7 +1335,7 @@ export default {
       //お勤め先名・学校名呼称  todo
       if(this.form.job_kbn == 1 ||this.form.job_kbn == 2 ||this.form.job_kbn ==4 ||this.form.job_kbn ==6 ||this.form.job_kbn ==7||this.form.job_kbn == 8){
        if (isEmpty(this.form.work_name_code)) {
-        this.Err("work_name_code", "......", "work_name_code");
+        this.Err("work_name_code", "ご職業を選択してください", "work_name_code");
         return false;
       } 
       
