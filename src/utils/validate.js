@@ -137,7 +137,14 @@ export function validMailAddress(str) {
 export function validateVideoForVideoId(str) {
   return /^[0-9a-zA-Z]{0,256}$/.test(str);
 }
-
+//半角 白名单 check
+export function whitelist(str) {
+  return /^[ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｳﾞｶﾞｷﾞｸﾞｹﾞｺﾞｻﾞｼﾞｽﾞｾﾞｿﾞﾀﾞﾁﾞﾂﾞﾃﾞﾄﾞﾊﾞﾋﾞﾌﾞﾍﾞﾎﾞﾊﾟﾋﾟﾌﾟﾍﾟﾎﾟ\-゛゜\s]+$/g.test(str);
+}
+//半角 白名单02 check
+export function whitelist02(str) {
+  return /^[ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｳﾞｶﾞｷﾞｸﾞｹﾞｺﾞｻﾞｼﾞｽﾞｾﾞｿﾞﾀﾞﾁﾞﾂﾞﾃﾞﾄﾞﾊﾞﾋﾞﾌﾞﾍﾞﾎﾞﾊﾟﾋﾟﾌﾟﾍﾟﾎﾟ\-゛゜\s0-9()\.]+$/g.test(str);
+}
 // 转半角(英文 数字 符号)
 export function toSBC(str) {
   var result = "";
@@ -299,7 +306,7 @@ export function zenkana2Hankana(str) {
     .replace(/゜/g, "ﾟ");
 }
 
-// 转全角
+// 空格 英文 数字 记号 片假名 转全角
 export function halfToFull(str) {
   let newValue = "";
   for (let i = 0; i < str.length; i++) {
@@ -342,7 +349,7 @@ const halfKanaListPart1 =
   "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ-‐−ーｰ－ｬｭｮｧｨｩｪｫｯﾞﾟ";
 const halfKanaListPart2 =
   "ｳﾞ,ｶﾞ,ｷﾞ,ｸﾞ,ｹﾞ,ｺﾞ,ｻﾞ,ｼﾞ,ｽﾞ,ｾﾞ,ｿﾞ,ﾀﾞ,ﾁﾞ,ﾂﾞ,ﾃﾞ,ﾄﾞ,ﾊﾞ,ﾋﾞ,ﾌﾞ,ﾍﾞ,ﾎﾞ,ﾊﾟ,ﾋﾟ,ﾌﾟ,ﾍﾟ,ﾎﾟ";
-// 转半角
+// 空格 英文 数字 记号 片假名 转半角
 export function FullTohalf(str) {
 
   var newValue = "";
@@ -735,7 +742,7 @@ export function similarBirthday(password) {
   return list.includes(password);
 }
 let mappingFlag = "1";
-//半角を全角に変換する
+//半角片假名 转 全角片假名
 export function changeToDBC(str) {
   let result = "";
   let len = str.length;
@@ -748,7 +755,7 @@ export function changeToDBC(str) {
   return toZenkanaCase(result);
 }
 
-//全角ひらがなを全角カタカナに変換します
+//将全角平假名转换为全角片假名
 export function toKatakanaCase(str) {
   let i = str.length,
     a = [];
@@ -760,7 +767,7 @@ export function toKatakanaCase(str) {
   }
   return String.fromCharCode.apply(null, a);
 }
-//半角のカタカナを全角のカタカナに変換します
+//半角片假名转全角片假名
 function toZenkanaCase(str) {
   let i,
     j,
@@ -1515,7 +1522,7 @@ export function kanaToRoman(targetStr, type, options) {
 export function getUserAge(birthDay,is0402){
   const birthDayAge = new Date(birthDay);
   //当前年份
-  let Year0402;
+  let Year0402 = new Date().toDateString();
   if(is0402){
     let now = new Date()
      //当前年份的0402

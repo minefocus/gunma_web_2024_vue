@@ -65,6 +65,7 @@ const state = {
     introduce_list:'',
     work_address:'',
     work_zip_code:'',
+    work_name_code:'',
     introduce_nm:'',
     account_store_nm:'',
     stateCopy:'',

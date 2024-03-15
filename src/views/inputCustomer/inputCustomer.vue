@@ -99,7 +99,7 @@
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_last_name" id="kana_last_name" class="input_inner_100"
                       v-model.trim="form.kana_last_name" placeholder="20文字まで（例）グンマ" :maxlength="20"
-                      @blur="changeLastKanaName('kana_last_name'),jatoEn()" @input="kanaOnInput('kana_last_name','kana_last_name')">
+                      @blur="changeLastKanaName('kana_last_name'),jatoEn()" >
                     </el-input>
                   </el-col>
                 </el-row>
@@ -114,7 +114,7 @@
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_first_name" id="kana_first_name" class="input_inner_100"
                       v-model.trim="form.kana_first_name" :maxlength="20" @blur="changeLastKanaName('kana_first_name'),jatoEn()"
-                      placeholder="20文字まで（例）タロウ" @input="kanaOnInput('kana_first_name','kana_first_name')"></el-input>
+                      placeholder="20文字まで（例）タロウ" ></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -356,7 +356,7 @@
            <div class="content_ input_01 flex_c_c">
            <el-input ref="kana_address" id="kana_address" class="input_inner_100"
                       v-model.trim="form.kana_address" :maxlength="130" @blur="changeLastKanaName('kana_address')"
-                      placeholder="130文字まで" @input="kanaOnInput('kana_address','kana_address')"></el-input>
+                      placeholder="130文字まで" ></el-input>
            </div>
         </el-col>
       </el-row>
@@ -606,7 +606,7 @@
            <div class="content_ input_01 flex_c_c">
            <el-input ref="work_name_kana" id="work_name_kana" class="input_inner_100"
                       v-model.trim="form.work_name_kana" :maxlength="20" @blur="changeLastKanaName('work_name_kana')"
-                      placeholder="20文字まで（例）○○ショウジ" @input="kanaOnInput('work_name_kana','work_name_kana')"></el-input>
+                      placeholder="20文字まで（例）○○ショウジ" ></el-input>
            </div>
         </el-col>
       </el-row>
@@ -800,7 +800,7 @@
            <div class="content_ input_01 flex_c_c">
            <el-input ref="work_kana_address" id="work_kana_address" class="input_inner_100"
                       v-model.trim="form.work_kana_address" :maxlength="130" @blur="changeLastKanaName('work_kana_address')"
-                      placeholder="130文字まで" @input="kanaOnInput('work_kana_address','work_kana_address')"></el-input>
+                      placeholder="130文字まで" ></el-input>
            </div>
         </el-col>
       </el-row>
@@ -820,7 +820,8 @@
 <script>
 import { mapMutations, mapGetters } from "vuex";
 import SetDom from "@/utils/setDomErr.js";
-import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,PATTERFULL,kanaToRoman,FullTohalf,getUserAge } from "@/utils/validate.js";
+import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,
+PATTERFULL,kanaToRoman,FullTohalf,getUserAge,whitelist,whitelist02} from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
 import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
@@ -891,6 +892,7 @@ export default {
       initApiflg: '',
       studentCode:false,
       age:0,
+      age02:0,
       application_seq:''
     };
   },
@@ -963,8 +965,13 @@ export default {
     this.form[eventName] = this.form[eventName].replace(/[^\u30A0-\u30FF\u3040-\u309F0-9\uFF10-\uFF19a-zA-Z（）ー\(\)\-\−\－\―]|[・]/g, '');
   },
   changeLastKanaName(eventName) {
+    //半角转全角
     this.halfToFull(eventName)
+    // toKatakanaCase全角平假名转换为全角片假名
+    //changeToDBC 半角片假名 转 全角片假名
     this.form[eventName]= changeToDBC(toKatakanaCase(this.form[eventName]))
+    // 全角转半角
+    console.log(FullTohalf(this.form[eventName]));
   },
     getAddress(){
       try {
@@ -997,7 +1004,7 @@ export default {
           if(this.application_seq == 1){
               applicationId = this.getApplication
           }else{
-              applicationId = getApplication_2
+              applicationId = this.getApplication_2
           }
       
       let params = {
@@ -1033,7 +1040,7 @@ export default {
     },
     toPage() {
       this.setValues();
-      // if (this.check()) {
+      if (this.check()) {
       //   startLoading();
       //   let data = {
       //     seq_no:this.getSeqNo,
@@ -1053,7 +1060,7 @@ export default {
       //       endLoading();
       //     })
     
-      // }
+      }
     },
 
     // 半角 转 全角
@@ -1086,8 +1093,12 @@ export default {
       this.birthday = year + '/' + mouth + '/' + day
       this.currentDate = new Date(year, mouth-1, day);
       this.show = false
-      this.age = getUserAge(this.birthday,true);
-      console.log(this.age);
+
+      // false=15		OFF	 誤入力：中学生はデビットカードをお申込みいただけません。
+      this.age = getUserAge(this.birthday,false);
+      // true<15			4月1日時点で年齢が15歳未満の方はお申し込みいただけません													
+      this.age02 = getUserAge(this.birthday,true);
+      console.log(this.age,'-',this.age02 );
     },
     radioChange(){
       this.form.work_name_code = ""
@@ -1178,17 +1189,25 @@ export default {
       if (isEmpty(this.form.kana_last_name)) {
         this.Err("kana_last_name", MESSAGE.MsgErrCheck030, "kana_last_name");
         return false;
-      } else if (this.form.kana_last_name.length > 20 || checkHal02(this.form.kana_last_name) || !PATTERFULL(this.form.kana_last_name)) {
+      } else if (this.form.kana_last_name.length > 20 || !PATTERFULL(this.form.kana_last_name)) {
+        this.Err("kana_last_name", MESSAGE.MsgErrCheck031, "kana_last_name");
+        return false;
+      }
+      if(!whitelist(FullTohalf(this.form.kana_last_name))){
         this.Err("kana_last_name", MESSAGE.MsgErrCheck031, "kana_last_name");
         return false;
       }
 
-
       if (isEmpty(this.form.kana_first_name)) {
         this.Err("kana_first_name", MESSAGE.MsgErrCheck032, "kana_first_name");
         return false;
-      } else if (this.form.kana_first_name.length > 20 || checkHal02(this.form.kana_first_name) || !PATTERFULL(this.form.kana_first_name)) {
+      } else if (this.form.kana_first_name.length > 20|| !PATTERFULL(this.form.kana_first_name)) {
         this.Err("kana_first_name", MESSAGE.MsgErrCheck078, "kana_first_name");
+        return false;
+      }
+
+      if(!whitelist(FullTohalf(this.form.kana_first_name))){
+        this.Err("kana_first_name", MESSAGE.MsgErrCheck031, "kana_first_name");
         return false;
       }
       //全角カナの姓と名合わせて２０文字以下								
@@ -1226,13 +1245,15 @@ export default {
         this.scrollTop('birthday')
         return false;
       }
-      if(this.age < 15){
+      if(this.age02 < 15){
+        this.$message.error('4月1日時点で年齢が15歳未満の方はお申し込みいただけません');
         this.ErrOnlyColor("birthday01", "birthday01");
         this.ErrOnlyColor("birthday02", "birthday02");
         return false;
       }
       if(this.age == 15 && !this.studentCode){
-        this.Err("studentCode", MESSAGE.MsgErrCheck085, "studentCode");
+        this.$message.error(MESSAGE.MsgErrCheck033);
+        this.Err("studentCode", '中学生はデビットカードをお申込みいただけません。', "studentCode");
         return false;
       }
       
@@ -1333,9 +1354,9 @@ export default {
         return false;
       }
       //お勤め先名・学校名呼称  todo
-      if(this.form.job_kbn == 1 ||this.form.job_kbn == 2 ||this.form.job_kbn ==4 ||this.form.job_kbn ==6 ||this.form.job_kbn ==7||this.form.job_kbn == 8){
+    if(this.form.job_kbn == 1 ||this.form.job_kbn == 2 ||this.form.job_kbn ==4 ||this.form.job_kbn ==6 ||this.form.job_kbn ==7||this.form.job_kbn == 8){
        if (isEmpty(this.form.work_name_code)) {
-        this.Err("work_name_code", "ご職業を選択してください", "work_name_code");
+        this.Err("work_name_code", "お勤め先名・学校名呼称を選択してください", "work_name_code");
         return false;
       } 
       
@@ -1348,6 +1369,7 @@ export default {
         this.Err("id_work_name", 'お勤め先（学校名）は全角10文字まで入力してください', "id_work_name");
         return false;
       }
+
       //お勤め先・学校名（フリガナ）
       if (isEmpty(this.form.work_name_kana)) {
           this.Err("work_name_kana", 'お勤め先・学校名（フリガナ）を入力してください', "work_name_kana");
@@ -1358,9 +1380,13 @@ export default {
       }else if (FullTohalf(this.form.work_name_kana) > 20) {
           this.Err("kana_address",'お勤め先・学校名（フリガナ）は半角カナに変換した際に、20文字以内になるように入力してください。', "kana_address");
           return false;
-        }
-      
+       }
+
+      if(!whitelist02(FullTohalf(this.form.work_name_kana))){
+        this.Err("work_name_kana", MESSAGE.MsgErrCheck096, "work_name_kana");
+        return false;
       }
+    }
       //お勤め先電話番号
       let num02 = this.form.work_tele_number01 + this.form.work_tele_number02 + this.form.work_tele_number03;
 
@@ -1430,8 +1456,6 @@ export default {
           this.Err("work_kana_address",'自宅住所（フリガナ）は半角カナに変換した際に、130文字以内になるように入力してください。', "work_kana_address");
           return false;
       }
-
-
 
       return true;
     },
