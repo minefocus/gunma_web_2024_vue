@@ -147,6 +147,15 @@ export function EKYC_BACK_INIT(data) {
   })
 }
 
+export function SALES_STORE_SEARCH(data) {
+  return request({
+    url: API_PATH.SALES_STORE_SEARCH,
+    method: REQ_METHOD.METHOD_POST,
+    data
+  })
+}
+
+
 
 
 

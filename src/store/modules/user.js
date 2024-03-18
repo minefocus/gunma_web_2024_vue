@@ -26,6 +26,7 @@ const state = {
     sex: '', //性别
     zip_code: '', //郵便番号
     account_store_number: '',//支店
+    country_code:'',
     address_pref:'',//住所（都道府県）
     address_city:'',//住所（市区町村）
     address_number:'',
@@ -112,6 +113,9 @@ const mutations = {
 
     setState(state, opt) {
         for (let [key, val] of Object.entries(opt)) {
+            if (val == null){
+                val =''
+            }
             console.log(key,"-",val);
             state[key] = encrypt(val);
         }

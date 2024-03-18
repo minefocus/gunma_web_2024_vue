@@ -45,7 +45,7 @@ service.interceptors.response.use(
         // jwt 30分钟时效  moke数据时需注释掉X-Authorization-Token
         if (typeof response.headers['x-authorization-token'] === 'undefined') {
           // 查询 user的stor 的 参数 S0010_AUTH_JWT  为空时  token 过期
-        //   store.dispatch('user/pushToken', '')
+          store.dispatch('user/pushToken', '')
         } else {
          store.dispatch('user/pushToken', decodeURIComponent(response.headers['x-authorization-token']))
         }

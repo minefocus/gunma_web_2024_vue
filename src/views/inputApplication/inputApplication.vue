@@ -84,7 +84,7 @@
                           @change="deleteAllBackgroundColor(['account_store_number'])" 
                           @input="deleteAllBackgroundColor(['account_store_number'])">
                           <el-option v-for="item in store_list" :key="item.store_number"
-                            :label="item.store_nm" :value="item.store_number" />
+                            :label="item.store_name" :value="item.store_number" />
                         </el-select>
                   </el-col>
                 </el-row>
@@ -252,7 +252,7 @@
   import {isEmpty,checkHalNum,toSBC,halfToFull,PasswordCheck} from "@/utils/validate.js";
   import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
   import SetDom from "@/utils/setDomErr.js";
-  import { GET_ACCOUNT_STORE } from "@/api/account/api.js";
+  import { SALES_STORE_SEARCH } from "@/api/account/api.js";
   import { startLoading, endLoading } from "@/utils/loading";
   import myMixin from "../mixin.js";
   import { mapMutations, mapGetters } from 'vuex';
@@ -271,9 +271,7 @@
           account_store_number: "",
           account_number:''
         },
-        account_store_number_list: [],
-        account_store_number_list_all: [],
-        store_list:[{store_nm:'dadasd',store_number:'2'}],
+        store_list:[],
         DomList: [],
       };
     },
@@ -308,27 +306,23 @@
       },
        getList() {
         this.getState();
-        // try {
-        //   let zip_code = decrypt(this.$store.state.user.zip_code);
-        //   let params = {
-        //     seq_no:this.getSeqNo,
-        //     zip_code_pre: zip_code.substring(0, 3),
-        //   };
-        //   startLoading();
-        //   GET_ACCOUNT_STORE(params)
-        //     .then((res) => {
-        //       popMessageFromApi(res);
-        //       if (res.success) {
-        //         this.account_store_number_list = res.data.store_list;
-        //         this.account_store_number_list_all = res.data.all_store_list;
-        //         
-        //       }
-        //       endLoading();
-        //     })
-        //     .catch((err) => {
-        //       endLoading();
-        //     });
-        // } catch (error) { }
+        try {
+          let params = {
+            search_flag:'0'
+          }
+          startLoading();
+          SALES_STORE_SEARCH(params)
+            .then((res) => {
+              popMessageFromApi(res);
+              if (res.success) {
+                this.store_list = res.data.store_list
+              }
+              endLoading();
+            })
+            .catch((err) => {
+              endLoading();
+            });
+        } catch (error) { }
       },
 
       toPage() {
@@ -470,7 +464,7 @@
         if (!isEmpty(code)) {
           let i =1;
           let name ='';
-          for (let res of this.account_store_number_list_all) {
+          for (let res of this.store_list) {
             i++
             if (res.store_number == code) {
               name = res.store_nm;
@@ -486,7 +480,7 @@
       setState() {
        let account_store_nm = this.getName(this.form.account_store_number);
         this.$store.commit("user/setState", {
-          introduce_list: JSON.stringify(this.account_store_number_list_all),
+          // introduce_list: JSON.stringify(this.account_store_number_list_all),
           account_store_number: this.form.account_store_number,
           account_number: this.form.account_number,
           account_store_nm: account_store_nm,
@@ -503,7 +497,7 @@
         this.form.security_password02 =decrypt(this.$store.state.user.security_password02);
         this.form.debit_password = decrypt(this.$store.state.user.debit_password);
         this.form.debit_password02 = decrypt(this.$store.state.user.debit_password02);
-        this.account_store_number_list_all = decrypt(this.$store.state.user.introduce_list);
+
       },
     }
   };

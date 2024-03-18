@@ -99,7 +99,8 @@
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_last_name" id="kana_last_name" class="input_inner_100"
                       v-model.trim="form.kana_last_name" placeholder="20文字まで（例）グンマ" :maxlength="20"
-                      @blur="changeLastKanaName('kana_last_name'),jatoEn()" >
+                      @blur="changeLastKanaName('kana_last_name'),jatoEn()" 
+                      @input="deleteAllBackgroundColor(['kana_last_name'])">
                     </el-input>
                   </el-col>
                 </el-row>
@@ -114,6 +115,7 @@
                   <el-col :xs="24" :sm="20" class="">
                     <el-input ref="kana_first_name" id="kana_first_name" class="input_inner_100"
                       v-model.trim="form.kana_first_name" :maxlength="20" @blur="changeLastKanaName('kana_first_name'),jatoEn()"
+                      @input="deleteAllBackgroundColor(['kana_first_name'])"
                       placeholder="20文字まで（例）タロウ" ></el-input>
                   </el-col>
                 </el-row>
@@ -356,6 +358,7 @@
            <div class="content_ input_01 flex_c_c">
            <el-input ref="kana_address" id="kana_address" class="input_inner_100"
                       v-model.trim="form.kana_address" :maxlength="130" @blur="changeLastKanaName('kana_address')"
+                      @input="deleteAllBackgroundColor(['kana_address'])"
                       placeholder="130文字まで" ></el-input>
            </div>
         </el-col>
@@ -606,6 +609,7 @@
            <div class="content_ input_01 flex_c_c">
            <el-input ref="work_name_kana" id="work_name_kana" class="input_inner_100"
                       v-model.trim="form.work_name_kana" :maxlength="20" @blur="changeLastKanaName('work_name_kana')"
+                      @input="deleteAllBackgroundColor(['work_name_kana'])"
                       placeholder="20文字まで（例）○○ショウジ" ></el-input>
            </div>
         </el-col>
@@ -701,7 +705,7 @@
                         </el-input>
                       </el-col>
                       <el-col :xs="8" :sm="5" class="flex_center">
-                        <van-button plain style="height:35px;border-radius: 5px;margin-left: 10px;" type="info" @click="getAddress()">住所検索
+                        <van-button plain style="height:35px;border-radius: 5px;margin-left: 10px;" type="info" @click="getAddress02()">住所検索
                         </van-button>
                       </el-col>
                     </el-row>
@@ -799,7 +803,8 @@
         <el-col ref='sex' :xs="24" :sm="18" class="back_wight border_l">
            <div class="content_ input_01 flex_c_c">
            <el-input ref="work_kana_address" id="work_kana_address" class="input_inner_100"
-                      v-model.trim="form.work_kana_address" :maxlength="130" @blur="changeLastKanaName('work_kana_address')"
+                      v-model.trim="form.work_kana_address" :maxlength="130" 
+                      @blur="changeLastKanaName('work_kana_address')" @input="deleteAllBackgroundColor(['work_kana_address'])"
                       placeholder="130文字まで" ></el-input>
            </div>
         </el-col>
@@ -823,7 +828,7 @@ import SetDom from "@/utils/setDomErr.js";
 import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,
 PATTERFULL,kanaToRoman,FullTohalf,getUserAge,whitelist,whitelist02} from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
-import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE } from "@/api/account/api.js";
+import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE,EKYC_BACK_INIT } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import {constants} from '@/utils/constants.js'
 import myMixin from '../mixin.js';
@@ -909,19 +914,21 @@ export default {
     //   this.setSeqNo(decodeURIComponent(this.$route.query.seq_no));
     // }
      if (this.$route.query.hasOwnProperty('application_seq') &&   this.$route.query.hasOwnProperty('application_id')) {
-          this.application_seq = this.$route.query.application_id;
+      console.log(this.$route.query.application_seq,this.$route.query.application_id);
+          this.application_seq = this.$route.query.application_seq;
           if( this.application_seq == 1){
-              this.setApplication_1(this.$route.query.application_id);   
+              this.setApplication_1(this.$route.query.application_id);  
           }else{
               this.setApplication_2(this.$route.query.application_id);
+              this.id_document_type_2 = '33'
           }
      }
  
 
     this.getState();
-    if (!this.initApiflg=='1') {
+    // if (!this.initApiflg=='1') {
       this.init();
-    }
+    // }
     }
   },
   components: {
@@ -973,7 +980,7 @@ export default {
     // 全角转半角
     console.log(FullTohalf(this.form[eventName]));
   },
-    getAddress(){
+  getAddress(){
       try {
         let params = {
           seq_no:this.getSeqNo,
@@ -999,34 +1006,56 @@ export default {
          endLoading()
       }
     },
+    getAddress02(){
+      try {
+        let params = {
+          seq_no:this.getSeqNo,
+          zip_code_pre:this.form.work_zip_code
+        }
+        startLoading();
+        GET_ADDRESS(params).then((res)=>{
+          popMessageFromApi(res)
+          endLoading()
+          if(res.success){
+            this.deleteAllBackgroundColor(['address_pref','address_city'])
+            if(!isEmpty(res.data.address_pref)){
+              this.form.work_address_pref= res.data.address_pref
+            }
+            if(!isEmpty(res.data.address_city)){
+                this.form.work_address_city= res.data.address_city
+            }
+          }
+      }).catch((error)=>{
+          endLoading()
+      })
+      } catch (error) {
+         endLoading()
+      }
+    },
     init() {
       let applicationId ="";
-          if(this.application_seq == 1){
-              applicationId = this.getApplication
-          }else{
-              applicationId = this.getApplication_2
-          }
-      
+       applicationId = this.$store.state.user.application_id_1
       let params = {
         application_id: applicationId,
       };
       startLoading();
-      CUSTOMER_INPUT_INIT_POST(params)
+      EKYC_BACK_INIT(params)
         .then((res) => {
           this.initApiflg = '1'
-          popMessageFromApi(res,() => { this.$router.push({ name: "explanation", params: {}, }) });
+          let pageName = ""
+           if( this.application_seq == 1){
+                pageName = 'explanation'
+           }else{
+                 pageName = 'explanation2'
+           }
+          popMessageFromApi(res,() => { this.$router.push({ name: pageName, params: {}, }) });
           endLoading();
           if (res.success) {
-              if(this.application_seq == 1){
-              this.id_document_type_1 = res.data.id_document_type; //本人確認書類コード
-          }else{
-              this.id_document_type_2 = res.data.id_document_type; //本人確認書類コード
-          }
-           
+            this.id_document_type_1 = res.data.id_document_type; //本人確認書類コード
             this.form.name_last = res.data.name_last; //姓
             this.form.name_first = res.data.name_first; //名
             this.birthday = res.data.birthday; //生年月日
-            this.birthday = this.birthday.replace(/(.{6})/, "$1/").replace(/(.{4})/, "$1/")
+            this.birthday =this.birthday? this.birthday.replace(/(.{6})/, "$1/").replace(/(.{4})/, "$1/"): ''
             this.address = res.data.address; // 住所
             this.sex = res.data.sex; //性別
             this.form.zip_code = res.data.zip_code; //郵便番号
@@ -1041,24 +1070,24 @@ export default {
     toPage() {
       this.setValues();
       if (this.check()) {
-      //   startLoading();
-      //   let data = {
-      //     seq_no:this.getSeqNo,
-      //     birthday:this.birthday.replace(/\//g, '')
-      //   }
-      //     CHECK_AGE(data).then(res=>{
-      //       popMessageFromApi(res);
-      //       endLoading();
-      //         if(res.success){
-      //           this.setValues();
-      //           this.$router.push({
-      //           name: "inputApplication",
-      //           params: {},
-      //         });
-      //       }
-      //     }).catch(err=>{
-      //       endLoading();
-      //     })
+        startLoading();
+        let data = {
+          seq_no:this.getSeqNo,
+          birthday:this.birthday.replace(/\//g, '')
+        }
+          CHECK_AGE(data).then(res=>{
+            popMessageFromApi(res);
+            endLoading();
+              if(res.success){
+                this.setValues();
+                this.$router.push({
+                name: "inputApplication",
+                params: {},
+              });
+            }
+          }).catch(err=>{
+            endLoading();
+          })
     
       }
     },
@@ -1241,22 +1270,23 @@ export default {
         this.$message.error(MESSAGE.MsgErrCheck033);
         this.ErrOnlyColor("birthday01", "birthday01");
         this.ErrOnlyColor("birthday02", "birthday02");
-
-        this.scrollTop('birthday')
+        this.scrollTop('birthday02')
         return false;
       }
-      if(this.age02 < 15){
+       if(this.age02 < 15){
         this.$message.error('4月1日時点で年齢が15歳未満の方はお申し込みいただけません');
         this.ErrOnlyColor("birthday01", "birthday01");
         this.ErrOnlyColor("birthday02", "birthday02");
+        this.scrollTop('birthday02')
         return false;
       }
       if(this.age == 15 && !this.studentCode){
         this.$message.error(MESSAGE.MsgErrCheck033);
         this.Err("studentCode", '中学生はデビットカードをお申込みいただけません。', "studentCode");
+        this.scrollTop('birthday02')
         return false;
       }
-      
+ 
       //性別
       if (isEmpty(this.sex)) {
         this.$message.error(MESSAGE.MsgErrCheck034);

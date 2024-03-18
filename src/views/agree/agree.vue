@@ -67,7 +67,7 @@
       </el-col>
       <el-col :xs="24" :sm="24" style="padding: 10px 20px">
         <el-select
-          v-model="form.account_store_number"
+          v-model="form.country_code"
           popper-class="customDropdown"
           :popper-append-to-body="false"
           placeholder="選択してください"
@@ -755,7 +755,7 @@ export default {
       documentUrl07: "",
       documentUrl08: "",
       form: {
-        account_store_number: ""
+        country_code: ""
       },
       country_list: country
     };
@@ -791,24 +791,11 @@ export default {
           showMessage(MESSAGE.MSGTypeError, MESSAGE.MsgErrCheck017);
           return;
         }
-        let data = {
-          seq_no: this.getSeqNo
-        };
-        startLoading();
-        UPT_AGREEN_AT(data)
-          .then(res => {
-            popMessageFromApi(res);
-            endLoading();
-            if (res.success) {
-              this.setState({
-                account_store_number: this.form.account_store_number
-              });
-              this.toPage();
-            }
-          })
-          .catch(error => {
-            endLoading();
+         this.setState({
+                country_code: this.form.country_code
           });
+         this.toPage();
+         
       } catch (error) {}
     },
     InitAgree() {

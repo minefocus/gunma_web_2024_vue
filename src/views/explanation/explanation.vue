@@ -160,8 +160,8 @@ export default {
   methods: {
     getUrl() {
       let county = ""
-      let countyCode =  decrypt(this.$store.state.user.initApiflg);
-      if(countyCode == 100){
+      let countyCode =  decrypt(this.$store.state.user.country_code);
+      if(countyCode == '100'){
           county = '/gunmab/visa/#/inputCustomer'
       }else {
           county = '/gunmab/visa/#/explanation2'

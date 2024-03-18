@@ -150,6 +150,8 @@ export default {
   mounted() {
     if (this.$route.query.hasOwnProperty('application_id')) {
       this.form.application_id = this.$route.query.application_id
+    }else{
+        this.form.application_id = decrypt(this.$store.state.user.application_id_1);
     }
     this.setState();
     this.getMsg();
@@ -167,7 +169,7 @@ export default {
       };
       startLoading();
       EKYC_BACK_INIT(params).then((res) => {
-          popMessageFromApi(res);
+          popMessageFromApi(res,() => { this.$router.push({ name: "explanation", params: {} }) });
           endLoading();
           if (res.success) {
             this.id_document_type_1 = res.data.id_document_type;
@@ -216,7 +218,7 @@ export default {
     setState() {
       this.setState({
         application_id_1: this.form.application_id,
-        id_document_type_1: this.id_document_type_1
+        // id_document_type_1: this.id_document_type_1
     })
     }
   },
