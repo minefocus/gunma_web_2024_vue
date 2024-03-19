@@ -1193,10 +1193,7 @@ export default {
         },100)
       },300)
     },
-    banjiao(){
-     console.log(this.form.kana_last_name+" "+this.form.kana_first_name);
-     console.log(FullTohalf(this.form.kana_last_name+" "+this.form.kana_first_name)); 
-    },
+
     check() {
       this.deleteAllBackgroundColor(['name_first', 'sex', 'name_last', 'kana_last_name', 'kana_first_name', 'birthday01', 'birthday02', 'id_phone_number', "id_phone_number_2",
         "id_phone_number_3","address_number", "tele_number", "tele_number_2", "tele_number_3", 'p3_i4', 'id_work_name',

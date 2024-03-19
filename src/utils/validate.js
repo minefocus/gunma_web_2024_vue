@@ -306,6 +306,20 @@ export function zenkana2Hankana(str) {
     .replace(/゜/g, "ﾟ");
 }
 
+//文字转大文字
+export function toBig(str){
+  let samllWord = characters1.split("")
+  let    big    = characters2.split("")
+  for (let i = 0; i < samllWord.length; i++) {
+    newValue = newValue.replace(
+      new RegExp(samllWord[i], "gm"),
+      big[i]
+    );
+  }
+return newValue
+}
+const characters1 = "ァィゥェォッャュョヮヵヶ"
+const characters2 = "アイウエオツヤユヨワカケ"
 // 空格 英文 数字 记号 片假名 转全角
 export function halfToFull(str) {
   let newValue = "";

@@ -770,7 +770,7 @@ import { popMessageFromApi, ErrMessage } from "@/utils/message.js";
 import { ACCOUNT_APPLICATION_POST } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import urlImage01 from "../../assets/img/card_visa@3x.png";
-import { isEmpty } from "@/utils/validate.js";
+import { isEmpty,FullTohalf,toBig } from "@/utils/validate.js";
 import myMixin from "../mixin.js";
 import { decrypt } from "../../utils/jse";
 export default {
@@ -840,8 +840,8 @@ export default {
         id_document_type_1: decrypt(this.$store.state.user.id_document_type_1),
         application_id_2: this.getApplication_2,
         id_document_type_2: decrypt(this.$store.state.user.id_document_type_2),
-        name_first: this.form.name_first,
-        name_last: this.form.name_last,
+        name_first:  FullTohalf(toBig(this.form.name_first)),
+        name_last: FullTohalf(toBig(this.form.name_last)),
         kana_last_name: this.form.kana_last_name,
         kana_first_name: this.form.kana_first_name,
         birthday: this.form.birthday.replace(/\//g, ""),
@@ -852,19 +852,20 @@ export default {
         address_city: this.form.address_city,
         address_number: this.form.address_number,
         address_other: this.form.address_other,
+        kana_address: FullTohalf(toBig(this.form.kana_address)),
         tele_number: tele_number,
         phone_number: phone_number,
         job_kbn: this.form.checkList,
         work_name_code:this.form.work_name_code,
         work_name: this.form.work_name,
-        work_name_kana:this.form.work_name_kana,
+        work_name_kana:FullTohalf(toBig(this.form.work_name_kana)),
         work_tele_number: work_tele_number,
         work_zip_code:this.form.work_zip_code,
         work_address_pref:this.form.work_address_pref,
         work_address_city:this.form.work_address_city,
         work_address_number:this.form.work_address_number,
         work_address_other:this.form.work_address_other,
-        work_kana_address:this.form.work_kana_address,
+        work_kana_address:FullTohalf(toBig(this.form.work_kana_address)),
         account_store_number: this.form.account_store_number,
         account_number:this.form.account_number,
         security_password: this.form.security_password,
