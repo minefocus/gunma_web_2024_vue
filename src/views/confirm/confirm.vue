@@ -218,7 +218,7 @@
                     {{ form.birthday | NOVALUE }}
                   </el-col>
                 </el-row>
-                    <el-row class="third_text">
+                    <el-row v-if="this.form.student_flg" class="third_text">
                   <el-col :xs="24" :sm="24" class="">
                     私は中学生ではありません
                   </el-col>
@@ -732,14 +732,14 @@
                   </el-col>
                 </el-row>
 
-                <!-- <el-row class="second_title" v-if="pageS.contractor_flg !='0'">
+                <!-- <el-row class="second_title" v-if="form.contractor_flg !='0'">
                   <el-col :xs="24" :sm="24" style="display: flex;justify-content: space-between;">
                     <div class=" ">
                       <span class="" style="">インターネットバンキング暗証番号</span>
                     </div>
                   </el-col>
                 </el-row> -->
-                <el-row class="third_text" v-if="pageS.contractor_flg != '0'">
+                <el-row class="third_text" v-if="form.contractor_flg != '0'">
                   <el-col :xs="24" :sm="24" class=""> ****** </el-col>
                 </el-row>
               </el-col>
@@ -762,98 +762,30 @@
       </el-col>
     </el-row>
 
-    <!-- <el-dialog title="" :visible.sync="centerDialogVisible" class="width_w_m" center>
-      <span>{{description}}</span>
-      <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="closeWindow()">閉じる</el-button>
-      </span>
-    </el-dialog> -->
   </div>
 </template>
 <script>
-import { mapMutations, mapGetters } from "vuex";
-import { MESSAGE, popMessageFromApi, ErrMessage } from "@/utils/message.js";
+import { mapGetters } from "vuex";
+import { popMessageFromApi, ErrMessage } from "@/utils/message.js";
 import { ACCOUNT_APPLICATION_POST } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import urlImage01 from "../../assets/img/card_visa@3x.png";
-import urlImage02 from "../../assets/img/picture02.png";
 import { isEmpty } from "@/utils/validate.js";
 import myMixin from "../mixin.js";
-import {constants} from "@/utils/constants.js";
 import { decrypt } from "../../utils/jse";
 export default {
   data() {
     return {
-      address_pref_list: constants.prefecturesCodeList,
-      pageF: {
-        name_first: "",
-        name_last: "",
-        kana_last_name: "",
-        kana_first_name: "",
-        address_city: "", //住所（市区町村）
-        address_number: "",
-        address_pref: "", //住所（都道府県）
-        address_pref_name: "",
-        zip_code: "", //郵便番号
-        address_other: "", //マンション・部屋番号
-        kana_address_other: "", //マンション・部屋番号（フリガナ）
-        birthday: "",
-        tele_flg: "",
-        phone_number01: "",
-        phone_number02: "",
-        phone_number03: "",
-        phone_number_content: "",
-        tele_number: "",
-        tele_number_02: "",
-        tele_number_03: "",
-        tele_number_content: "",
-        checkList: [],
-        other_item: "",
-        work_name: "",
-        work_tele_number01: "",
-        work_tele_number02: "",
-        work_tele_number03: "",
-        work_tele_number_content: "",
-        work_address: "",
-      },
-      pageS: {
-        introduce_flg: "",
-        introduce_nm: "",
-        account_address_pref: "",
-        account_address_city: "",
-        account_store_number: "",
-        account_store_nm: "",
-        account_reason: "",
-        security_password: "",
-        security_password02: "",
-        contractor_flg: "",
-        contractor_number: "",
-        creditlimit: "",
-        online_password: "",
-        online_password02: "",
-        checklist: [],
-        account_reason: [],
-        account_purpose_other: "",
-        account_reason_other: "",
-        cord_type: "",
-        introduce_list: [],
-      },
       url01: urlImage01,
-      url02: urlImage02,
-      centerDialogVisible: false,
-      description: "",
       form: {
-        introduce_flg: "",
       },
-      flg: false,
-      flg_2: false,
-      flg_3: false,
+
     };
   },
   mixins: [myMixin],
   created() {},
   computed: {
-    ...mapGetters("user", ["getSeqNo", "getApplication","getDatas"]),
+    ...mapGetters("user", ["getSeqNo", "getApplication","getDatas","getApplication_2"]),
   },
   mounted() {
     document.getElementsByClassName("body_")[0].scrollTo(0, 0);
@@ -903,77 +835,41 @@ export default {
       }
 
       let data = {
-        //管理番号	-		yyyyMMddHHmmss{２桁乱数} ※暗号化
         seq_no: this.getSeqNo,
-        //連携ID1	20
         application_id_1: this.getApplication,
-        //連携ID1本人確認書類コード	5
         id_document_type_1: decrypt(this.$store.state.user.id_document_type_1),
-        //氏名
-        name_first: this.pageF.name_first,
-        name_last: this.pageF.name_last,
-        //生年月日
-        birthday: this.pageF.birthday.replace(/\//g, ""),
-        //性別
-        sex: this.pageF.sex,
-        //郵便番号
-        zip_code: this.pageF.zip_code,
-        //住所（都道府県）
-        address_pref: this.pageF.address_pref,
-        //住所（市区町村）
-        address_city: this.pageF.address_city,
-        address_number: this.pageF.address_number,
-        //住所（その他）
-        address_other: this.pageF.address_other,
-        //マンション・部屋番号（フリガナ）
-        kana_address_other: this.pageF.kana_address_other,
-        //お名前_セイ
-        kana_last_name: this.pageF.kana_last_name,
-        //お名前_メイ
-        kana_first_name: this.pageF.kana_first_name,
-        //電話番号flg			0：自宅（固定電話）と携帯電話を持っています 1：自宅（固定電話）しか持っていません 2：携帯電話しか持っていません
-        tele_flg: this.pageF.tele_flg,
-        //自宅電話番号
-
+        application_id_2: this.getApplication_2,
+        id_document_type_2: decrypt(this.$store.state.user.id_document_type_2),
+        name_first: this.form.name_first,
+        name_last: this.form.name_last,
+        kana_last_name: this.form.kana_last_name,
+        kana_first_name: this.form.kana_first_name,
+        birthday: this.form.birthday.replace(/\//g, ""),
+        student_flg: this.form.student_flg?'0':'1',
+        sex: this.form.sex,
+        zip_code: this.form.zip_code,
+        address_pref: this.form.address_pref,
+        address_city: this.form.address_city,
+        address_number: this.form.address_number,
+        address_other: this.form.address_other,
         tele_number: tele_number,
-        //携帯電話番号
         phone_number: phone_number,
-        //	職業	256		list 1:会社役員・団体役員   2:会社員・団体職員   3:公務員　　4:個人事業主・自営業　　5:パート・アルバイト　6:派遣・嘱託・契約社員　7:主婦・主夫　8:年金受給者　9:学生　10:無職 11:その他         カンマで区切る
-        job_kbn: this.pageF.checkList.join(),
-        //その他職業	60
-        job_kbn_other: this.pageF.other_item,
-        //勤務先名
-        work_name: this.pageF.work_name,
-        //勤務先電話番号
+        job_kbn: this.form.checkList,
+        work_name_code:this.form.work_name_code,
+        work_name: this.form.work_name,
+        work_name_kana:this.form.work_name_kana,
         work_tele_number: work_tele_number,
-        //お勤め先住所
-        work_address: this.pageF.work_address,
-        account_store_number: this.pageS.account_store_number,
-        account_store_nm: this.pageS.account_store_nm,
-        //カードデザイン	1
-        cord_type: this.pageS.cord_type,
-        //キャッシュカード暗証番号
-        security_password: this.pageS.security_password,
-        //契約持ちflg			０：はい　１：いいえ
-        contractor_flg: this.pageS.contractor_flg,
-        //契約者番号
-        //1日あたりの振込限度額
-        creditlimit: this.pageS.creditlimit.replace(/,/g, ""),
-        //インターネットバンキング暗証番号
-        online_password: this.pageS.online_password,
-
-        //アンケート	1		1:WEBのニュース   2:新聞・雑誌広告   3:阿波銀行ホームページ  4:知人・友人の紹介   5:LINE・Twitter・Facebookなど   6:店頭   7: ATMコーナー  8:WEB検索  9:その他
-
-        //その他アンケート	60
-        //取引目的	256		1:生活費決済   2:給料受取 3:年金受取   4:仕送り   5:貯蓄   6:資産運用  7:融資返済用口座  8:外国為替取引  9:その他
-        account_purpose: this.pageS.checklist.join(),
-        account_reason: this.pageS.account_reason,
-        // その他取引目的	60
-        account_purpose_other: this.pageS.account_purpose_other,
-        account_reason_other: this.pageS.account_reason_other,
-        introduce_flg: this.pageS.introduce_flg,
-
-        introduce_nm: this.pageS.introduce_nm,
+        work_zip_code:this.form.work_zip_code,
+        work_address_pref:this.form.work_address_pref,
+        work_address_city:this.form.work_address_city,
+        work_address_number:this.form.work_address_number,
+        work_address_other:this.form.work_address_other,
+        work_kana_address:this.form.work_kana_address,
+        account_store_number: this.form.account_store_number,
+        account_number:this.form.account_number,
+        security_password: this.form.security_password,
+        debit_password:this.form.debit_password,
+        account_store_nm: this.form.account_store_nm
 
       };
       startLoading();
@@ -997,9 +893,6 @@ export default {
           endLoading();
         });
     },
-    closeWindow() {
-      this.centerDialogVisible = false;
-    },
     toPage(path) {
       this.$router.push({
         name: path,
@@ -1008,7 +901,6 @@ export default {
     },
     getState() {
       this.form = this.getDatas;
-      console.log(this.form);
       if(!isEmpty(this.form.phone_number01)&&!isEmpty(this.form.phone_number02)&&!isEmpty(this.form.phone_number03)){
         this.form.phone_number_content = this.form.phone_number01+'-'+this.form.phone_number02+'-'+this.form.phone_number03
       }else{

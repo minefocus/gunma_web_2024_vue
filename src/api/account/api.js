@@ -131,13 +131,7 @@ export function GET_CODE(params) {
     params
   })
 }
-export function CHECK_AGE(data) {
-  return request({
-    url: API_PATH.CHECK_AGE,
-    method: REQ_METHOD.METHOD_POST,
-    data
-  })
-}
+
 
 export function EKYC_BACK_INIT(data) {
   return request({

@@ -79,7 +79,8 @@ const state = {
     work_address_other:'',
     work_kana_address:'',
     account_number:'',
-    account_store_number:''
+    account_store_number:'',
+    student_flg:''
 }
 const getters={
     getDatas(state){

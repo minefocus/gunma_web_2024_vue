@@ -203,7 +203,7 @@
             </el-row>
              <el-row v-if="age == 15" class="flex_bet">
               <el-col :xs="24" :sm="11">
-                 <el-checkbox ref="studentCode" id="studentCode" v-model="studentCode" style="margin:10px 5px 0">私は中学生ではありません</el-checkbox>
+                 <el-checkbox ref="student_flg" id="student_flg" v-model="student_flg" style="margin:10px 5px 0">私は中学生ではありません</el-checkbox>
               </el-col>
             </el-row>
           </div>
@@ -895,7 +895,7 @@ export default {
       maxDate: new Date(2999, 10, 1),
       show: false,
       initApiflg: '',
-      studentCode:false,
+      student_flg:false,
       age:0,
       age02:0,
       application_seq:''
@@ -1290,9 +1290,9 @@ export default {
         this.scrollTop('birthday02')
         return false;
       }
-      if(this.age == 15 && !this.studentCode){
+      if(this.age == 15 && !this.student_flg){
         this.$message.error(MESSAGE.MsgErrCheck033);
-        this.Err("studentCode", '中学生はデビットカードをお申込みいただけません。', "studentCode");
+        this.Err("student_flg", '中学生はデビットカードをお申込みいただけません。', "student_flg");
         this.scrollTop('birthday02')
         return false;
       }
@@ -1531,6 +1531,7 @@ export default {
         id_document_type_1: this.id_document_type_1,  //本人確認書類コード id_document_type_1_1
         id_document_type_2: this.id_document_type_2,  //本人確認書類コード id_document_type_1_1
         birthday: this.birthday,  //生年月日
+        student_flg:this.student_flg,
         address: this.address,// 住所
         sex: this.sex, //性別
         zip_code: this.form.zip_code,//郵便番号
@@ -1577,6 +1578,7 @@ export default {
       this.form.kana_first_name = decrypt(this.$store.state.user.kana_first_name);
       this.form.name_en = decrypt(this.$store.state.user.name_en);
       this.birthday = decrypt(this.$store.state.user.birthday);
+      this.student_flg = decrypt(this.$store.state.user.student_flg);
       let date = this.birthday.split('/')
       this.currentDate = new Date(date[0], date[1]-1, date[2]);
       this.sex = decrypt(this.$store.state.user.sex);

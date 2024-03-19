@@ -40,7 +40,6 @@ const API = {
   LOCK_INFO:'',
   GET_ACCOUNT:'',
   TEST:'',
-  CHECK_AGE:'', //年齢チェック
   
 
 }
@@ -66,7 +65,6 @@ const STUB = {
   CHECK_LOCK_INFO:'v1/visa/check_lock_info',	    //ロック情報をチェックする	開設口座案内WEB：「ユーザー認証」画面で次へボタンを押下
   GET_ACOUNT:'v1/visa/get_account',	              //口座情報を取得する	開設口座案内WEB：「案内」画面初期化
   GET_CODE:'v1/visa/get_code',
-  CHECK_AGE:'v1/visa/check_age', //年齢チェック
   TEST:'v1/visa/test',
 
 }
