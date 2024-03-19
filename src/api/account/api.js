@@ -155,6 +155,16 @@ export function SALES_STORE_SEARCH(data) {
   })
 }
 
+export function CHECK_INPUT(data) {
+  return request({
+    url: API_PATH.CHECK_INPUT,
+    method: REQ_METHOD.METHOD_POST,
+    data
+  })
+}
+
+
+
 
 
 

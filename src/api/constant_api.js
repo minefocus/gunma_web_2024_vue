@@ -32,6 +32,7 @@ const API = {
   ACCOUNT_APPLICATION:'',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
   GET_DOCUMENTS:'', //ドキュメント情報取得API
   CUSTOMER_INPUT_INIT: '',//顧客情報入力画面初期化API
+  CHECK_INPUT:'',
   GET_ACCOUNT_STORE:'',
   SALES_STORE_SEARCH:'',
   GET_ADDRESS:'',
@@ -55,6 +56,7 @@ const STUB = {
   ACCOUNT_APPLICATION:'v1/visa/account_application',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
   GET_DOCUMENTS:'v1/visa/get_documents',//ドキュメント情報取得API
   GET_ACCOUNT_STORE:'v1/visa/get_accout_store',
+  CHECK_INPUT:'v1/visa/check_input',
   SALES_STORE_SEARCH:'v1/visa/sales_store_search',
   GET_ADDRESS:'v1/visa/select_address',
   UPT_AGREEN_AT:'v1/visa/upt_agreen_at',
@@ -65,7 +67,8 @@ const STUB = {
   GET_ACOUNT:'v1/visa/get_account',	              //口座情報を取得する	開設口座案内WEB：「案内」画面初期化
   GET_CODE:'v1/visa/get_code',
   CHECK_AGE:'v1/visa/check_age', //年齢チェック
-  TEST:'v1/visa/test'
+  TEST:'v1/visa/test',
+
 }
 
 export const API_PATH = 0 ? API : STUB

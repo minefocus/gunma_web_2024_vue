@@ -828,7 +828,7 @@ import SetDom from "@/utils/setDomErr.js";
 import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,
 PATTERFULL,kanaToRoman,FullTohalf,getUserAge,whitelist,whitelist02} from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
-import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,CHECK_AGE,EKYC_BACK_INIT } from "@/api/account/api.js";
+import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,EKYC_BACK_INIT,CHECK_INPUT } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import {constants} from '@/utils/constants.js'
 import myMixin from '../mixin.js';
@@ -1073,9 +1073,19 @@ export default {
         startLoading();
         let data = {
           seq_no:this.getSeqNo,
-          birthday:this.birthday.replace(/\//g, '')
+          name_last:this.form.name_last,
+          name_first:this.form.name_first,
+          zip_code:this.form.zip_code,	
+          address_city:this.form.address_city,	
+          address_number:this.form.address_number,	
+          address_other:this.form.address_other,	
+          work_name:this.form.work_name,	
+          work_address_city:this.form.work_address_city,	
+          work_address_number:this.form.work_address_number,	
+          work_address_other:this.form.work_address_other	
+
         }
-          CHECK_AGE(data).then(res=>{
+          CHECK_INPUT(data).then(res=>{
             popMessageFromApi(res);
             endLoading();
               if(res.success){
