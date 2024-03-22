@@ -98,9 +98,9 @@
                     </div>
                   </el-col>
                   <el-col :xs="24" :sm="20" class="">
-                    <el-input ref="account_number" id="account_number" class="input_inner_100" v-model.trim="form.account_number"
-                      :maxlength="7" @blur="halfToFull('account_number')" placeholder="半角数字７桁"
-                      @input="deleteAllBackgroundColor(['account_number'])"></el-input>
+                    <el-input ref="account_number" id="account_number" class="input_inner_100" type='tel' v-model.trim="form.account_number"
+                      :maxlength="7" @blur="toSBCNum('account_number')" placeholder="半角数字７桁"
+                      @input="deleteAllBackgroundColor(['account_number']),replaceNum('account_number')"></el-input>
                   </el-col>
                 </el-row>
               </el-col>
@@ -308,6 +308,7 @@
         this.getState();
         try {
           let params = {
+            seq_no:this.getSeqNo,
             search_flag:'0'
           }
           startLoading();
@@ -328,10 +329,10 @@
       toPage() {
         if (this.check()) {
           this.setState();
-          // this.$router.push({
-          //   name: "confirm",
-          //   params: {},
-          // });
+          this.$router.push({
+            name: "confirm",
+            params: {},
+          });
         }
       },
       goBack() {
@@ -467,7 +468,7 @@
           for (let res of this.store_list) {
             i++
             if (res.store_number == code) {
-              name = res.store_nm;
+              name = res.store_name;
               break;
             }
           }

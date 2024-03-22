@@ -80,7 +80,9 @@ const state = {
     work_kana_address:'',
     account_number:'',
     account_store_number:'',
-    student_flg:''
+    student_flg:'',
+    debit_password:'',
+    debit_password02:''
 }
 const getters={
     getDatas(state){

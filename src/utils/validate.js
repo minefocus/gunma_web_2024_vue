@@ -63,6 +63,9 @@ export function checkNumxLength(str, length) {
 export function checkHalfAngle(str) {
   return /^[0-9a-zA-Z]*$/.test(str);
 }
+export function checkEN(str) {
+  return /^[A-Z\s]*$/.test(str);
+}
 // 半角数
 export function checkHalNum(str) {
   return /^[0-9]*$/.test(str);
@@ -308,6 +311,7 @@ export function zenkana2Hankana(str) {
 
 //文字转大文字
 export function toBig(str){
+  let newValue = str;
   let samllWord = characters1.split("")
   let    big    = characters2.split("")
   for (let i = 0; i < samllWord.length; i++) {

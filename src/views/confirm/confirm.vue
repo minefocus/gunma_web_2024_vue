@@ -840,10 +840,11 @@ export default {
         id_document_type_1: decrypt(this.$store.state.user.id_document_type_1),
         application_id_2: this.getApplication_2,
         id_document_type_2: decrypt(this.$store.state.user.id_document_type_2),
-        name_first:  FullTohalf(toBig(this.form.name_first)),
-        name_last: FullTohalf(toBig(this.form.name_last)),
-        kana_last_name: this.form.kana_last_name,
-        kana_first_name: this.form.kana_first_name,
+        name_first: this.form.name_first,
+        name_last:this.form.name_last,
+        kana_last_name:  FullTohalf(toBig(this.form.kana_last_name)),
+        kana_first_name:  FullTohalf(toBig(this.form.kana_first_name)),
+        name_en: this.form.name_en,
         birthday: this.form.birthday.replace(/\//g, ""),
         student_flg: this.form.student_flg?'0':'1',
         sex: this.form.sex,
@@ -855,7 +856,7 @@ export default {
         kana_address: FullTohalf(toBig(this.form.kana_address)),
         tele_number: tele_number,
         phone_number: phone_number,
-        job_kbn: this.form.checkList,
+        job_kbn: this.form.job_kbn,
         work_name_code:this.form.work_name_code,
         work_name: this.form.work_name,
         work_name_kana:FullTohalf(toBig(this.form.work_name_kana)),
@@ -902,6 +903,7 @@ export default {
     },
     getState() {
       this.form = this.getDatas;
+      console.log(this.form);
       if(!isEmpty(this.form.phone_number01)&&!isEmpty(this.form.phone_number02)&&!isEmpty(this.form.phone_number03)){
         this.form.phone_number_content = this.form.phone_number01+'-'+this.form.phone_number02+'-'+this.form.phone_number03
       }else{

@@ -826,9 +826,9 @@
 import { mapMutations, mapGetters } from "vuex";
 import SetDom from "@/utils/setDomErr.js";
 import {isEmpty,checkHalNum,toSBC,halfToFull,toSBCNum,Symbol02,changeToDBC,toKatakanaCase,checkHal02,strto,
-PATTERFULL,kanaToRoman,FullTohalf,getUserAge,whitelist,whitelist02} from "@/utils/validate.js";
+PATTERFULL,kanaToRoman,FullTohalf,getUserAge,whitelist,whitelist02,checkEN,toBig} from "@/utils/validate.js";
 import { MESSAGE, popMessageFromApi } from "@/utils/message.js";
-import { CUSTOMER_INPUT_INIT_POST,GET_ADDRESS,EKYC_BACK_INIT,CHECK_INPUT } from "@/api/account/api.js";
+import { GET_ADDRESS,EKYC_BACK_INIT,CHECK_INPUT } from "@/api/account/api.js";
 import { startLoading, endLoading } from "@/utils/loading";
 import {constants} from '@/utils/constants.js'
 import myMixin from '../mixin.js';
@@ -1262,7 +1262,7 @@ export default {
     if (isEmpty(this.form.name_en)) {
         this.Err("name_en", MESSAGE.MsgErrCheck081, "name_en");
         return false;
-      } else if (this.form.name_en.length > 18|| !PATTERFULL(this.form.kana_first_name)) {
+      } else if (this.form.name_en.length > 18||!checkEN(this.form.name_en)) {
         this.Err("name_en", MESSAGE.MsgErrCheck082, "name_en");
         return false;
       }else if(this.form.name_en.indexOf(' ') ==-1){
@@ -1375,7 +1375,7 @@ export default {
         } else if (!checkHalNum(num01) || num01.length != 11) {
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck046,"id_phone_number");
           return false;
-        }else if(num01.slice(0,3)=="090"||num01.slice(0,3)=="080"||num01.slice(0,3)=="070"||num01.slice(0,3)=="050"||num01.slice(0,3)=="020"){
+        }else if(num01.slice(0,3)!="090"&&num01.slice(0,3)!="080"&&num01.slice(0,3)!="070"&&num01.slice(0,3)!="050"&&num01.slice(0,3)!="020"){
           this.Errs(["id_phone_number", "id_phone_number_2", "id_phone_number_3"],MESSAGE.MsgErrCheck093,"id_phone_number");
           return false;  
         }

@@ -52,7 +52,7 @@ const STUB = {
   TAKE_PHOTO:'v1/visa/take_photo',//口座開設web：「eKYC説明」画面で撮影ボタンを押下
   EKYC_BACK_INIT:'v1/visa/ekyc_back_init',
   CUSTOMER_INPUT_INIT:'v1/visa/customer_input_init',//口座開設web：「顧客情報入力」画面初期化
-  ACCOUNT_APPLICATION:'v1/visa/account_application',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
+  ACCOUNT_APPLICATION:'v1/visa/visa_application',//口座開設web：「申込内容確認」画面で「この内容で申込む」ボタンを押下
   GET_DOCUMENTS:'v1/visa/get_documents',//ドキュメント情報取得API
   GET_ACCOUNT_STORE:'v1/visa/get_accout_store',
   CHECK_INPUT:'v1/visa/check_input',
